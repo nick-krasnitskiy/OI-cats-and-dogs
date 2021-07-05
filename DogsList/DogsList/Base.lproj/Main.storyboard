@@ -36,6 +36,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Od2-nI-vNz" id="c86-s7-Z1U"/>
+                                    <outlet property="delegate" destination="Od2-nI-vNz" id="T1G-yd-y6c"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NQR-JJ-tyF"/>
