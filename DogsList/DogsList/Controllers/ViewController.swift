@@ -47,13 +47,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, Int>
+    typealias DataSource = UICollectionViewDiffableDataSource<Section, String>
+    
     private var dataSource: DataSource!
+    var dogManager = DogManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dogManager.delegate = self
         configureCollectionView()
         configureDataSource()
+        dogManager.performRequest(with: dogManager.imageURL)
+        
     }
     
     private func configureCollectionView() {
@@ -97,28 +102,42 @@ class ViewController: UIViewController {
     }
     
     private func configureDataSource() {
-        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, _) -> UICollectionViewCell? in
+        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, imageURL) -> UICollectionViewCell? in
             
             switch indexPath.section {
             case 0:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCell", for: indexPath) as? TopCell else { fatalError("Cannot create the cell") }
+                cell.congigure(urlString: imageURL)
                 return cell
             case 1:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MiddleCell", for: indexPath) as? MiddleCell else { fatalError("Cannot create the cell") }
+                cell.congigure(urlString: imageURL)
                 return cell
             default:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BottomCell", for: indexPath) as? BottomCell else { fatalError("Cannot create the cell") }
+                cell.congigure(urlString: imageURL)
                 return cell
             }
         })
-        
-        
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Int>()
+    }
+    
+    func add(imageURL: [String], animate: Bool = true) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
         snapshot.appendSections([.first, .second, .third])
-        snapshot.appendItems([1], toSection: .first)
-        snapshot.appendItems(Array(2...3), toSection: .second)
-        snapshot.appendItems(Array(4...6), toSection: .third)
+        snapshot.appendItems([imageURL[0]], toSection: .first)
+        snapshot.appendItems(Array(arrayLiteral: imageURL[1], imageURL[2]), toSection: .second)
+        snapshot.appendItems(Array(arrayLiteral: imageURL[3], imageURL[4], imageURL[5]), toSection: .third)
         dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
 
+extension ViewController: DogManagerDelegate{
+    func addDogs(dogImages: [String]) {
+        self.add(imageURL: dogImages)
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+
+}

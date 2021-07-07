@@ -19,6 +19,8 @@
 		D44914712692F32C002EBF46 /* MiddleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D449146F2692F32C002EBF46 /* MiddleCell.xib */; };
 		D44914752692F35D002EBF46 /* BottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44914732692F35D002EBF46 /* BottomCell.swift */; };
 		D44914762692F35D002EBF46 /* BottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44914742692F35D002EBF46 /* BottomCell.xib */; };
+		D48B5BA42694582100CF6EDB /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BA32694582100CF6EDB /* Dog.swift */; };
+		D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		D449146F2692F32C002EBF46 /* MiddleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiddleCell.xib; sourceTree = "<group>"; };
 		D44914732692F35D002EBF46 /* BottomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCell.swift; sourceTree = "<group>"; };
 		D44914742692F35D002EBF46 /* BottomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomCell.xib; sourceTree = "<group>"; };
+		D48B5BA32694582100CF6EDB /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,12 +74,10 @@
 			children = (
 				D449142F268D912E002EBF46 /* AppDelegate.swift */,
 				D4491431268D912E002EBF46 /* SceneDelegate.swift */,
-				D4491450268DEF2B002EBF46 /* ViewController.swift */,
-				D44914782692F366002EBF46 /* Cells */,
-				D449147C2692F372002EBF46 /* Xibs */,
-				D4491435268D912E002EBF46 /* Main.storyboard */,
+				D48B5BA72694582A00CF6EDB /* Model */,
+				D48B5BAE2695C31E00CF6EDB /* Controllers */,
+				D48B5BAD2695C30A00CF6EDB /* View */,
 				D4491438268D9132002EBF46 /* Assets.xcassets */,
-				D449143A268D9132002EBF46 /* LaunchScreen.storyboard */,
 				D449143D268D9132002EBF46 /* Info.plist */,
 			);
 			path = DogsList;
@@ -99,6 +101,34 @@
 				D44914742692F35D002EBF46 /* BottomCell.xib */,
 			);
 			path = Xibs;
+			sourceTree = "<group>";
+		};
+		D48B5BA72694582A00CF6EDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BA32694582100CF6EDB /* Dog.swift */,
+				D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D48B5BAD2695C30A00CF6EDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D449147C2692F372002EBF46 /* Xibs */,
+				D4491435268D912E002EBF46 /* Main.storyboard */,
+				D449143A268D9132002EBF46 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D48B5BAE2695C31E00CF6EDB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4491450268DEF2B002EBF46 /* ViewController.swift */,
+				D44914782692F366002EBF46 /* Cells */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,
 				D44914752692F35D002EBF46 /* BottomCell.swift in Sources */,
+				D48B5BA42694582100CF6EDB /* Dog.swift in Sources */,
 				D4491451268DEF2B002EBF46 /* ViewController.swift in Sources */,
 				D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */,
 				D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */,

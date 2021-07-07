@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="400" height="334"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogSample" translatesAutoresizingMaskIntoConstraints="NO" id="cQ7-eY-Gwu">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cQ7-eY-Gwu">
                         <rect key="frame" x="20" y="20" width="360" height="244"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="cQ7-eY-Gwu" secondAttribute="height" multiplier="400:271" id="eIW-rF-cF7"/>
@@ -26,14 +26,8 @@
                         <rect key="frame" x="20" y="274" width="360" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labrador Retriever" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOH-lx-do9">
-                                <rect key="frame" x="0.0" y="0.0" width="360" height="15"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The sweet-faced dog. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Yzj-62-xL7">
-                                <rect key="frame" x="0.0" y="25" width="360" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -53,10 +47,11 @@
                 <constraint firstAttribute="trailing" secondItem="cQ7-eY-Gwu" secondAttribute="trailing" constant="20" id="wgH-mU-abW"/>
             </constraints>
             <size key="customSize" width="697" height="290"/>
+            <connections>
+                <outlet property="dogBreed" destination="vOH-lx-do9" id="Ib3-e5-vu9"/>
+                <outlet property="dogImage" destination="cQ7-eY-Gwu" id="Czz-AX-mJ0"/>
+            </connections>
             <point key="canvasLocation" x="-107.24637681159422" y="0.6696428571428571"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="dogSample" width="729" height="486"/>
-    </resources>
 </document>

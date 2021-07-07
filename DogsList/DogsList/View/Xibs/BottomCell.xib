@@ -16,24 +16,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="332" height="335"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogSample" translatesAutoresizingMaskIntoConstraints="NO" id="LRG-U3-5Op">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LRG-U3-5Op">
                         <rect key="frame" x="20" y="20" width="292" height="199"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="LRG-U3-5Op" secondAttribute="height" multiplier="263:273" constant="100.05860805860806" id="Rqp-Pp-CAg"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="kg0-aN-bFN">
-                        <rect key="frame" x="20" y="229" width="292" height="67.5"/>
+                        <rect key="frame" x="20" y="249" width="292" height="24"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labrador Retriever" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3q2-Rx-g12">
                                 <rect key="frame" x="0.0" y="0.0" width="292" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The sweet-faced dog. " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="skx-5N-EhV">
-                                <rect key="frame" x="0.0" y="47" width="292" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -47,16 +41,17 @@
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kg0-aN-bFN" secondAttribute="bottom" constant="20" id="6eA-ZN-zNk"/>
                 <constraint firstAttribute="trailing" secondItem="LRG-U3-5Op" secondAttribute="trailing" constant="20" id="94E-K3-BDF"/>
                 <constraint firstItem="kg0-aN-bFN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Iod-x4-zsh"/>
-                <constraint firstItem="kg0-aN-bFN" firstAttribute="top" secondItem="LRG-U3-5Op" secondAttribute="bottom" constant="10" id="Q4Z-LA-BEs"/>
+                <constraint firstItem="kg0-aN-bFN" firstAttribute="top" secondItem="LRG-U3-5Op" secondAttribute="bottom" constant="30" id="Q4Z-LA-BEs"/>
                 <constraint firstAttribute="trailing" secondItem="kg0-aN-bFN" secondAttribute="trailing" constant="20" id="amo-rW-ld3"/>
                 <constraint firstItem="LRG-U3-5Op" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="lX7-QN-x85"/>
                 <constraint firstItem="LRG-U3-5Op" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="wLk-ZG-2RS"/>
             </constraints>
             <size key="customSize" width="332" height="335"/>
+            <connections>
+                <outlet property="dogBreed" destination="3q2-Rx-g12" id="WzW-m1-eqf"/>
+                <outlet property="dogImage" destination="LRG-U3-5Op" id="CAI-fO-FvV"/>
+            </connections>
             <point key="canvasLocation" x="-424.63768115942031" y="57.254464285714285"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="dogSample" width="729" height="486"/>
-    </resources>
 </document>
