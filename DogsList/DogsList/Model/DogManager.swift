@@ -9,6 +9,8 @@ import Foundation
 
 protocol DogManagerDelegate: class {
     func addDogs(dogImages: [String])
+    func startActivityIndicator()
+    func stopActivityIndicator()
     func didFailWithError(error: Error)
 }
 
@@ -22,14 +24,28 @@ struct DogManager {
         
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
+        
             let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    self.delegate?.didFailWithError(error: error!)
+                if let error = error {
+                    self.delegate?.didFailWithError(error: error)
                     return
-                }
-                if let safeData = data {
-                    if let dog = self.parseJSON(data: safeData) {
-                        self.delegate?.addDogs(dogImages: dog.message)
+                } else {
+                    if let httpResponse = response as? HTTPURLResponse {
+                        switch httpResponse.statusCode {
+                        case 200:
+                            if let safeData = data {
+                                if let dog = self.parseJSON(data: safeData) {
+                                    self.delegate?.addDogs(dogImages: dog.message)
+                                    self.delegate?.stopActivityIndicator()
+                                }
+                            }
+                        case nil:
+                            print("Activity indicator")
+                            print("didFailWithResponce -> alert - Failure! \(httpResponse.statusCode)")
+                        default:
+                            print("Activity indicator")
+                            print("didFailWithResponce -> alert - Failure! \(httpResponse.statusCode)")
+                        }
                     }
                 }
             }

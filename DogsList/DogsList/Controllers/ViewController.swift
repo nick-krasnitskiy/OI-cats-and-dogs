@@ -46,18 +46,21 @@ enum Section: Int, CaseIterable {
 class ViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
-    
+
+    private let indicator = UIActivityIndicatorView(style: .large)
+
     typealias DataSource = UICollectionViewDiffableDataSource<Section, String>
-    
     private var dataSource: DataSource!
+    private var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
     var dogManager = DogManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureDataSource()
+        configureCollectionView()
         dogManager.delegate = self
         dogManager.performRequest(with: dogManager.imageURL)
-        configureCollectionView()
-        configureDataSource()
+        startActivityIndicator()
     }
     
     private func configureCollectionView() {
@@ -70,10 +73,8 @@ class ViewController: UIViewController {
         collectionView.register(nibOne, forCellWithReuseIdentifier: TopCell.reuseIdentifier)
         collectionView.register(nibTwo, forCellWithReuseIdentifier: MiddleCell.reuseIdentifier)
         collectionView.register(nibThree, forCellWithReuseIdentifier: BottomCell.reuseIdentifier)
-        
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(collectionView)
-        
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -121,13 +122,13 @@ class ViewController: UIViewController {
     }
     
     func add(imageURL: [String], animate: Bool = true) {
+        guard let dataSource = self.dataSource else { return }
         DispatchQueue.main.async {
-            var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
-            snapshot.appendSections([.first, .second, .third])
-            snapshot.appendItems([imageURL[0]], toSection: .first)
-            snapshot.appendItems([imageURL[1], imageURL[2]], toSection: .second)
-            snapshot.appendItems([imageURL[3], imageURL[4], imageURL[5]], toSection: .third)
-            self.dataSource.apply(snapshot, animatingDifferences: false)
+            self.snapshot.appendSections([.first, .second, .third])
+            self.snapshot.appendItems([imageURL[0]], toSection: .first)
+            self.snapshot.appendItems([imageURL[1], imageURL[2]], toSection: .second)
+            self.snapshot.appendItems([imageURL[3], imageURL[4], imageURL[5]], toSection: .third)
+            dataSource.apply(self.snapshot, animatingDifferences: false)
         }
     }
 }
@@ -139,8 +140,25 @@ extension ViewController: DogManagerDelegate {
         self.add(imageURL: dogImages)
     }
     
+    func startActivityIndicator() {
+        indicator.center = self.view.center
+        indicator.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.6967710582, green: 0.4893499848, blue: 0.1820901042, alpha: 1)
+        indicator.startAnimating()
+        view.addSubview(indicator)
+        collectionView.isHidden = true
+    }
+    
+    func stopActivityIndicator() {
+        DispatchQueue.main.async {
+            self.indicator.hidesWhenStopped = true
+            self.indicator.stopAnimating()
+            self.collectionView.isHidden = false
+        }
+    }
+    
     func didFailWithError(error: Error) {
-        print(error)
+        print("Error!: " + error.localizedDescription)
     }
 
 }
