@@ -11,24 +11,23 @@ class TopCell: UICollectionViewCell {
     
     static let reuseIdentifier = "TopCell"
     
-    @IBOutlet weak var dogImage: UIImageView!
-    @IBOutlet weak var dogBreed: UILabel!
-
+    @IBOutlet private weak var dogImage: UIImageView!
+    @IBOutlet private weak var dogBreed: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     func congigure(urlString: String) {
-        
-        dogBreed.text = String(urlString.split(separator: "/")[3])
-        
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    dogImage.image = image
+        DispatchQueue.main.async {
+            self.dogBreed.text = String(urlString.split(separator: "/")[3])
+            if let url = URL(string: urlString) {
+                if let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        self.dogImage.image = image
+                    }
                 }
             }
         }
-    
     }
 }

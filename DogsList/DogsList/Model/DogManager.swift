@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DogManagerDelegate {
+protocol DogManagerDelegate: class {
     func addDogs(dogImages: [String])
     func didFailWithError(error: Error)
 }
@@ -16,7 +16,7 @@ struct DogManager {
     
     let imageURL = "https://dog.ceo/api/breed/hound/images/random/6"
     
-    var delegate: DogManagerDelegate?
+    weak var delegate: DogManagerDelegate?
     
     func performRequest(with urlString: String) {
         
@@ -37,7 +37,6 @@ struct DogManager {
         }
     }
         
-    
     func parseJSON(data: Data) -> Dog? {
         let decoder = JSONDecoder()
         do {

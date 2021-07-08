@@ -45,7 +45,7 @@ enum Section: Int, CaseIterable {
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     typealias DataSource = UICollectionViewDiffableDataSource<Section, String>
     
@@ -55,10 +55,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dogManager.delegate = self
+        dogManager.performRequest(with: dogManager.imageURL)
         configureCollectionView()
         configureDataSource()
-        dogManager.performRequest(with: dogManager.imageURL)
-        
     }
     
     private func configureCollectionView() {
@@ -122,16 +121,20 @@ class ViewController: UIViewController {
     }
     
     func add(imageURL: [String], animate: Bool = true) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
-        snapshot.appendSections([.first, .second, .third])
-        snapshot.appendItems([imageURL[0]], toSection: .first)
-        snapshot.appendItems(Array(arrayLiteral: imageURL[1], imageURL[2]), toSection: .second)
-        snapshot.appendItems(Array(arrayLiteral: imageURL[3], imageURL[4], imageURL[5]), toSection: .third)
-        dataSource.apply(snapshot, animatingDifferences: false)
+        DispatchQueue.main.async {
+            var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
+            snapshot.appendSections([.first, .second, .third])
+            snapshot.appendItems([imageURL[0]], toSection: .first)
+            snapshot.appendItems([imageURL[1], imageURL[2]], toSection: .second)
+            snapshot.appendItems([imageURL[3], imageURL[4], imageURL[5]], toSection: .third)
+            self.dataSource.apply(snapshot, animatingDifferences: false)
+        }
     }
 }
 
-extension ViewController: DogManagerDelegate{
+// MARK: - DogManagerDelegate
+
+extension ViewController: DogManagerDelegate {
     func addDogs(dogImages: [String]) {
         self.add(imageURL: dogImages)
     }
