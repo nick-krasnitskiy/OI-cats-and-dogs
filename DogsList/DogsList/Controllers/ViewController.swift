@@ -131,6 +131,14 @@ class ViewController: UIViewController {
             dataSource.apply(self.snapshot, animatingDifferences: false)
         }
     }
+    
+    func alertGeenrate(alertTitle: String, alertMessage: String, actionTitle: String, handler: ((UIAlertAction) -> Void)? = nil) {
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default) {(_: UIAlertAction!) in
+            self.viewDidLoad()})
+        present(alert, animated: true, completion: nil)
+    }
+
 }
 
 // MARK: - DogManagerDelegate
@@ -158,7 +166,21 @@ extension ViewController: DogManagerDelegate {
     }
     
     func didFailWithError(error: Error) {
-        print("Error!: " + error.localizedDescription)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.alertGeenrate(alertTitle: "Error!", alertMessage: error.localizedDescription, actionTitle: "Try again")
+        }
     }
-
+    
+    func didFailWithResponce(response: HTTPURLResponse ) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.alertGeenrate(alertTitle: "Failure!", alertMessage: "Response has status unacceptable code: \(response.statusCode)", actionTitle: "Try again")
+            
+        }
+    }
+    
+    func notResponce() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.alertGeenrate(alertTitle: "Failure!", alertMessage: "Data not received due to network connection", actionTitle: "Try again")
+        }
+    }
 }

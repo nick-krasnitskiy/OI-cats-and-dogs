@@ -12,6 +12,8 @@ protocol DogManagerDelegate: class {
     func startActivityIndicator()
     func stopActivityIndicator()
     func didFailWithError(error: Error)
+    func didFailWithResponce(response: HTTPURLResponse)
+    func notResponce()
 }
 
 struct DogManager {
@@ -40,11 +42,11 @@ struct DogManager {
                                 }
                             }
                         case nil:
-                            print("Activity indicator")
-                            print("didFailWithResponce -> alert - Failure! \(httpResponse.statusCode)")
+                            self.delegate?.notResponce()
+                            self.delegate?.stopActivityIndicator()
                         default:
-                            print("Activity indicator")
-                            print("didFailWithResponce -> alert - Failure! \(httpResponse.statusCode)")
+                            self.delegate?.didFailWithResponce(response: httpResponse)
+                            self.delegate?.stopActivityIndicator()
                         }
                     }
                 }
