@@ -12,7 +12,7 @@
 		D4491437268D912E002EBF46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4491435268D912E002EBF46 /* Main.storyboard */; };
 		D4491439268D9132002EBF46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4491438268D9132002EBF46 /* Assets.xcassets */; };
 		D449143C268D9132002EBF46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D449143A268D9132002EBF46 /* LaunchScreen.storyboard */; };
-		D4491451268DEF2B002EBF46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4491450268DEF2B002EBF46 /* ViewController.swift */; };
+		D4491451268DEF2B002EBF46 /* ListDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4491450268DEF2B002EBF46 /* ListDogViewController.swift */; };
 		D449146B2692F313002EBF46 /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44914692692F313002EBF46 /* TopCell.swift */; };
 		D449146C2692F313002EBF46 /* TopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D449146A2692F313002EBF46 /* TopCell.xib */; };
 		D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D449146E2692F32C002EBF46 /* MiddleCell.swift */; };
@@ -21,6 +21,10 @@
 		D44914762692F35D002EBF46 /* BottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44914742692F35D002EBF46 /* BottomCell.xib */; };
 		D48B5BA42694582100CF6EDB /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BA32694582100CF6EDB /* Dog.swift */; };
 		D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */; };
+		D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */; };
+		D48B5BB9269C075100CF6EDB /* Persons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BB8269C075000CF6EDB /* Persons.swift */; };
+		D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BBC269C080A00CF6EDB /* PersonManager.swift */; };
+		D48B5BC1269C111C00CF6EDB /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BC0269C111C00CF6EDB /* PersonModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +35,7 @@
 		D4491438268D9132002EBF46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D449143B268D9132002EBF46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D449143D268D9132002EBF46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4491450268DEF2B002EBF46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D4491450268DEF2B002EBF46 /* ListDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDogViewController.swift; sourceTree = "<group>"; };
 		D44914692692F313002EBF46 /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		D449146A2692F313002EBF46 /* TopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCell.xib; sourceTree = "<group>"; };
 		D449146E2692F32C002EBF46 /* MiddleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleCell.swift; sourceTree = "<group>"; };
@@ -40,6 +44,10 @@
 		D44914742692F35D002EBF46 /* BottomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomCell.xib; sourceTree = "<group>"; };
 		D48B5BA32694582100CF6EDB /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogManager.swift; sourceTree = "<group>"; };
+		D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStarWarViewController.swift; sourceTree = "<group>"; };
+		D48B5BB8269C075000CF6EDB /* Persons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persons.swift; sourceTree = "<group>"; };
+		D48B5BBC269C080A00CF6EDB /* PersonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonManager.swift; sourceTree = "<group>"; };
+		D48B5BC0269C111C00CF6EDB /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +115,10 @@
 			isa = PBXGroup;
 			children = (
 				D48B5BA32694582100CF6EDB /* Dog.swift */,
+				D48B5BB8269C075000CF6EDB /* Persons.swift */,
+				D48B5BC0269C111C00CF6EDB /* PersonModel.swift */,
 				D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */,
+				D48B5BBC269C080A00CF6EDB /* PersonManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,7 +136,8 @@
 		D48B5BAE2695C31E00CF6EDB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D4491450268DEF2B002EBF46 /* ViewController.swift */,
+				D4491450268DEF2B002EBF46 /* ListDogViewController.swift */,
+				D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */,
 				D44914782692F366002EBF46 /* Cells */,
 			);
 			path = Controllers;
@@ -225,10 +237,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48B5BC1269C111C00CF6EDB /* PersonModel.swift in Sources */,
+				D48B5BB9269C075100CF6EDB /* Persons.swift in Sources */,
 				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,
+				D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */,
 				D44914752692F35D002EBF46 /* BottomCell.swift in Sources */,
+				D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */,
 				D48B5BA42694582100CF6EDB /* Dog.swift in Sources */,
-				D4491451268DEF2B002EBF46 /* ViewController.swift in Sources */,
+				D4491451268DEF2B002EBF46 /* ListDogViewController.swift in Sources */,
 				D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */,
 				D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */,
 				D4491432268D912E002EBF46 /* SceneDelegate.swift in Sources */,

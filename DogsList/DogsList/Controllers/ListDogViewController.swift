@@ -43,7 +43,7 @@ enum Section: Int, CaseIterable {
     
 }
 
-class ViewController: UIViewController {
+class ListDogViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
 
@@ -143,7 +143,7 @@ class ViewController: UIViewController {
 
 // MARK: - DogManagerDelegate
 
-extension ViewController: DogManagerDelegate {
+extension ListDogViewController: DogManagerDelegate {
     func addDogs(dogImages: [String]) {
         self.add(imageURL: dogImages)
     }
