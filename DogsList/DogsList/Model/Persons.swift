@@ -18,6 +18,5 @@ struct Person: Codable, Hashable {
     let hair_color: String
     let skin_color: String
     let eye_color: String
-    let birth_year: String
     let gender: String
 }

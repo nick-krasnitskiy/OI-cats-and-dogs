@@ -7,10 +7,6 @@
 
 import UIKit
 
-struct PersonModel {
+struct PersonModel: Codable, Hashable {
     let persons: [Person]
-}
-
-func searchPerson(name: String, persons: [Person]) -> [Person] {
-    return persons
 }

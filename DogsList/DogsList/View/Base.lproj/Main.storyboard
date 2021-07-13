@@ -66,20 +66,21 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hjo-uZ-p1A" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="O8D-HO-ee5">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1130067617360079" green="0.24034035218700267" blue="0.20629664973828665" alpha="0.56321894171779141" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.14437124130000001" green="0.2595478296" blue="0.2738721073" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="Od2-nI-vNz" kind="relationship" relationship="viewControllers" id="Ij5-PH-Ibu"/>
-                        <segue destination="4Qf-Id-fCz" kind="relationship" relationship="viewControllers" id="SBe-mR-vl1"/>
+                        <segue destination="II2-ag-0ix" kind="relationship" relationship="viewControllers" id="SBe-mR-vl1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RvU-6M-djp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-378.26086956521743" y="-29.464285714285712"/>
         </scene>
-        <!--Star War-->
+        <!--Search Star War View Controller-->
         <scene sceneID="T7o-Ed-bBY">
             <objects>
                 <viewController id="4Qf-Id-fCz" customClass="SearchStarWarViewController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,11 +90,30 @@
                         <viewLayoutGuide key="safeArea" id="xhT-hm-PZB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Star War" image="star.leadinghalf.fill" catalog="system" selectedImage="star.leadinghalf.fill" id="huC-8r-Sbv"/>
+                    <navigationItem key="navigationItem" id="4RR-bo-wXK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3c-RD-FKl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480" y="449"/>
+            <point key="canvasLocation" x="1389.8550724637682" y="448.66071428571428"/>
+        </scene>
+        <!--Star War-->
+        <scene sceneID="oXI-AK-tW2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="II2-ag-0ix" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Star War" image="star.leadinghalf.fill" catalog="system" selectedImage="star.leadinghalf.fill" id="huC-8r-Sbv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="juI-nL-Tv6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4Qf-Id-fCz" kind="relationship" relationship="rootViewController" id="hOu-Gm-eHk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9b-37-pXl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="479.71014492753625" y="448.66071428571428"/>
         </scene>
     </scenes>
     <resources>

@@ -61,8 +61,9 @@ struct PersonManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(Persons.self, from: data)
-            let personsArray = decodedData.results
-            let persons = PersonModel(persons: personsArray)
+            let resuts = decodedData.results
+
+            let persons = PersonModel(persons: resuts)
             return persons
             
         } catch {
