@@ -9,21 +9,49 @@
 /* Begin PBXBuildFile section */
 		D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D449142F268D912E002EBF46 /* AppDelegate.swift */; };
 		D4491432268D912E002EBF46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4491431268D912E002EBF46 /* SceneDelegate.swift */; };
-		D4491434268D912E002EBF46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4491433268D912E002EBF46 /* ViewController.swift */; };
 		D4491437268D912E002EBF46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4491435268D912E002EBF46 /* Main.storyboard */; };
 		D4491439268D9132002EBF46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4491438268D9132002EBF46 /* Assets.xcassets */; };
 		D449143C268D9132002EBF46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D449143A268D9132002EBF46 /* LaunchScreen.storyboard */; };
+		D4491451268DEF2B002EBF46 /* ListDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4491450268DEF2B002EBF46 /* ListDogViewController.swift */; };
+		D449146B2692F313002EBF46 /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44914692692F313002EBF46 /* TopCell.swift */; };
+		D449146C2692F313002EBF46 /* TopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D449146A2692F313002EBF46 /* TopCell.xib */; };
+		D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D449146E2692F32C002EBF46 /* MiddleCell.swift */; };
+		D44914712692F32C002EBF46 /* MiddleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D449146F2692F32C002EBF46 /* MiddleCell.xib */; };
+		D44914752692F35D002EBF46 /* BottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44914732692F35D002EBF46 /* BottomCell.swift */; };
+		D44914762692F35D002EBF46 /* BottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44914742692F35D002EBF46 /* BottomCell.xib */; };
+		D48B5BA42694582100CF6EDB /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BA32694582100CF6EDB /* Dog.swift */; };
+		D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */; };
+		D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */; };
+		D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BBC269C080A00CF6EDB /* PersonManager.swift */; };
+		D48B5BC1269C111C00CF6EDB /* Persons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BC0269C111C00CF6EDB /* Persons.swift */; };
+		D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */; };
+		D48B5BC8269C231600CF6EDB /* StarWarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */; };
+		D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D449142C268D912E002EBF46 /* DogsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D449142F268D912E002EBF46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4491431268D912E002EBF46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D4491433268D912E002EBF46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D4491436268D912E002EBF46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4491438268D9132002EBF46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D449143B268D9132002EBF46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D449143D268D9132002EBF46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4491450268DEF2B002EBF46 /* ListDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDogViewController.swift; sourceTree = "<group>"; };
+		D44914692692F313002EBF46 /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
+		D449146A2692F313002EBF46 /* TopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCell.xib; sourceTree = "<group>"; };
+		D449146E2692F32C002EBF46 /* MiddleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleCell.swift; sourceTree = "<group>"; };
+		D449146F2692F32C002EBF46 /* MiddleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiddleCell.xib; sourceTree = "<group>"; };
+		D44914732692F35D002EBF46 /* BottomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCell.swift; sourceTree = "<group>"; };
+		D44914742692F35D002EBF46 /* BottomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomCell.xib; sourceTree = "<group>"; };
+		D48B5BA32694582100CF6EDB /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogManager.swift; sourceTree = "<group>"; };
+		D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStarWarViewController.swift; sourceTree = "<group>"; };
+		D48B5BBC269C080A00CF6EDB /* PersonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonManager.swift; sourceTree = "<group>"; };
+		D48B5BC0269C111C00CF6EDB /* Persons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persons.swift; sourceTree = "<group>"; };
+		D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCell.swift; sourceTree = "<group>"; };
+		D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarWarsCell.xib; sourceTree = "<group>"; };
+		D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStarWarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +86,91 @@
 			children = (
 				D449142F268D912E002EBF46 /* AppDelegate.swift */,
 				D4491431268D912E002EBF46 /* SceneDelegate.swift */,
-				D4491433268D912E002EBF46 /* ViewController.swift */,
-				D4491435268D912E002EBF46 /* Main.storyboard */,
+				D48B5BA72694582A00CF6EDB /* Model */,
+				D48B5BAE2695C31E00CF6EDB /* Controllers */,
+				D48B5BAD2695C30A00CF6EDB /* View */,
 				D4491438268D9132002EBF46 /* Assets.xcassets */,
-				D449143A268D9132002EBF46 /* LaunchScreen.storyboard */,
 				D449143D268D9132002EBF46 /* Info.plist */,
 			);
 			path = DogsList;
+			sourceTree = "<group>";
+		};
+		D44914782692F366002EBF46 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BCB269C235F00CF6EDB /* StarWarsCells */,
+				D48B5BC3269C22DC00CF6EDB /* DogCells */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D449147C2692F372002EBF46 /* DogXibs */ = {
+			isa = PBXGroup;
+			children = (
+				D449146A2692F313002EBF46 /* TopCell.xib */,
+				D449146F2692F32C002EBF46 /* MiddleCell.xib */,
+				D44914742692F35D002EBF46 /* BottomCell.xib */,
+			);
+			path = DogXibs;
+			sourceTree = "<group>";
+		};
+		D48B5BA72694582A00CF6EDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BA32694582100CF6EDB /* Dog.swift */,
+				D48B5BC0269C111C00CF6EDB /* Persons.swift */,
+				D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */,
+				D48B5BBC269C080A00CF6EDB /* PersonManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D48B5BAD2695C30A00CF6EDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BCA269C233F00CF6EDB /* StarWarsXibs */,
+				D449147C2692F372002EBF46 /* DogXibs */,
+				D4491435268D912E002EBF46 /* Main.storyboard */,
+				D449143A268D9132002EBF46 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D48B5BAE2695C31E00CF6EDB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4491450268DEF2B002EBF46 /* ListDogViewController.swift */,
+				D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */,
+				D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */,
+				D44914782692F366002EBF46 /* Cells */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D48B5BC3269C22DC00CF6EDB /* DogCells */ = {
+			isa = PBXGroup;
+			children = (
+				D44914692692F313002EBF46 /* TopCell.swift */,
+				D449146E2692F32C002EBF46 /* MiddleCell.swift */,
+				D44914732692F35D002EBF46 /* BottomCell.swift */,
+			);
+			path = DogCells;
+			sourceTree = "<group>";
+		};
+		D48B5BCA269C233F00CF6EDB /* StarWarsXibs */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */,
+			);
+			path = StarWarsXibs;
+			sourceTree = "<group>";
+		};
+		D48B5BCB269C235F00CF6EDB /* StarWarsCells */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */,
+			);
+			path = StarWarsCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +183,7 @@
 				D4491428268D912E002EBF46 /* Sources */,
 				D4491429268D912E002EBF46 /* Frameworks */,
 				D449142A268D912E002EBF46 /* Resources */,
+				D4491445268D9FFF002EBF46 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -127,19 +234,53 @@
 				D449143C268D9132002EBF46 /* LaunchScreen.storyboard in Resources */,
 				D4491439268D9132002EBF46 /* Assets.xcassets in Resources */,
 				D4491437268D912E002EBF46 /* Main.storyboard in Resources */,
+				D48B5BC8269C231600CF6EDB /* StarWarsCell.xib in Resources */,
+				D449146C2692F313002EBF46 /* TopCell.xib in Resources */,
+				D44914762692F35D002EBF46 /* BottomCell.xib in Resources */,
+				D44914712692F32C002EBF46 /* MiddleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D4491445268D9FFF002EBF46 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D4491428268D912E002EBF46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4491434268D912E002EBF46 /* ViewController.swift in Sources */,
+				D48B5BC1269C111C00CF6EDB /* Persons.swift in Sources */,
+				D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */,
+				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,
+				D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */,
+				D44914752692F35D002EBF46 /* BottomCell.swift in Sources */,
+				D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */,
+				D48B5BA42694582100CF6EDB /* Dog.swift in Sources */,
+				D4491451268DEF2B002EBF46 /* ListDogViewController.swift in Sources */,
 				D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */,
+				D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */,
+				D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */,
 				D4491432268D912E002EBF46 /* SceneDelegate.swift in Sources */,
+				D449146B2692F313002EBF46 /* TopCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +437,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.krasnitskiy.DogsList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.krasnitskiy.DogsList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
