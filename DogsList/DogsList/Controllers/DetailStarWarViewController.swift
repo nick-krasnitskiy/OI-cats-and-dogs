@@ -9,9 +9,9 @@ import UIKit
 
 class DetailStarWarViewController: UIViewController {
 
-    let person: String// Person
+    let person: Person
     
-    init(with person: String) {
+    init(with person: Person) {
         self.person = person
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,7 +32,12 @@ class DetailStarWarViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 0.3176909506, green: 0.5634241709, blue: 0.5961199444, alpha: 1)
         self.navigationController?.navigationBar.tintColor = .white
-
+        setupLabels()
+        addLabels()
+        setupConstraints()
+    }
+    
+    private func setupLabels() {
         let nameLabel = UILabel()
         let heightLabel = UILabel()
         let massLabel = UILabel()
@@ -44,37 +49,37 @@ class DetailStarWarViewController: UIViewController {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = .boldSystemFont(ofSize: 40.0)
         nameLabel.textColor = .white
-        nameLabel.text = "Luke Skywalker" // self.person.name
+        nameLabel.text = self.person.name
         
         heightLabel.translatesAutoresizingMaskIntoConstraints = false
         heightLabel.font = .preferredFont(forTextStyle: .headline)
         heightLabel.textColor = .white
-        heightLabel.text = "Height: 172 sm" // self.person.height
+        heightLabel.text = "Height: \(self.person.height) sm"
         
         massLabel.translatesAutoresizingMaskIntoConstraints = false
         massLabel.font = .preferredFont(forTextStyle: .headline)
         massLabel.textColor = .white
-        massLabel.text = "Mass: 77kg" // self.person.mass
+        massLabel.text = "Mass: \(self.person.mass) kg"
         
         hairColorLabel.translatesAutoresizingMaskIntoConstraints = false
         hairColorLabel.font = .preferredFont(forTextStyle: .headline)
         hairColorLabel.textColor = .white
-        hairColorLabel.text = "Hair Color: blond" // self.person.hair_color
+        hairColorLabel.text = "Hair Color: \(self.person.hair_color)"
         
         skinColorLabel.translatesAutoresizingMaskIntoConstraints = false
         skinColorLabel.font = .preferredFont(forTextStyle: .headline)
         skinColorLabel.textColor = .white
-        skinColorLabel.text = "Skin Color: fair" // self.person.skin_color
+        skinColorLabel.text = "Skin Color: \(self.person.skin_color)"
         
         eyeColorLabel.translatesAutoresizingMaskIntoConstraints = false
         eyeColorLabel.font = .preferredFont(forTextStyle: .headline)
         eyeColorLabel.textColor = .white
-        eyeColorLabel.text = "Eye Color: blue" // self.person.eye_color
-    
+        eyeColorLabel.text = "Eye Color: \(self.person.eye_color)"
+        
         genderLabel.translatesAutoresizingMaskIntoConstraints = false
         genderLabel.font = .preferredFont(forTextStyle: .headline)
         genderLabel.textColor = .white
-        genderLabel.text = "Gender: male" // self.person.gender
+        genderLabel.text = "Gender: \(self.person.gender)"
         
         self.nameLabel = nameLabel
         self.heightLabel = heightLabel
@@ -83,7 +88,9 @@ class DetailStarWarViewController: UIViewController {
         self.skinColorLabel = skinColorLabel
         self.eyeColorLabel = eyeColorLabel
         self.genderLabel = genderLabel
-        
+    }
+    
+    private func addLabels() {
         self.view.addSubview(nameLabel)
         self.view.addSubview(heightLabel)
         self.view.addSubview(massLabel)
@@ -91,7 +98,9 @@ class DetailStarWarViewController: UIViewController {
         self.view.addSubview(skinColorLabel)
         self.view.addSubview(eyeColorLabel)
         self.view.addSubview(genderLabel)
-        
+    }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             nameLabel.centerYAnchor.constraint(lessThanOrEqualTo: view.topAnchor, constant: 300),
             heightLabel.topAnchor.constraint(equalToSystemSpacingBelow: nameLabel.bottomAnchor, multiplier: 1.0),

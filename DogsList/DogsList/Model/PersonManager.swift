@@ -8,19 +8,22 @@
 import Foundation
 
 protocol PersonManagerDelegate: class {
-    func getPersons(persons: PersonModel)
+    func getPersons(persons: [Person])
 //    func startActivityIndicator()
 //    func stopActivityIndicator()
-//    func didFailWithError(error: Error)
-//    func didFailWithResponce(response: HTTPURLResponse)
-//    func notResponce()
+    func didFailWithError(error: Error)
+    func didFailWithResponce(response: HTTPURLResponse)
+    func notResponce()
 }
 
 struct PersonManager {
     
-    let personsURL = "https://swapi.dev/api/people/"
-    
     weak var delegate: PersonManagerDelegate?
+    
+    func fetchName(name: String) {
+        let urlString = "https://swapi.dev/api/people/?search=\(name)"
+        performRequest(with: urlString)
+    }
     
     func performRequest(with urlString: String) {
         
@@ -29,7 +32,7 @@ struct PersonManager {
         
             let task = session.dataTask(with: url) { (data, response, error) in
                 if let error = error {
-                    //self.delegate?.didFailWithError(error: error)
+                     self.delegate?.didFailWithError(error: error)
                     return
                 } else {
                     if let httpResponse = response as? HTTPURLResponse {
@@ -37,18 +40,15 @@ struct PersonManager {
                         case 200:
                             if let safeData = data {
                                 if let persons = self.parseJSON(data: safeData) {
-                                    self.delegate?.getPersons(persons: persons)
-                                    //self.delegate?.stopActivityIndicator()
+                                    self.delegate?.getPersons(persons: persons.results)
                                 }
                             }
                         case nil:
                             print("Nil")
-                            //self.delegate?.notResponce()
-                            //self.delegate?.stopActivityIndicator()
+                             self.delegate?.notResponce()
                         default:
                             print("Default")
-                            //self.delegate?.didFailWithResponce(response: httpResponse)
-                            //self.delegate?.stopActivityIndicator()
+                             self.delegate?.didFailWithResponce(response: httpResponse)
                         }
                     }
                 }
@@ -57,17 +57,17 @@ struct PersonManager {
         }
     }
         
-    func parseJSON(data: Data) -> PersonModel? {
+    func parseJSON(data: Data) -> Persons? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(Persons.self, from: data)
             let resuts = decodedData.results
 
-            let persons = PersonModel(persons: resuts)
+            let persons = Persons(results: resuts)
             return persons
             
         } catch {
-            //delegate?.didFailWithError(error: error)
+            delegate?.didFailWithError(error: error)
             return nil
         }
     }

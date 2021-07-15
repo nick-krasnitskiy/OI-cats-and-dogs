@@ -22,9 +22,8 @@
 		D48B5BA42694582100CF6EDB /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BA32694582100CF6EDB /* Dog.swift */; };
 		D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */; };
 		D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */; };
-		D48B5BB9269C075100CF6EDB /* Persons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BB8269C075000CF6EDB /* Persons.swift */; };
 		D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BBC269C080A00CF6EDB /* PersonManager.swift */; };
-		D48B5BC1269C111C00CF6EDB /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BC0269C111C00CF6EDB /* PersonModel.swift */; };
+		D48B5BC1269C111C00CF6EDB /* Persons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BC0269C111C00CF6EDB /* Persons.swift */; };
 		D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */; };
 		D48B5BC8269C231600CF6EDB /* StarWarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */; };
 		D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */; };
@@ -48,9 +47,8 @@
 		D48B5BA32694582100CF6EDB /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogManager.swift; sourceTree = "<group>"; };
 		D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStarWarViewController.swift; sourceTree = "<group>"; };
-		D48B5BB8269C075000CF6EDB /* Persons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persons.swift; sourceTree = "<group>"; };
 		D48B5BBC269C080A00CF6EDB /* PersonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonManager.swift; sourceTree = "<group>"; };
-		D48B5BC0269C111C00CF6EDB /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		D48B5BC0269C111C00CF6EDB /* Persons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persons.swift; sourceTree = "<group>"; };
 		D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCell.swift; sourceTree = "<group>"; };
 		D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarWarsCell.xib; sourceTree = "<group>"; };
 		D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStarWarViewController.swift; sourceTree = "<group>"; };
@@ -120,8 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				D48B5BA32694582100CF6EDB /* Dog.swift */,
-				D48B5BB8269C075000CF6EDB /* Persons.swift */,
-				D48B5BC0269C111C00CF6EDB /* PersonModel.swift */,
+				D48B5BC0269C111C00CF6EDB /* Persons.swift */,
 				D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */,
 				D48B5BBC269C080A00CF6EDB /* PersonManager.swift */,
 			);
@@ -271,8 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48B5BC1269C111C00CF6EDB /* PersonModel.swift in Sources */,
-				D48B5BB9269C075100CF6EDB /* Persons.swift in Sources */,
+				D48B5BC1269C111C00CF6EDB /* Persons.swift in Sources */,
 				D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */,
 				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,
 				D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */,
