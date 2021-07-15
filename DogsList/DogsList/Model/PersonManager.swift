@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PersonManagerDelegate: class {
+protocol PersonManagerDelegate: AnyObject {
     func getPersons(persons: [Person])
 //    func startActivityIndicator()
 //    func stopActivityIndicator()

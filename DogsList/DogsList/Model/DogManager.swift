@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DogManagerDelegate: class {
+protocol DogManagerDelegate: AnyObject {
     func addDogs(dogImages: [String])
     func startActivityIndicator()
     func stopActivityIndicator()

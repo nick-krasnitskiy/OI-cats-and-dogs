@@ -104,16 +104,18 @@ class ListDogViewController: UIViewController {
     private func configureDataSource() {
         dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, imageURL) -> UICollectionViewCell? in
             
-            switch indexPath.section {
-            case 0:
+            let sectionKind = Section(rawValue: indexPath.section)!
+        
+            switch sectionKind {
+            case .first:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCell", for: indexPath) as? TopCell else { fatalError("Cannot create the cell") }
                 cell.congigure(urlString: imageURL)
                 return cell
-            case 1:
+            case .second:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MiddleCell", for: indexPath) as? MiddleCell else { fatalError("Cannot create the cell") }
                 cell.congigure(urlString: imageURL)
                 return cell
-            default:
+            case .third:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BottomCell", for: indexPath) as? BottomCell else { fatalError("Cannot create the cell") }
                 cell.congigure(urlString: imageURL)
                 return cell
