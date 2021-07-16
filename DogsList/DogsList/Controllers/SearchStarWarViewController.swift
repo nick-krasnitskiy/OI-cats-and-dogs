@@ -30,6 +30,7 @@ class SearchStarWarViewController: UIViewController {
         self.view.backgroundColor =
             UIColor(red: 0.1469314694, green: 0.259611547, blue: 0.2739216685, alpha: 1)
         personManager.delegate = self
+        hideKeyboardWhenTappedAround()
     }
 }
 
@@ -110,6 +111,16 @@ extension SearchStarWarViewController {
                 self.dataSource.apply(snapshot, animatingDifferences: false)
             }
         }
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SearchStarWarViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
