@@ -12,7 +12,7 @@ class SearchHistoryViewController: UIViewController {
     enum Section: CaseIterable {
         case main
     }
-
+    
     let searchHistory: [String]
     
     init(with searchHistory: [String]) {
@@ -41,7 +41,12 @@ class SearchHistoryViewController: UIViewController {
 extension SearchHistoryViewController {
     
     private func createLayout() -> UICollectionViewLayout {
-        let config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        config.trailingSwipeActionsConfigurationProvider = { [weak self] indexPath in
+            guard let `self` = self else { return nil }
+            let selectedItem = self.dataSource.itemIdentifier(for: indexPath)
+            return self.deleteItemOnSwipe(item: selectedItem!)
+        }
         return UICollectionViewCompositionalLayout.list(using: config)
     }
     
@@ -63,10 +68,10 @@ extension SearchHistoryViewController {
         })
     }
     
-     func addSnaphot(searchHistory: [String]?) {
+    func addSnaphot(searchHistory: [String]?) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
         snapshot.appendSections([.main])
-         if let queries = searchHistory {
+        if let queries = searchHistory {
             DispatchQueue.main.async {
                 snapshot.appendItems(queries)
                 self.dataSource.apply(snapshot, animatingDifferences: false)
@@ -82,13 +87,32 @@ extension SearchHistoryViewController {
 extension Array where Element: Hashable {
     func removingDuplicates() -> [Element] {
         var addedDict = [Element: Bool]()
-
+        
         return filter {
             addedDict.updateValue(true, forKey: $0) == nil
         }
     }
-
+    
     mutating func removeDuplicates() {
         self = self.removingDuplicates()
+    }
+}
+
+extension SearchHistoryViewController {
+    
+    private func deleteItemOnSwipe(item: String) -> UISwipeActionsConfiguration? {
+        let actionHandler: UIContextualAction.Handler = { _, _, completion in
+            completion(true)
+            
+            var snapShot = self.dataSource.snapshot()
+            snapShot.deleteItems([item])
+            self.dataSource.apply(snapShot)
+        }
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: actionHandler)
+        deleteAction.image = UIImage(systemName: "trash")
+        deleteAction.backgroundColor = .red
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }

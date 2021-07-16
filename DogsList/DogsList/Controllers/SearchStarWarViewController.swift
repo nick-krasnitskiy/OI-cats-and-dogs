@@ -105,7 +105,7 @@ extension SearchStarWarViewController {
         })
     }
     
-    func addSnaphot(persons: [Person]?) {
+    private func addSnaphot(persons: [Person]?) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Person>()
         snapshot.appendSections([.main])
         if let foundPersons = persons {
@@ -120,7 +120,7 @@ extension SearchStarWarViewController {
         }
     }
     
-    func hideKeyboardWhenTappedAround() {
+    private func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SearchStarWarViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
@@ -155,7 +155,7 @@ extension SearchStarWarViewController: UISearchBarDelegate {
             addSnaphot(persons: nil)
         }
     }
-
+    
 }
 
 // MARK: - PersonManagerDelegate
