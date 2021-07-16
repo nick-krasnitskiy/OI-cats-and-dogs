@@ -19,6 +19,7 @@ class SearchStarWarViewController: UIViewController {
     
     private var collectionView: UICollectionView! = nil
     private let searchBar = UISearchBar(frame: .zero)
+    private var searchHistory = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,12 @@ class SearchStarWarViewController: UIViewController {
         personManager.delegate = self
         hideKeyboardWhenTappedAround()
     }
+    
+    @IBAction func searchHistoryPressed(_ sender: UIBarButtonItem) {
+        let searchHistoryVC = SearchHistoryViewController(with: searchHistory)
+        show(searchHistoryVC, sender: nil)
+    }
+    
 }
 
 extension SearchStarWarViewController {
@@ -68,7 +75,7 @@ extension SearchStarWarViewController {
     private func alertGeenrate(alertTitle: String, alertMessage: String, actionTitle: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: actionTitle, style: .default) {(_: UIAlertAction!) in
-            self.viewDidLoad()})
+                            self.viewDidLoad()})
         present(alert, animated: true, completion: nil)
     }
 }
@@ -143,10 +150,12 @@ extension SearchStarWarViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
             personManager.fetchName(name: searchText)
+            searchHistory.append(searchText)
         } else {
             addSnaphot(persons: nil)
         }
     }
+
 }
 
 // MARK: - PersonManagerDelegate
