@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D42F742C3E05A9E6368E2FDA /* Pods_DogsList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */; };
+		D4429B3626A1C264000B5DD2 /* AnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */; };
+		D4429B3B26A4B091000B5DD2 /* AnimalTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */; };
+		D4429B3C26A4B091000B5DD2 /* AnimalTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B3A26A4B091000B5DD2 /* AnimalTopCell.xib */; };
+		D4429B4426A4B11A000B5DD2 /* AnimalMiddleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B4226A4B11A000B5DD2 /* AnimalMiddleCell.swift */; };
+		D4429B4526A4B11A000B5DD2 /* AnimalMiddleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B4326A4B11A000B5DD2 /* AnimalMiddleCell.xib */; };
+		D4429B4926A4B167000B5DD2 /* AnimalBottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B4726A4B167000B5DD2 /* AnimalBottomCell.swift */; };
+		D4429B4A26A4B167000B5DD2 /* AnimalBottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B4826A4B167000B5DD2 /* AnimalBottomCell.xib */; };
+		D4429B5526A556D4000B5DD2 /* BreedDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B5426A556D4000B5DD2 /* BreedDetailController.swift */; };
+		D4429B5A26A55F8C000B5DD2 /* DetailAnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B5826A55F8C000B5DD2 /* DetailAnimalCell.swift */; };
+		D4429B5B26A55F8C000B5DD2 /* DetailAnimalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B5926A55F8C000B5DD2 /* DetailAnimalCell.xib */; };
+		D4429B6426A5673C000B5DD2 /* BreedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B6326A5673C000B5DD2 /* BreedImageViewController.swift */; };
 		D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D449142F268D912E002EBF46 /* AppDelegate.swift */; };
 		D4491432268D912E002EBF46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4491431268D912E002EBF46 /* SceneDelegate.swift */; };
 		D4491437268D912E002EBF46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4491435268D912E002EBF46 /* Main.storyboard */; };
@@ -30,6 +42,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15210C7A2F8AB7B07176C368 /* Pods-DogsList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsList.release.xcconfig"; path = "Target Support Files/Pods-DogsList/Pods-DogsList.release.xcconfig"; sourceTree = "<group>"; };
+		7E1832DD3A3B589DE09974E1 /* Pods-DogsList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsList.debug.xcconfig"; path = "Target Support Files/Pods-DogsList/Pods-DogsList.debug.xcconfig"; sourceTree = "<group>"; };
+		CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogsList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
+		D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTopCell.swift; sourceTree = "<group>"; };
+		D4429B3A26A4B091000B5DD2 /* AnimalTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalTopCell.xib; sourceTree = "<group>"; };
+		D4429B4226A4B11A000B5DD2 /* AnimalMiddleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalMiddleCell.swift; sourceTree = "<group>"; };
+		D4429B4326A4B11A000B5DD2 /* AnimalMiddleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalMiddleCell.xib; sourceTree = "<group>"; };
+		D4429B4726A4B167000B5DD2 /* AnimalBottomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalBottomCell.swift; sourceTree = "<group>"; };
+		D4429B4826A4B167000B5DD2 /* AnimalBottomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalBottomCell.xib; sourceTree = "<group>"; };
+		D4429B5426A556D4000B5DD2 /* BreedDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailController.swift; sourceTree = "<group>"; };
+		D4429B5826A55F8C000B5DD2 /* DetailAnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimalCell.swift; sourceTree = "<group>"; };
+		D4429B5926A55F8C000B5DD2 /* DetailAnimalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailAnimalCell.xib; sourceTree = "<group>"; };
+		D4429B6326A5673C000B5DD2 /* BreedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageViewController.swift; sourceTree = "<group>"; };
 		D449142C268D912E002EBF46 /* DogsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D449142F268D912E002EBF46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4491431268D912E002EBF46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,17 +85,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D42F742C3E05A9E6368E2FDA /* Pods_DogsList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18D2AB794AC7D2FC21C15223 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E1832DD3A3B589DE09974E1 /* Pods-DogsList.debug.xcconfig */,
+				15210C7A2F8AB7B07176C368 /* Pods-DogsList.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D4429B4026A4B0B7000B5DD2 /* AnimalCells */ = {
+			isa = PBXGroup;
+			children = (
+				D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */,
+				D4429B4226A4B11A000B5DD2 /* AnimalMiddleCell.swift */,
+				D4429B4726A4B167000B5DD2 /* AnimalBottomCell.swift */,
+				D4429B5826A55F8C000B5DD2 /* DetailAnimalCell.swift */,
+			);
+			path = AnimalCells;
+			sourceTree = "<group>";
+		};
+		D4429B4D26A4B1A0000B5DD2 /* AnimalXibs */ = {
+			isa = PBXGroup;
+			children = (
+				D4429B5926A55F8C000B5DD2 /* DetailAnimalCell.xib */,
+				D4429B3A26A4B091000B5DD2 /* AnimalTopCell.xib */,
+				D4429B4326A4B11A000B5DD2 /* AnimalMiddleCell.xib */,
+				D4429B4826A4B167000B5DD2 /* AnimalBottomCell.xib */,
+			);
+			path = AnimalXibs;
+			sourceTree = "<group>";
+		};
 		D4491423268D912E002EBF46 = {
 			isa = PBXGroup;
 			children = (
 				D449142E268D912E002EBF46 /* DogsList */,
 				D449142D268D912E002EBF46 /* Products */,
+				18D2AB794AC7D2FC21C15223 /* Pods */,
+				EE0D41BD84A476ABC00F943C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +159,7 @@
 		D44914782692F366002EBF46 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				D4429B4026A4B0B7000B5DD2 /* AnimalCells */,
 				D48B5BCB269C235F00CF6EDB /* StarWarsCells */,
 				D48B5BC3269C22DC00CF6EDB /* DogCells */,
 			);
@@ -128,6 +190,7 @@
 		D48B5BAD2695C30A00CF6EDB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D4429B4D26A4B1A0000B5DD2 /* AnimalXibs */,
 				D48B5BCA269C233F00CF6EDB /* StarWarsXibs */,
 				D449147C2692F372002EBF46 /* DogXibs */,
 				D4491435268D912E002EBF46 /* Main.storyboard */,
@@ -142,6 +205,9 @@
 				D4491450268DEF2B002EBF46 /* ListDogViewController.swift */,
 				D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */,
 				D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */,
+				D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */,
+				D4429B5426A556D4000B5DD2 /* BreedDetailController.swift */,
+				D4429B6326A5673C000B5DD2 /* BreedImageViewController.swift */,
 				D44914782692F366002EBF46 /* Cells */,
 			);
 			path = Controllers;
@@ -173,6 +239,14 @@
 			path = StarWarsCells;
 			sourceTree = "<group>";
 		};
+		EE0D41BD84A476ABC00F943C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,10 +254,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4491440268D9132002EBF46 /* Build configuration list for PBXNativeTarget "DogsList" */;
 			buildPhases = (
+				C533F2CDA65EDB16999E3284 /* [CP] Check Pods Manifest.lock */,
 				D4491428268D912E002EBF46 /* Sources */,
 				D4491429268D912E002EBF46 /* Frameworks */,
 				D449142A268D912E002EBF46 /* Resources */,
 				D4491445268D9FFF002EBF46 /* ShellScript */,
+				5FD0BA0374DAAB2559CA5770 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,18 +308,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				D449143C268D9132002EBF46 /* LaunchScreen.storyboard in Resources */,
+				D4429B5B26A55F8C000B5DD2 /* DetailAnimalCell.xib in Resources */,
 				D4491439268D9132002EBF46 /* Assets.xcassets in Resources */,
 				D4491437268D912E002EBF46 /* Main.storyboard in Resources */,
+				D4429B4526A4B11A000B5DD2 /* AnimalMiddleCell.xib in Resources */,
+				D4429B4A26A4B167000B5DD2 /* AnimalBottomCell.xib in Resources */,
 				D48B5BC8269C231600CF6EDB /* StarWarsCell.xib in Resources */,
 				D449146C2692F313002EBF46 /* TopCell.xib in Resources */,
 				D44914762692F35D002EBF46 /* BottomCell.xib in Resources */,
 				D44914712692F32C002EBF46 /* MiddleCell.xib in Resources */,
+				D4429B3C26A4B091000B5DD2 /* AnimalTopCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5FD0BA0374DAAB2559CA5770 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogsList/Pods-DogsList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogsList/Pods-DogsList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DogsList/Pods-DogsList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C533F2CDA65EDB16999E3284 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DogsList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D4491445268D9FFF002EBF46 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,18 +387,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4429B3626A1C264000B5DD2 /* AnimalListViewController.swift in Sources */,
 				D48B5BC1269C111C00CF6EDB /* Persons.swift in Sources */,
+				D4429B4426A4B11A000B5DD2 /* AnimalMiddleCell.swift in Sources */,
 				D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */,
 				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,
+				D4429B6426A5673C000B5DD2 /* BreedImageViewController.swift in Sources */,
+				D4429B5526A556D4000B5DD2 /* BreedDetailController.swift in Sources */,
 				D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */,
 				D44914752692F35D002EBF46 /* BottomCell.swift in Sources */,
 				D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */,
 				D48B5BA42694582100CF6EDB /* Dog.swift in Sources */,
 				D4491451268DEF2B002EBF46 /* ListDogViewController.swift in Sources */,
 				D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */,
+				D4429B5A26A55F8C000B5DD2 /* DetailAnimalCell.swift in Sources */,
 				D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */,
 				D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */,
+				D4429B4926A4B167000B5DD2 /* AnimalBottomCell.swift in Sources */,
 				D4491432268D912E002EBF46 /* SceneDelegate.swift in Sources */,
+				D4429B3B26A4B091000B5DD2 /* AnimalTopCell.swift in Sources */,
 				D449146B2692F313002EBF46 /* TopCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +550,7 @@
 		};
 		D4491441268D9132002EBF46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E1832DD3A3B589DE09974E1 /* Pods-DogsList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,6 +570,7 @@
 		};
 		D4491442268D9132002EBF46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15210C7A2F8AB7B07176C368 /* Pods-DogsList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
