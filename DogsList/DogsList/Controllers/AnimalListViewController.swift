@@ -12,15 +12,6 @@ enum NewSection: Int, CaseIterable {
     case second
     case third
     
-    var columnCount: Int {
-        switch self {
-        case .first, .third:
-            return 1
-        case .second:
-            return 2
-        }
-    }
-    
     var groupHeight: NSCollectionLayoutDimension {
         switch self {
         case .first:
@@ -52,14 +43,15 @@ class AnimalListViewController: UIViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<NewSection, String>
     private var dataSource: DataSource!
     private var snapshot = NSDiffableDataSourceSnapshot<NewSection, String>()
-    var dogManager = DogManager()
+    var animalManager = AnimalManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDataSource()
         configureCollectionView()
-        dogManager.delegate = self
-        dogManager.performRequest(with: dogManager.imageURL)
+        animalManager.delegate = self
+        animalManager.performRequest()
+
         startActivityIndicator()
     }
     
@@ -81,8 +73,8 @@ class AnimalListViewController: UIViewController {
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, _) -> NSCollectionLayoutSection? in
             
-            guard let sectionType = Section(rawValue: sectionIndex) else { return nil }
-            
+            guard let sectionType = NewSection(rawValue: sectionIndex) else { fatalError("unknown section kind") }
+        
             let heights = sectionType.groupHeight
             let widths = sectionType.groupWidth
             
@@ -103,34 +95,34 @@ class AnimalListViewController: UIViewController {
     }
     
     private func configureDataSource() {
-        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, imageURL) -> UICollectionViewCell? in
+        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, breed) -> UICollectionViewCell? in
             
-            let sectionKind = Section(rawValue: indexPath.section)!
-            
+            let sectionKind = NewSection(rawValue: indexPath.section)!
+
             switch sectionKind {
             case .first:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalTopCell", for: indexPath) as? AnimalTopCell else { fatalError("Cannot create the cell") }
-                cell.congigure(urlString: imageURL)
+                cell.configure(animals: breed)
                 return cell
             case .second:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalMiddleCell", for: indexPath) as? AnimalMiddleCell else { fatalError("Cannot create the cell") }
-                cell.congigure(urlString: imageURL)
+                cell.configure(animals: breed)
                 return cell
             case .third:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalBottomCell", for: indexPath) as? AnimalBottomCell else { fatalError("Cannot create the cell") }
-                cell.congigure(urlString: imageURL)
+                cell.configure(animals: breed)
                 return cell
             }
         })
     }
     
-    func add(imageURL: [String], animate: Bool = true) {
+    func add(breeds: [String], animate: Bool = true) {
         guard let dataSource = self.dataSource else { return }
         DispatchQueue.main.async {
             self.snapshot.appendSections([.first, .second, .third])
-            self.snapshot.appendItems([imageURL[0]], toSection: .first)
-            self.snapshot.appendItems([imageURL[1], imageURL[2]], toSection: .second)
-            self.snapshot.appendItems([imageURL[3], imageURL[4], imageURL[5]], toSection: .third)
+            self.snapshot.appendItems(Array(arrayLiteral: breeds[0]), toSection: .first)
+            self.snapshot.appendItems(Array(breeds[1...2]), toSection: .second)
+            self.snapshot.appendItems(Array(breeds[3...breeds.count - 1]), toSection: .third)
             dataSource.apply(self.snapshot, animatingDifferences: false)
         }
     }
@@ -144,11 +136,15 @@ class AnimalListViewController: UIViewController {
     
 }
 
-// MARK: - DogManagerDelegate
+// MARK: - AnimalManagerDelegate
 
-extension AnimalListViewController: DogManagerDelegate {
-    func addDogs(dogImages: [String]) {
-        self.add(imageURL: dogImages)
+extension AnimalListViewController: AnimalManagerDelegate {
+    func addDogBreed(breeds: [String]) {
+        self.add(breeds: breeds)
+    }
+    
+    func addDogImage(breeds: [String]) {
+       // self.add(breeds: breeds)
     }
     
     func startActivityIndicator() {

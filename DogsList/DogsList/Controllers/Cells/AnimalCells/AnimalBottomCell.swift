@@ -18,16 +18,17 @@ class AnimalBottomCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func congigure(urlString: String) {
+    func configure(animals: String) {
         DispatchQueue.main.async {
-            self.animalBreed.text = String(urlString.split(separator: "/")[3])
-            if let url = URL(string: urlString) {
-                if let data = try? Data(contentsOf: url) {
-                    if let image = UIImage(data: data) {
-                        self.animalImage.image = image
-                    }
-                }
-            }
+            self.animalBreed.text = animals
+//            if let url = URL(string: urlImage) {
+//                if let data = try? Data(contentsOf: url) {
+//                    if let image = UIImage(data: data) {
+//                        self.animalImage.image = image
+//                    }
+//                }
+//            }
         }
     }
 }
+

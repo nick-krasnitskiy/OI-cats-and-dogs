@@ -1,16 +1,20 @@
 PODS:
+  - Alamofire (5.4.3)
   - ImageScrollView (1.9.3)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - ImageScrollView
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - ImageScrollView
 
 SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   ImageScrollView: d3ce8371e0d44299b2b638410db45387e18aa83f
 
-PODFILE CHECKSUM: 95c5f40b2821ce7019d6d8497773fc682e0daed9
+PODFILE CHECKSUM: 969847c9b1ffd5057425be707ba4c1b4fdc8b668
 
 COCOAPODS: 1.10.1
