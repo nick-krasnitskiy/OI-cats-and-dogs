@@ -9,7 +9,7 @@ import UIKit
 
 class StarWarsSearchHistoryViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var query: UILabel!
+    @IBOutlet private weak var query: UILabel!
     
     static let reuseIdentifier = "StarWarsSearchHistoryViewCell"
     

@@ -30,6 +30,7 @@
 		D48B5BC1269C111C00CF6EDB /* Persons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BC0269C111C00CF6EDB /* Persons.swift */; };
 		D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */; };
 		D48B5BC8269C231600CF6EDB /* StarWarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */; };
+		D4ACA3AE26AED88900607750 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA3AD26AED88900607750 /* Extensions.swift */; };
 		D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		D48B5BC0269C111C00CF6EDB /* Persons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persons.swift; sourceTree = "<group>"; };
 		D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCell.swift; sourceTree = "<group>"; };
 		D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarWarsCell.xib; sourceTree = "<group>"; };
+		D4ACA3AD26AED88900607750 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStarWarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 				D48B5BAD2695C30A00CF6EDB /* View */,
 				D4491438268D9132002EBF46 /* Assets.xcassets */,
 				D449143D268D9132002EBF46 /* Info.plist */,
+				D4ACA3B126AED89F00607750 /* Extensions */,
 			);
 			path = DogsList;
 			sourceTree = "<group>";
@@ -183,6 +186,14 @@
 				D4429B2726A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift */,
 			);
 			path = StarWarsCells;
+			sourceTree = "<group>";
+		};
+		D4ACA3B126AED89F00607750 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D4ACA3AD26AED88900607750 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D48B5BC1269C111C00CF6EDB /* Persons.swift in Sources */,
+				D4ACA3AE26AED88900607750 /* Extensions.swift in Sources */,
 				D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */,
 				D4429B2926A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift in Sources */,
 				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,

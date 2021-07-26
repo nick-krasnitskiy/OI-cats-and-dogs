@@ -38,7 +38,7 @@ class SearchHistoryViewController: UIViewController {
     }
 }
 
-extension SearchHistoryViewController {
+private extension SearchHistoryViewController {
     
     private func createLayout() -> UICollectionViewLayout {
         var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
@@ -68,38 +68,6 @@ extension SearchHistoryViewController {
         })
     }
     
-    func addSnaphot(searchHistory: [String]?) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
-        snapshot.appendSections([.main])
-        if let queries = searchHistory {
-            DispatchQueue.main.async {
-                snapshot.appendItems(queries)
-                self.dataSource.apply(snapshot, animatingDifferences: false)
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.dataSource.apply(snapshot, animatingDifferences: false)
-            }
-        }
-    }
-}
-
-extension Array where Element: Hashable {
-    func removingDuplicates() -> [Element] {
-        var addedDict = [Element: Bool]()
-        
-        return filter {
-            addedDict.updateValue(true, forKey: $0) == nil
-        }
-    }
-    
-    mutating func removeDuplicates() {
-        self = self.removingDuplicates()
-    }
-}
-
-extension SearchHistoryViewController {
-    
     private func deleteItemOnSwipe(item: String) -> UISwipeActionsConfiguration? {
         let actionHandler: UIContextualAction.Handler = { _, _, completion in
             completion(true)
@@ -115,4 +83,20 @@ extension SearchHistoryViewController {
         
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
+    
+    private func addSnaphot(searchHistory: [String]?) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
+        snapshot.appendSections([.main])
+        if let queries = searchHistory {
+            DispatchQueue.main.async {
+                snapshot.appendItems(queries)
+                self.dataSource.apply(snapshot, animatingDifferences: false)
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.dataSource.apply(snapshot, animatingDifferences: false)
+            }
+        }
+    }
 }
+
