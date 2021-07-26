@@ -39,7 +39,7 @@
 		D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */; };
 		D48B5BC8269C231600CF6EDB /* StarWarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */; };
 		D4ACA39426A5DED800607750 /* AnimalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA39326A5DED800607750 /* AnimalManager.swift */; };
-		D4ACA39E26A5DF6000607750 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA39D26A5DF6000607750 /* Animal.swift */; };
+		D4ACA39E26A5DF6000607750 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA39D26A5DF6000607750 /* Model.swift */; };
 		D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +80,7 @@
 		D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCell.swift; sourceTree = "<group>"; };
 		D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarWarsCell.xib; sourceTree = "<group>"; };
 		D4ACA39326A5DED800607750 /* AnimalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalManager.swift; sourceTree = "<group>"; };
-		D4ACA39D26A5DF6000607750 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		D4ACA39D26A5DF6000607750 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStarWarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,7 +186,7 @@
 				D48B5BC0269C111C00CF6EDB /* Persons.swift */,
 				D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */,
 				D48B5BBC269C080A00CF6EDB /* PersonManager.swift */,
-				D4ACA39D26A5DF6000607750 /* Animal.swift */,
+				D4ACA39D26A5DF6000607750 /* Model.swift */,
 				D4ACA39326A5DED800607750 /* AnimalManager.swift */,
 			);
 			path = Model;
@@ -403,7 +403,7 @@
 				D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */,
 				D44914752692F35D002EBF46 /* BottomCell.swift in Sources */,
 				D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */,
-				D4ACA39E26A5DF6000607750 /* Animal.swift in Sources */,
+				D4ACA39E26A5DF6000607750 /* Model.swift in Sources */,
 				D48B5BA42694582100CF6EDB /* Dog.swift in Sources */,
 				D4491451268DEF2B002EBF46 /* ListDogViewController.swift in Sources */,
 				D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */,

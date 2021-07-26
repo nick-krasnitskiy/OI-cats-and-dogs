@@ -40,9 +40,9 @@ class AnimalListViewController: UIViewController {
     
     private let indicator = UIActivityIndicatorView(style: .large)
   
-    typealias DataSource = UICollectionViewDiffableDataSource<NewSection, String>
+    typealias DataSource = UICollectionViewDiffableDataSource<NewSection, Animal>
     private var dataSource: DataSource!
-    private var snapshot = NSDiffableDataSourceSnapshot<NewSection, String>()
+    private var snapshot = NSDiffableDataSourceSnapshot<NewSection, Animal>()
     var animalManager = AnimalManager()
     
     override func viewDidLoad() {
@@ -95,34 +95,35 @@ class AnimalListViewController: UIViewController {
     }
     
     private func configureDataSource() {
-        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, breed) -> UICollectionViewCell? in
+        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, animal) -> UICollectionViewCell? in
             
             let sectionKind = NewSection(rawValue: indexPath.section)!
 
             switch sectionKind {
             case .first:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalTopCell", for: indexPath) as? AnimalTopCell else { fatalError("Cannot create the cell") }
-                cell.configure(animals: breed)
+                cell.configure(animal: animal)
                 return cell
             case .second:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalMiddleCell", for: indexPath) as? AnimalMiddleCell else { fatalError("Cannot create the cell") }
-                cell.configure(animals: breed)
+                cell.configure(animal: animal)
                 return cell
             case .third:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalBottomCell", for: indexPath) as? AnimalBottomCell else { fatalError("Cannot create the cell") }
-                cell.configure(animals: breed)
+                cell.configure(animal: animal)
                 return cell
             }
         })
     }
     
-    func add(breeds: [String], animate: Bool = true) {
+    func add(animals: [Animal], animate: Bool = true) {
         guard let dataSource = self.dataSource else { return }
+        
         DispatchQueue.main.async {
             self.snapshot.appendSections([.first, .second, .third])
-            self.snapshot.appendItems(Array(arrayLiteral: breeds[0]), toSection: .first)
-            self.snapshot.appendItems(Array(breeds[1...2]), toSection: .second)
-            self.snapshot.appendItems(Array(breeds[3...breeds.count - 1]), toSection: .third)
+            self.snapshot.appendItems([animals[0]],  toSection: .first)
+            self.snapshot.appendItems(Array(animals[1...2]), toSection: .second)
+            self.snapshot.appendItems(Array(animals[3...animals.count - 1]), toSection: .third)
             dataSource.apply(self.snapshot, animatingDifferences: false)
         }
     }
@@ -139,12 +140,8 @@ class AnimalListViewController: UIViewController {
 // MARK: - AnimalManagerDelegate
 
 extension AnimalListViewController: AnimalManagerDelegate {
-    func addDogBreed(breeds: [String]) {
-        self.add(breeds: breeds)
-    }
-    
-    func addDogImage(breeds: [String]) {
-       // self.add(breeds: breeds)
+    func addAnimal(animals: [Animal]) {
+        self.add(animals: animals)
     }
     
     func startActivityIndicator() {
