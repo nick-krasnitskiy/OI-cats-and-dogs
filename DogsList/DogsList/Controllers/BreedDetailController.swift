@@ -13,24 +13,36 @@ class BreedDetailController: UIViewController {
         case main
     }
     
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, Int>
+    let animalImages: AnimalImages
+    
+    init(with animalImages: AnimalImages) {
+        self.animalImages = animalImages
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    typealias DataSource = UICollectionViewDiffableDataSource<Section, String>
     private var dataSource: DataSource!
     
-    var collectionView: UICollectionView! = nil
+    private var collectionView: UICollectionView! = nil
+    private var animalManager = AnimalManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = .white
-        navigationItem.title = "Breed Details"
+        navigationItem.title = "\(animalImages.breed)"
         configureHierarchy()
         configureDataSource()
-        addSnaphot()
         collectionView.delegate = self
+        addSnaphot(images: animalImages.images)
     }
 }
 
 extension BreedDetailController {
-   
+    
     func createLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalWidth(0.5))
@@ -49,9 +61,7 @@ extension BreedDetailController {
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
-}
-
-extension BreedDetailController {
+    
     func configureHierarchy() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
         let nib = UINib(nibName: DetailAnimalCell.reuseIdentifier, bundle: nil)
@@ -62,18 +72,27 @@ extension BreedDetailController {
         view.addSubview(collectionView)
     }
     func configureDataSource() {
-        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, _) -> UICollectionViewCell? in
+        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, image) -> UICollectionViewCell? in
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailAnimalCell", for: indexPath) as? DetailAnimalCell else { fatalError("Cannot create the cell") }
-            cell.configure()
+            cell.configure(image: image)
             return cell
         })
     }
-          
-    func addSnaphot() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Int>()
+    
+    func alertGeenrate(alertTitle: String, alertMessage: String, actionTitle: String, handler: ((UIAlertAction) -> Void)? = nil) {
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default) {(_: UIAlertAction!) in
+                            self.viewDidLoad()})
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func addSnaphot(images: [String]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(Array(0..<94))
+        for image in images {
+            snapshot.appendItems([image])
+        }
         dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
@@ -82,8 +101,14 @@ extension BreedDetailController {
 
 extension BreedDetailController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let breedImageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BreedImageVC") as? BreedImageViewController {
-            self.navigationController?.pushViewController(breedImageViewController, animated: true)
+        guard let image = self.dataSource.itemIdentifier(for: indexPath) else {
+            collectionView.deselectItem(at: indexPath, animated: true)
+            return
         }
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let breedImageViewController = storyBoard.instantiateViewController(withIdentifier: "BreedImageVC") as? BreedImageViewController else { return }
+        breedImageViewController.imageName = image
+        self.navigationController?.pushViewController(breedImageViewController, animated: true)
     }
 }

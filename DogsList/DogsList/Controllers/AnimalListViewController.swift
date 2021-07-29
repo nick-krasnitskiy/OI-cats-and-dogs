@@ -43,7 +43,8 @@ class AnimalListViewController: UIViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<NewSection, Animal>
     private var dataSource: DataSource!
     private var snapshot = NSDiffableDataSourceSnapshot<NewSection, Animal>()
-    var animalManager = AnimalManager()
+    private var animalManager = AnimalManager()
+    private var images = [AnimalImages]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,9 +140,13 @@ class AnimalListViewController: UIViewController {
 
 // MARK: - AnimalManagerDelegate
 
-extension AnimalListViewController: AnimalManagerDelegate {
+extension AnimalListViewController: AnimalDelegate {
     func addAnimal(animals: [Animal]) {
         self.add(animals: animals)
+    }
+    
+    func addAnimalImage(animalImages: [AnimalImages]) {
+        images = animalImages
     }
     
     func startActivityIndicator() {
@@ -185,8 +190,17 @@ extension AnimalListViewController: AnimalManagerDelegate {
 
 extension AnimalListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let breedDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BreedDetailVC") as? BreedDetailController {
-            self.navigationController?.pushViewController(breedDetailViewController, animated: true)
+        
+        guard let breed = self.dataSource.itemIdentifier(for: indexPath)?.breed else {
+            collectionView.deselectItem(at: indexPath, animated: true)
+            return
+        }
+        
+        for object in images {
+            if breed == object.breed {
+                let breedDetailViewController = BreedDetailController(with: object)
+                self.navigationController?.pushViewController(breedDetailViewController, animated: true)
+            }
         }
     }
 }

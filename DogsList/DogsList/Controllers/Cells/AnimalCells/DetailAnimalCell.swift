@@ -17,9 +17,16 @@ class DetailAnimalCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func configure() {
+    func configure(image: String) {
         DispatchQueue.main.async {
-            self.animalImage.image = UIImage(named: "dogTest")
+            if let url = URL(string: image) {
+                if let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        self.animalImage.image = image
+                    }
+                }
+                
+            }
         }
     }
 }

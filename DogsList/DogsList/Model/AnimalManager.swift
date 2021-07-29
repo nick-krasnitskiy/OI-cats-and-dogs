@@ -8,8 +8,9 @@
 import Foundation
 import Alamofire
 
-protocol AnimalManagerDelegate: AnyObject {
+protocol AnimalDelegate: AnyObject {
     func addAnimal(animals: [Animal])
+    func addAnimalImage(animalImages: [AnimalImages])
     func startActivityIndicator()
     func stopActivityIndicator()
     func didFailWithError(error: Error)
@@ -17,9 +18,14 @@ protocol AnimalManagerDelegate: AnyObject {
     func notResponce()
 }
 
+protocol AnimalImagesDelegate: AnyObject {
+    func addAnimalImage(animals: [AnimalImages])
+}
+
 enum Endpoint {
     case listAllDogBreeds
     case randomDogBreedImage(breed: String)
+    case breedImages(breed: String)
     
     var url: URL {
         switch self {
@@ -27,14 +33,17 @@ enum Endpoint {
             return .makeForEndpoint("breeds/list/all")
         case .randomDogBreedImage(let breed):
             return .makeForEndpoint("breed/\(breed)/images/random")
+        case .breedImages(let breed):
+            return .makeForEndpoint("breed/\(breed)/images")
         }
     }
 }
 var animalObjects = [Animal]()
+var animalImages = [AnimalImages]()
 
 struct AnimalManager {
     
-    weak var delegate: AnimalManagerDelegate?
+    weak var delegate: AnimalDelegate?
     
     func performRequest() {
         let group = DispatchGroup()
@@ -59,8 +68,21 @@ struct AnimalManager {
                             print(error)
                         }
                     }
+                    
+                    let endpointThree = Endpoint.breedImages(breed: breed).url
+                    AF.request(endpointThree).responseDecodable(of: DogImages.self) { response in
+                        
+                        switch response.result {
+                        case .success(let images):
+                            animalImagesGenerate(breed: breed, images: images.message)
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                    
                 }
                 group.notify(queue: .main) {
+                    self.delegate?.addAnimalImage(animalImages: animalImages)
                     self.delegate?.addAnimal(animals: animalObjects)
                     self.delegate?.stopActivityIndicator()
                 }
@@ -78,6 +100,9 @@ struct AnimalManager {
         animalObjects.append(Animal(breed: breed, image: image))
     }
     
+    func animalImagesGenerate(breed: String, images: [String]) {
+        animalImages.append(AnimalImages(breed: breed, images: images))
+    }
 }
 
 private extension URL {
@@ -85,4 +110,3 @@ private extension URL {
         URL(string: "https://dog.ceo/api/\(endpoint)")!
     }
 }
-
