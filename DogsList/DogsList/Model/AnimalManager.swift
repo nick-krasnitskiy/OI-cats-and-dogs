@@ -22,19 +22,27 @@ protocol AnimalImagesDelegate: AnyObject {
     func addAnimalImage(animals: [AnimalImages])
 }
 
+private let limit = 100
+
 enum Endpoint {
     case listAllDogBreeds
+    case listAllCatBreeds
     case randomDogBreedImage(breed: String)
-    case breedImages(breed: String)
+    case breedDogImages(breed: String)
+    case breedCatImages(breedId: String)
     
     var url: URL {
         switch self {
         case .listAllDogBreeds:
-            return .makeForEndpoint("breeds/list/all")
+            return .makeForDogEndpoint("breeds/list/all")
+        case .listAllCatBreeds:
+            return .makeForCatEndpoint("breeds")
         case .randomDogBreedImage(let breed):
-            return .makeForEndpoint("breed/\(breed)/images/random")
-        case .breedImages(let breed):
-            return .makeForEndpoint("breed/\(breed)/images")
+            return .makeForDogEndpoint("breed/\(breed)/images/random")
+        case .breedDogImages(let breed):
+            return .makeForDogEndpoint("breed/\(breed)/images")
+        case .breedCatImages(let breedId):
+            return .makeForCatEndpoint("images/search?breed_id=\(breedId)&limit=\(limit)")
         }
     }
 }
@@ -69,7 +77,7 @@ struct AnimalManager {
                         }
                     }
                     
-                    let endpointThree = Endpoint.breedImages(breed: breed).url
+                    let endpointThree = Endpoint.breedDogImages(breed: breed).url
                     AF.request(endpointThree).responseDecodable(of: DogImages.self) { response in
                         
                         switch response.result {
@@ -84,10 +92,42 @@ struct AnimalManager {
                 group.notify(queue: .main) {
                     self.delegate?.addAnimalImage(animalImages: animalImages)
                     self.delegate?.addAnimal(animals: animalObjects)
-                    self.delegate?.stopActivityIndicator()
                 }
                 
             // print(breeds) // here add local store to Core Data
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        let endpointFour = Endpoint.listAllCatBreeds.url
+        AF.request(endpointFour).responseDecodable(of: [CatBreed].self) { response in
+            
+            switch response.result {
+            case .success(let cats):
+                for cat in cats {
+                    group.enter()
+                    let endpointFive = Endpoint.breedCatImages(breedId: cat.id).url
+                    AF.request(endpointFive).responseDecodable(of: [CatImages].self) { response in
+                        
+                        switch response.result {
+                        case .success(let objects):
+                            let images = objects.map{($0.url)}
+                            animalImagesGenerate(breed: cat.name, images: images)
+                            group.leave()
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                  
+                    let breed = cat.name
+                    if let image = cat.image {
+                        if let imageURL = image.url {
+                            animalGenerate(animals: (breed, imageURL))
+                        }
+                    }
+                }
+                
             case .failure(let error):
                 print(error)
             }
@@ -98,15 +138,21 @@ struct AnimalManager {
         let breed = animals.0
         let image = animals.1
         animalObjects.append(Animal(breed: breed, image: image))
+        animalObjects.shuffle()
     }
     
     func animalImagesGenerate(breed: String, images: [String]) {
         animalImages.append(AnimalImages(breed: breed, images: images))
+        animalImages.shuffle()
     }
 }
 
 private extension URL {
-    static func makeForEndpoint(_ endpoint: String) -> URL {
+    static func makeForDogEndpoint(_ endpoint: String) -> URL {
         URL(string: "https://dog.ceo/api/\(endpoint)")!
+    }
+    
+    static func makeForCatEndpoint(_ endpoint: String) -> URL {
+        URL(string: "https://api.thecatapi.com/v1/\(endpoint)")!
     }
 }

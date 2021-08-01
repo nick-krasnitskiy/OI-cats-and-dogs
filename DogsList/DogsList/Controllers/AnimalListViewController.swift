@@ -38,7 +38,7 @@ class AnimalListViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    private let indicator = UIActivityIndicatorView(style: .large)
+    let indicator = UIActivityIndicatorView(style: .large)
   
     typealias DataSource = UICollectionViewDiffableDataSource<NewSection, Animal>
     private var dataSource: DataSource!
@@ -52,8 +52,8 @@ class AnimalListViewController: UIViewController {
         configureCollectionView()
         animalManager.delegate = self
         animalManager.performRequest()
-
         startActivityIndicator()
+        
     }
     
     private func configureCollectionView() {
@@ -126,6 +126,7 @@ class AnimalListViewController: UIViewController {
             self.snapshot.appendItems(Array(animals[1...2]), toSection: .second)
             self.snapshot.appendItems(Array(animals[3...animals.count - 1]), toSection: .third)
             dataSource.apply(self.snapshot, animatingDifferences: false)
+            self.stopActivityIndicator()
         }
     }
     
@@ -157,7 +158,7 @@ extension AnimalListViewController: AnimalDelegate {
         view.addSubview(indicator)
         collectionView.isHidden = true
     }
-    
+
     func stopActivityIndicator() {
         DispatchQueue.main.async {
             self.indicator.hidesWhenStopped = true
