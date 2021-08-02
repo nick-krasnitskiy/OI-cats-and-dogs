@@ -26,12 +26,13 @@ class BreedDetailController: UIViewController {
     
     typealias DataSource = UICollectionViewDiffableDataSource<Section, String>
     private var dataSource: DataSource!
-    
+    private let indicator = UIActivityIndicatorView(style: .large)
     private var collectionView: UICollectionView! = nil
     private var animalManager = AnimalManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startActivityIndicator()
         self.navigationController?.navigationBar.tintColor = .white
         navigationItem.title = "\(animalImages.breed)"
         configureHierarchy()
@@ -70,6 +71,7 @@ extension BreedDetailController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = UIColor(red: 0.38307597, green: 0.6793843527, blue: 0.7188093509, alpha: 1)
         view.addSubview(collectionView)
+        view.addSubview(indicator)
     }
     func configureDataSource() {
         dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, image) -> UICollectionViewCell? in
@@ -94,6 +96,20 @@ extension BreedDetailController {
             snapshot.appendItems([image])
         }
         dataSource.apply(snapshot, animatingDifferences: false)
+        stopActivityIndicator()
+    }
+    
+    func startActivityIndicator() {
+        indicator.center = self.view.center
+        indicator.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        indicator.startAnimating()
+    }
+
+    func stopActivityIndicator() {
+        DispatchQueue.main.async {
+            self.indicator.hidesWhenStopped = true
+            self.indicator.stopAnimating()
+        }
     }
 }
 

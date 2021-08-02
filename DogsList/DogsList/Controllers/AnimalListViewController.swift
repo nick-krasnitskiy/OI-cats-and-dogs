@@ -37,8 +37,7 @@ enum NewSection: Int, CaseIterable {
 class AnimalListViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
-    
-    let indicator = UIActivityIndicatorView(style: .large)
+    private let indicator = UIActivityIndicatorView(style: .large)
   
     typealias DataSource = UICollectionViewDiffableDataSource<NewSection, Animal>
     private var dataSource: DataSource!
