@@ -5,8 +5,9 @@
 //  Created by Nick Krasnitskiy on 19.07.2021.
 //
 
-import Foundation
+import UIKit
 import Alamofire
+import CoreData
 
 protocol AnimalDelegate: AnyObject {
     func addAnimal(animals: [Animal])
@@ -16,10 +17,6 @@ protocol AnimalDelegate: AnyObject {
     func didFailWithError(error: Error)
     func didFailWithResponce(response: HTTPURLResponse)
     func notResponce()
-}
-
-protocol AnimalImagesDelegate: AnyObject {
-    func addAnimalImage(animals: [AnimalImages])
 }
 
 private let limit = 100
@@ -47,6 +44,8 @@ enum Endpoint {
     }
 }
 var animalObjects = [Animal]()
+var animalObjectsTwo = [Animal]()
+
 var animalImages = [AnimalImages]()
 
 struct AnimalManager {
@@ -65,12 +64,14 @@ struct AnimalManager {
                 
                 for breed in breeds {
                     group.enter()
+                    
                     let endpointTwo = Endpoint.randomDogBreedImage(breed: breed).url
                     AF.request(endpointTwo).responseDecodable(of: DogImage.self) { response in
                         
                         switch response.result {
                         case .success(let images):
                             animalGenerate(animals: (breed, images.message))
+                            saveToDataBase(objects: animalObjects) // СОХРАНИЛИ ЗАПРОС С СЕРВЕРА В CD
                             group.leave()
                         case .failure(let error):
                             print(error)
@@ -87,14 +88,16 @@ struct AnimalManager {
                             print(error)
                         }
                     }
-                    
-                }
-                group.notify(queue: .main) {
-                    self.delegate?.addAnimalImage(animalImages: animalImages)
-                    self.delegate?.addAnimal(animals: animalObjects)
                 }
                 
-            // print(breeds) // here add local store to Core Data
+                group.notify(queue: .main) {
+                    retrieveData(objects: &animalObjectsTwo) // ЗАПИСАЛИ ЗАПРОСЫ В МАССИВ 2
+                    self.delegate?.addAnimalImage(animalImages: animalImages)
+                    let animals = animalObjectsTwo.isEmpty ? animalObjects : animalObjectsTwo
+                    self.delegate?.addAnimal(animals: animals)
+                    
+                }
+                
             case .failure(let error):
                 print(error)
             }
@@ -119,11 +122,12 @@ struct AnimalManager {
                             print(error)
                         }
                     }
-                  
+                    
                     let breed = cat.name
                     if let image = cat.image {
                         if let imageURL = image.url {
                             animalGenerate(animals: (breed, imageURL))
+                            saveToDataBase(objects: animalObjects) // СОХРАНИЛИ ЗАПРОС С СЕРВЕРА В CD
                         }
                     }
                 }
@@ -131,6 +135,7 @@ struct AnimalManager {
             case .failure(let error):
                 print(error)
             }
+            
         }
     }
     
@@ -145,6 +150,46 @@ struct AnimalManager {
         animalImages.append(AnimalImages(breed: breed, images: images))
         animalImages.shuffle()
     }
+    
+    func saveToDataBase(objects: [Animal]) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Animals", in: managedContext)!
+        
+        for animal in objects {
+            let animals = NSManagedObject(entity: entity, insertInto: managedContext)
+            animals.setValue(animal.breed, forKey: "breed")
+            animals.setValue(animal.image, forKey: "image")
+        }
+        
+        if managedContext.hasChanges {
+            do {
+                try managedContext.execute(NSBatchDeleteRequest(fetchRequest: NSFetchRequest(entityName: "Animals")))
+                try managedContext.save()
+                
+            } catch let error {
+                print("Couldn't save animal to database. \(error)")
+            }
+        }
+    }
+    
+    func retrieveData( objects: inout [Animal])  {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Animals")
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            for data in result as! [NSManagedObject] {
+                if let breed = data.value(forKey: "breed") as? String, let image = data.value(forKey: "image") as? String {
+                    objects.append(Animal(breed: breed, image: image))
+                }
+            }
+        } catch {
+            print("Failed")
+        }
+    }
+    
 }
 
 private extension URL {
