@@ -75,11 +75,12 @@
                         <segue destination="Od2-nI-vNz" kind="relationship" relationship="viewControllers" id="Ij5-PH-Ibu"/>
                         <segue destination="II2-ag-0ix" kind="relationship" relationship="viewControllers" id="SBe-mR-vl1"/>
                         <segue destination="vK6-km-mzJ" kind="relationship" relationship="viewControllers" id="DpP-bx-xaG"/>
+                        <segue destination="Nm6-cF-3Bp" kind="relationship" relationship="viewControllers" id="tpQ-KF-Vre"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RvU-6M-djp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-996" y="1011"/>
+            <point key="canvasLocation" x="-1520" y="1390"/>
         </scene>
         <!--Search Star War View Controller-->
         <scene sceneID="T7o-Ed-bBY">
@@ -163,6 +164,84 @@
             </objects>
             <point key="canvasLocation" x="1380" y="1485"/>
         </scene>
+        <!--Weather Map-->
+        <scene sceneID="jUC-Bo-EF0">
+            <objects>
+                <viewController id="elT-oB-JIo" customClass="WeatherMapViewController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Jf-29-s9y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wRL-k3-1qf">
+                                <rect key="frame" x="20" y="108" width="374" height="685"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" placeholder="Enter a nearest town/city name" translatesAutoresizingMaskIntoConstraints="NO" id="2Da-mO-hVL">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="PGh-KW-SC0"/>
+                                        </constraints>
+                                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                    </searchBar>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="A6T-QF-v8b">
+                                        <rect key="frame" x="0.0" y="59" width="374" height="626"/>
+                                    </mapView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zlC-EU-fHy"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wRL-k3-1qf" firstAttribute="top" secondItem="zlC-EU-fHy" secondAttribute="top" constant="20" id="IxL-G8-ftR"/>
+                            <constraint firstItem="zlC-EU-fHy" firstAttribute="bottom" secondItem="wRL-k3-1qf" secondAttribute="bottom" constant="20" id="Jqe-uQ-Ktx"/>
+                            <constraint firstItem="zlC-EU-fHy" firstAttribute="trailing" secondItem="wRL-k3-1qf" secondAttribute="trailing" constant="20" id="UOo-5N-f8W"/>
+                            <constraint firstItem="wRL-k3-1qf" firstAttribute="leading" secondItem="zlC-EU-fHy" secondAttribute="leading" constant="20" id="Uze-eQ-VJB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Weather Map" id="zgn-tk-SXl">
+                        <barButtonItem key="rightBarButtonItem" title="Setttings" image="gearshape" catalog="system" id="1Hl-Cf-Im9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fNR-7f-iX4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1378.2608695652175" y="2232.5892857142858"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xCh-H3-OmR">
+            <objects>
+                <viewController id="9to-Wy-2rP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Va9-W6-Sv3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Zaa-MJ-HyZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m7B-tK-zXE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2283" y="2233"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TlO-Lz-sN0">
+            <objects>
+                <viewController id="OPL-Th-lMR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SlP-bw-hyN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jhi-0s-LSY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5gc-2F-lwE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3164" y="2233"/>
+        </scene>
         <!--Breed Detail Controller-->
         <scene sceneID="PnG-h3-qcb">
             <objects>
@@ -177,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9N-Xr-9gM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2282.608695652174" y="1484.5982142857142"/>
+            <point key="canvasLocation" x="2283" y="1485"/>
         </scene>
         <!--Breed Image View Controller-->
         <scene sceneID="Ovj-Mu-HqZ">
@@ -231,10 +310,31 @@
             </objects>
             <point key="canvasLocation" x="512" y="1485"/>
         </scene>
+        <!--Weather-->
+        <scene sceneID="e7B-oK-PiC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nm6-cF-3Bp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Weather" image="cloud.drizzle" catalog="system" id="v80-0O-tuB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yjZ-XQ-NGQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="elT-oB-JIo" kind="relationship" relationship="rootViewController" id="C38-HU-siG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RNc-1C-6aW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512" y="2233"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="cloud.drizzle" catalog="system" width="128" height="125"/>
         <image name="doc.on.doc" catalog="system" width="116" height="128"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="star.leadinghalf.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
