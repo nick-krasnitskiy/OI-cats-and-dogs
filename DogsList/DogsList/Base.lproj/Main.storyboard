@@ -172,11 +172,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wRL-k3-1qf">
-                                <rect key="frame" x="20" y="108" width="374" height="685"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wRL-k3-1qf">
+                                <rect key="frame" x="10" y="98" width="394" height="705"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" placeholder="Enter a nearest town/city name" translatesAutoresizingMaskIntoConstraints="NO" id="2Da-mO-hVL">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="PGh-KW-SC0"/>
                                         </constraints>
@@ -188,7 +188,7 @@
                                         </scopeButtonTitles>
                                     </searchBar>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="A6T-QF-v8b">
-                                        <rect key="frame" x="0.0" y="59" width="374" height="626"/>
+                                        <rect key="frame" x="0.0" y="54" width="394" height="651"/>
                                     </mapView>
                                 </subviews>
                             </stackView>
@@ -196,10 +196,10 @@
                         <viewLayoutGuide key="safeArea" id="zlC-EU-fHy"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wRL-k3-1qf" firstAttribute="top" secondItem="zlC-EU-fHy" secondAttribute="top" constant="20" id="IxL-G8-ftR"/>
-                            <constraint firstItem="zlC-EU-fHy" firstAttribute="bottom" secondItem="wRL-k3-1qf" secondAttribute="bottom" constant="20" id="Jqe-uQ-Ktx"/>
-                            <constraint firstItem="zlC-EU-fHy" firstAttribute="trailing" secondItem="wRL-k3-1qf" secondAttribute="trailing" constant="20" id="UOo-5N-f8W"/>
-                            <constraint firstItem="wRL-k3-1qf" firstAttribute="leading" secondItem="zlC-EU-fHy" secondAttribute="leading" constant="20" id="Uze-eQ-VJB"/>
+                            <constraint firstItem="wRL-k3-1qf" firstAttribute="top" secondItem="zlC-EU-fHy" secondAttribute="top" constant="10" id="IxL-G8-ftR"/>
+                            <constraint firstItem="zlC-EU-fHy" firstAttribute="bottom" secondItem="wRL-k3-1qf" secondAttribute="bottom" constant="10" id="Jqe-uQ-Ktx"/>
+                            <constraint firstItem="zlC-EU-fHy" firstAttribute="trailing" secondItem="wRL-k3-1qf" secondAttribute="trailing" constant="10" id="UOo-5N-f8W"/>
+                            <constraint firstItem="wRL-k3-1qf" firstAttribute="leading" secondItem="zlC-EU-fHy" secondAttribute="leading" constant="10" id="Uze-eQ-VJB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Weather Map" id="zgn-tk-SXl">

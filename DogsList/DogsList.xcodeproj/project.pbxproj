@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		D41571D226B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D41571D026B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld */; };
 		D415722226BA5FCF009507D2 /* WeatherMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */; };
+		D415722826BA972D009507D2 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722726BA972C009507D2 /* WeatherData.swift */; };
+		D415722B26BA97B1009507D2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722A26BA97B1009507D2 /* WeatherModel.swift */; };
+		D415722E26BA97DC009507D2 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722D26BA97DC009507D2 /* WeatherManager.swift */; };
 		D42F742C3E05A9E6368E2FDA /* Pods_DogsList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */; };
 		D4429B3626A1C264000B5DD2 /* AnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */; };
 		D4429B3B26A4B091000B5DD2 /* AnimalTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */; };
@@ -51,6 +54,9 @@
 		CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogsList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41571D126B7BDFE009507D2 /* ListAllBreeds.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListAllBreeds.xcdatamodel; sourceTree = "<group>"; };
 		D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMapViewController.swift; sourceTree = "<group>"; };
+		D415722726BA972C009507D2 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		D415722A26BA97B1009507D2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		D415722D26BA97DC009507D2 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
 		D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTopCell.swift; sourceTree = "<group>"; };
 		D4429B3A26A4B091000B5DD2 /* AnimalTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalTopCell.xib; sourceTree = "<group>"; };
@@ -264,6 +270,9 @@
 			isa = PBXGroup;
 			children = (
 				D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */,
+				D415722726BA972C009507D2 /* WeatherData.swift */,
+				D415722A26BA97B1009507D2 /* WeatherModel.swift */,
+				D415722D26BA97DC009507D2 /* WeatherManager.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -492,6 +501,7 @@
 				D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */,
 				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,
 				D4ACA39426A5DED800607750 /* AnimalManager.swift in Sources */,
+				D415722826BA972D009507D2 /* WeatherData.swift in Sources */,
 				D4429B6426A5673C000B5DD2 /* BreedImageViewController.swift in Sources */,
 				D4429B5526A556D4000B5DD2 /* BreedDetailController.swift in Sources */,
 				D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */,
@@ -500,9 +510,11 @@
 				D41571D226B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld in Sources */,
 				D4ACA39E26A5DF6000607750 /* Model.swift in Sources */,
 				D48B5BA42694582100CF6EDB /* Dog.swift in Sources */,
+				D415722E26BA97DC009507D2 /* WeatherManager.swift in Sources */,
 				D415722226BA5FCF009507D2 /* WeatherMapViewController.swift in Sources */,
 				D4491451268DEF2B002EBF46 /* ListDogViewController.swift in Sources */,
 				D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */,
+				D415722B26BA97B1009507D2 /* WeatherModel.swift in Sources */,
 				D4429B5A26A55F8C000B5DD2 /* DetailAnimalCell.swift in Sources */,
 				D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */,
 				D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */,
