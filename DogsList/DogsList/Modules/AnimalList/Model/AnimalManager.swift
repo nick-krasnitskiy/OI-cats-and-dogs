@@ -71,7 +71,7 @@ struct AnimalManager {
                         switch response.result {
                         case .success(let images):
                             animalGenerate(animals: (breed, images.message))
-                            saveToDataBase(objects: animalObjects) // СОХРАНИЛИ ЗАПРОС С СЕРВЕРА В CD
+                            saveToDataBase(objects: animalObjects)
                             group.leave()
                         case .failure(let error):
                             print(error)
@@ -91,7 +91,7 @@ struct AnimalManager {
                 }
                 
                 group.notify(queue: .main) {
-                    retrieveData(objects: &animalObjectsTwo) // ЗАПИСАЛИ ЗАПРОСЫ В МАССИВ 2
+                    retrieveData(objects: &animalObjectsTwo) 
                     self.delegate?.addAnimalImage(animalImages: animalImages)
                     let animals = animalObjectsTwo.isEmpty ? animalObjects : animalObjectsTwo
                     self.delegate?.addAnimal(animals: animals)

@@ -107,7 +107,109 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D4429B4026A4B0B7000B5DD2 /* AnimalCells */ = {
+		D41571FB26BA56AB009507D2 /* DogList */ = {
+			isa = PBXGroup;
+			children = (
+				D415720626BA5745009507D2 /* Model */,
+				D415720D26BA577B009507D2 /* Controller */,
+				D415721426BA57FA009507D2 /* View */,
+			);
+			path = DogList;
+			sourceTree = "<group>";
+		};
+		D41571FF26BA56CA009507D2 /* StarWar */ = {
+			isa = PBXGroup;
+			children = (
+				D415720A26BA5751009507D2 /* Model */,
+				D415720F26BA57A2009507D2 /* Controllers */,
+				D415721D26BA5833009507D2 /* View */,
+			);
+			path = StarWar;
+			sourceTree = "<group>";
+		};
+		D415720326BA56E9009507D2 /* AnimalList */ = {
+			isa = PBXGroup;
+			children = (
+				D415720B26BA5762009507D2 /* Model */,
+				D48B5BAE2695C31E00CF6EDB /* Controllers */,
+				D415721926BA581B009507D2 /* View */,
+			);
+			path = AnimalList;
+			sourceTree = "<group>";
+		};
+		D415720426BA5735009507D2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D41571FB26BA56AB009507D2 /* DogList */,
+				D41571FF26BA56CA009507D2 /* StarWar */,
+				D415720326BA56E9009507D2 /* AnimalList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D415720626BA5745009507D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BA32694582100CF6EDB /* Dog.swift */,
+				D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */,
+				D4ACA39D26A5DF6000607750 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D415720A26BA5751009507D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BC0269C111C00CF6EDB /* Persons.swift */,
+				D48B5BBC269C080A00CF6EDB /* PersonManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D415720B26BA5762009507D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4ACA39326A5DED800607750 /* AnimalManager.swift */,
+				D41571D026B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D415720D26BA577B009507D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D4491450268DEF2B002EBF46 /* ListDogViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D415720F26BA57A2009507D2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */,
+				D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D415721226BA57F4009507D2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BC3269C22DC00CF6EDB /* DogCells */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D415721426BA57FA009507D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D449147C2692F372002EBF46 /* Xibs */,
+				D415721226BA57F4009507D2 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D415721726BA5816009507D2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */,
@@ -115,10 +217,36 @@
 				D4429B4726A4B167000B5DD2 /* AnimalBottomCell.swift */,
 				D4429B5826A55F8C000B5DD2 /* DetailAnimalCell.swift */,
 			);
-			path = AnimalCells;
+			path = Cells;
 			sourceTree = "<group>";
 		};
-		D4429B4D26A4B1A0000B5DD2 /* AnimalXibs */ = {
+		D415721926BA581B009507D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D415721F26BA5853009507D2 /* Xibs */,
+				D415721726BA5816009507D2 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D415721B26BA582B009507D2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D415721D26BA5833009507D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BCA269C233F00CF6EDB /* Xibs */,
+				D415721B26BA582B009507D2 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D415721F26BA5853009507D2 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
 				D4429B5926A55F8C000B5DD2 /* DetailAnimalCell.xib */,
@@ -126,7 +254,7 @@
 				D4429B4326A4B11A000B5DD2 /* AnimalMiddleCell.xib */,
 				D4429B4826A4B167000B5DD2 /* AnimalBottomCell.xib */,
 			);
-			path = AnimalXibs;
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		D4491423268D912E002EBF46 = {
@@ -152,71 +280,31 @@
 			children = (
 				D449142F268D912E002EBF46 /* AppDelegate.swift */,
 				D4491431268D912E002EBF46 /* SceneDelegate.swift */,
-				D48B5BA72694582A00CF6EDB /* Model */,
-				D48B5BAE2695C31E00CF6EDB /* Controllers */,
-				D48B5BAD2695C30A00CF6EDB /* View */,
+				D415720426BA5735009507D2 /* Modules */,
 				D4491438268D9132002EBF46 /* Assets.xcassets */,
+				D4491435268D912E002EBF46 /* Main.storyboard */,
+				D449143A268D9132002EBF46 /* LaunchScreen.storyboard */,
 				D449143D268D9132002EBF46 /* Info.plist */,
 			);
 			path = DogsList;
 			sourceTree = "<group>";
 		};
-		D44914782692F366002EBF46 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				D4429B4026A4B0B7000B5DD2 /* AnimalCells */,
-				D48B5BCB269C235F00CF6EDB /* StarWarsCells */,
-				D48B5BC3269C22DC00CF6EDB /* DogCells */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		D449147C2692F372002EBF46 /* DogXibs */ = {
+		D449147C2692F372002EBF46 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
 				D449146A2692F313002EBF46 /* TopCell.xib */,
 				D449146F2692F32C002EBF46 /* MiddleCell.xib */,
 				D44914742692F35D002EBF46 /* BottomCell.xib */,
 			);
-			path = DogXibs;
-			sourceTree = "<group>";
-		};
-		D48B5BA72694582A00CF6EDB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D48B5BA32694582100CF6EDB /* Dog.swift */,
-				D48B5BC0269C111C00CF6EDB /* Persons.swift */,
-				D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */,
-				D48B5BBC269C080A00CF6EDB /* PersonManager.swift */,
-				D4ACA39D26A5DF6000607750 /* Model.swift */,
-				D4ACA39326A5DED800607750 /* AnimalManager.swift */,
-				D41571D026B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D48B5BAD2695C30A00CF6EDB /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D4429B4D26A4B1A0000B5DD2 /* AnimalXibs */,
-				D48B5BCA269C233F00CF6EDB /* StarWarsXibs */,
-				D449147C2692F372002EBF46 /* DogXibs */,
-				D4491435268D912E002EBF46 /* Main.storyboard */,
-				D449143A268D9132002EBF46 /* LaunchScreen.storyboard */,
-			);
-			path = View;
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		D48B5BAE2695C31E00CF6EDB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D4491450268DEF2B002EBF46 /* ListDogViewController.swift */,
-				D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */,
-				D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */,
 				D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */,
 				D4429B5426A556D4000B5DD2 /* BreedDetailController.swift */,
 				D4429B6326A5673C000B5DD2 /* BreedImageViewController.swift */,
-				D44914782692F366002EBF46 /* Cells */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,20 +319,12 @@
 			path = DogCells;
 			sourceTree = "<group>";
 		};
-		D48B5BCA269C233F00CF6EDB /* StarWarsXibs */ = {
+		D48B5BCA269C233F00CF6EDB /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
 				D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */,
 			);
-			path = StarWarsXibs;
-			sourceTree = "<group>";
-		};
-		D48B5BCB269C235F00CF6EDB /* StarWarsCells */ = {
-			isa = PBXGroup;
-			children = (
-				D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */,
-			);
-			path = StarWarsCells;
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		EE0D41BD84A476ABC00F943C /* Frameworks */ = {
