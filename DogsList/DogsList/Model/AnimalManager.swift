@@ -91,7 +91,7 @@ struct AnimalManager {
                 }
                 
                 group.notify(queue: .main) {
-                    retrieveData(objects: &animalObjectsTwo) // ЗАПИСАЛИ ЗАПРОСЫ В МАССИВ 2
+                    retrieveData(objects: &animalObjectsTwo) 
                     self.delegate?.addAnimalImage(animalImages: animalImages)
                     let animals = animalObjectsTwo.isEmpty ? animalObjects : animalObjectsTwo
                     self.delegate?.addAnimal(animals: animals)
@@ -127,7 +127,7 @@ struct AnimalManager {
                     if let image = cat.image {
                         if let imageURL = image.url {
                             animalGenerate(animals: (breed, imageURL))
-                            saveToDataBase(objects: animalObjects) // СОХРАНИЛИ ЗАПРОС С СЕРВЕРА В CD
+                            saveToDataBase(objects: animalObjects)
                         }
                     }
                 }

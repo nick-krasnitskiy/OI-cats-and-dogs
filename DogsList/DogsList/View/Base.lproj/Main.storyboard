@@ -134,7 +134,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Get-2U-6qD">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Get-2U-6qD">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Yuu-v3-jDP">
@@ -187,20 +187,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-66-4jA" customClass="ImageScrollView" customModule="ImageScrollView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-66-4jA" customClass="ImageScrollView" customModule="ImageScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.35803959829999998" green="0.63498240490000002" blue="0.67183073680000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="aSv-jK-d3o"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="6fz-Wg-qRM"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xzp-Wz-ELx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XMG-66-4jA" firstAttribute="top" secondItem="xzp-Wz-ELx" secondAttribute="top" id="TZ8-6v-fKK"/>
-                            <constraint firstItem="XMG-66-4jA" firstAttribute="trailing" secondItem="xzp-Wz-ELx" secondAttribute="trailing" id="lyK-qW-2Rb"/>
-                            <constraint firstItem="XMG-66-4jA" firstAttribute="leading" secondItem="xzp-Wz-ELx" secondAttribute="leading" id="q9i-XZ-cl4"/>
-                            <constraint firstAttribute="bottom" secondItem="XMG-66-4jA" secondAttribute="bottom" id="sXa-Um-kRZ"/>
+                            <constraint firstItem="XMG-66-4jA" firstAttribute="top" secondItem="WoZ-1h-JnA" secondAttribute="top" id="4BM-NR-LNI"/>
+                            <constraint firstItem="XMG-66-4jA" firstAttribute="trailing" secondItem="xzp-Wz-ELx" secondAttribute="trailing" id="RS0-Gh-e2f"/>
+                            <constraint firstItem="XMG-66-4jA" firstAttribute="leading" secondItem="xzp-Wz-ELx" secondAttribute="leading" id="n2A-yD-w6F"/>
+                            <constraint firstAttribute="bottom" secondItem="XMG-66-4jA" secondAttribute="bottom" id="ux9-ZI-U6R"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="G6s-Ai-98S"/>
@@ -210,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2F-bc-C43" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3164" y="1485"/>
+            <point key="canvasLocation" x="3163.7681159420295" y="1484.5982142857142"/>
         </scene>
         <!--Animals List -->
         <scene sceneID="pqk-6O-iZj">
