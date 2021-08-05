@@ -19,6 +19,7 @@ class SearchStarWarViewController: UIViewController {
     
     private var collectionView: UICollectionView! = nil
     private let searchBar = UISearchBar(frame: .zero)
+    private var searchHistory = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,14 @@ class SearchStarWarViewController: UIViewController {
         self.view.backgroundColor =
             UIColor(red: 0.1469314694, green: 0.259611547, blue: 0.2739216685, alpha: 1)
         personManager.delegate = self
+        hideKeyboardWhenTappedAround()
     }
+    
+    @IBAction func searchHistoryPressed(_ sender: UIBarButtonItem) {
+        let searchHistoryVC = SearchHistoryViewController(with: searchHistory)
+        show(searchHistoryVC, sender: nil)
+    }
+    
 }
 
 extension SearchStarWarViewController {
@@ -67,7 +75,7 @@ extension SearchStarWarViewController {
     private func alertGeenrate(alertTitle: String, alertMessage: String, actionTitle: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: actionTitle, style: .default) {(_: UIAlertAction!) in
-            self.viewDidLoad()})
+                            self.viewDidLoad()})
         present(alert, animated: true, completion: nil)
     }
 }
@@ -97,7 +105,7 @@ extension SearchStarWarViewController {
         })
     }
     
-    func addSnaphot(persons: [Person]?) {
+    private func addSnaphot(persons: [Person]?) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Person>()
         snapshot.appendSections([.main])
         if let foundPersons = persons {
@@ -110,6 +118,16 @@ extension SearchStarWarViewController {
                 self.dataSource.apply(snapshot, animatingDifferences: false)
             }
         }
+    }
+    
+    private func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SearchStarWarViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
@@ -132,10 +150,12 @@ extension SearchStarWarViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
             personManager.fetchName(name: searchText)
+            searchHistory.append(searchText)
         } else {
             addSnaphot(persons: nil)
         }
     }
+    
 }
 
 // MARK: - PersonManagerDelegate
