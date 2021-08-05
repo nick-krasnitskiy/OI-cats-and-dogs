@@ -53,8 +53,10 @@ struct WeatherManager {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             let temp = decodedData.main.temp
             let name = decodedData.name
+            let lat = decodedData.coord.lat
+            let lon = decodedData.coord.lon
             
-            let weather = WeatherModel(cityName: name, temperature: temp)
+            let weather = WeatherModel(cityName: name, temperature: temp, latitude: lat, longitude: lon)
             return weather
             
         } catch {
