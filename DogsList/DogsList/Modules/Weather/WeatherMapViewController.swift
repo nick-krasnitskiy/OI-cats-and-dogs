@@ -22,6 +22,7 @@ class WeatherMapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         weatherManager.delegate = self
         searchBar.delegate = self
         addPinTapAction(mapView: mapView, target:self, action: #selector(addTapAnnotation))
@@ -70,6 +71,8 @@ class WeatherMapViewController: UIViewController {
         let touchPoint = gestureRecognizer.location(in: mapView)
         return mapView.convert(touchPoint, toCoordinateFrom: mapView)
     }
+    
+
 }
 
 // MARK: - WeatherManagerDelegate
@@ -113,3 +116,19 @@ extension WeatherMapViewController {
        view.endEditing(true)
     }
 }
+
+// MARK: - MKMapViewDelegate
+
+extension WeatherMapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if view.annotation != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    guard let detailViewController = storyboard.instantiateViewController(identifier: "WeatherDetail") as? WeatherDetailViewController else { return }
+           // detailViewController.cityName = "Moscow"
+                    
+                    show(detailViewController, sender: nil)
+                
+            }
+        }
+    }
+

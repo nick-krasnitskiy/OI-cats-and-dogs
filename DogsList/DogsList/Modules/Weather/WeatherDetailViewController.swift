@@ -11,6 +11,7 @@ class WeatherDetailViewController: UITableViewController {
   
         override func viewDidLoad() {
             super.viewDidLoad()
+            self.navigationController?.navigationBar.tintColor = .white
         }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

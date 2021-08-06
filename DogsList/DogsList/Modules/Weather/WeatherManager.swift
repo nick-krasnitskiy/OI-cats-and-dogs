@@ -39,7 +39,6 @@ struct WeatherManager {
                 }
                 if let safeData = data {
                     if let weather = self.parseJSON(safeData) {
-                        print(weather)
                         self.delegate?.didUpdateWeather(self, weather: weather)
                     }
                 }
@@ -53,18 +52,7 @@ struct WeatherManager {
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             
-            let name = decodedData.name
-            let temp = decodedData.main.temp
-            let feelsTemp = decodedData.main.feels_like
-            let humid = decodedData.main.humidity
-            let press = decodedData.main.pressure
-            let lat = decodedData.coord.lat
-            let lon = decodedData.coord.lon
-            let windSp = decodedData.wind.speed
-            let windD = decodedData.wind.deg
-            let clouds = decodedData.clouds.all
-            
-            let weather = WeatherModel(cityName: name, temperature: temp, feelsTemperature: feelsTemp, humidity: humid, pressure: press, latitude: lat, longitude: lon, windSpeed: windSp, windDeg: windD, cloudness: clouds)
+            let weather = WeatherModel(cityName: decodedData.name, temperature: decodedData.main.temp, feelsTemperature: decodedData.main.feels_like, humidity: decodedData.main.humidity, pressure: decodedData.main.pressure, latitude: decodedData.coord.lat, longitude: decodedData.coord.lon, windSpeed: decodedData.wind.speed, windDeg: decodedData.wind.deg, cloudness: decodedData.clouds.all)
             return weather
             
         } catch {
