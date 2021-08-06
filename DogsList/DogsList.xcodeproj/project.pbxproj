@@ -12,6 +12,7 @@
 		D415722826BA972D009507D2 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722726BA972C009507D2 /* WeatherData.swift */; };
 		D415722B26BA97B1009507D2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722A26BA97B1009507D2 /* WeatherModel.swift */; };
 		D415722E26BA97DC009507D2 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722D26BA97DC009507D2 /* WeatherManager.swift */; };
+		D415724026BCFFF0009507D2 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415723F26BCFFF0009507D2 /* WeatherDetailViewController.swift */; };
 		D42F742C3E05A9E6368E2FDA /* Pods_DogsList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */; };
 		D4429B3626A1C264000B5DD2 /* AnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */; };
 		D4429B3B26A4B091000B5DD2 /* AnimalTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */; };
@@ -57,6 +58,7 @@
 		D415722726BA972C009507D2 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		D415722A26BA97B1009507D2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		D415722D26BA97DC009507D2 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		D415723F26BCFFF0009507D2 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 		D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
 		D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTopCell.swift; sourceTree = "<group>"; };
 		D4429B3A26A4B091000B5DD2 /* AnimalTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalTopCell.xib; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */,
+				D415723F26BCFFF0009507D2 /* WeatherDetailViewController.swift */,
 				D415722726BA972C009507D2 /* WeatherData.swift */,
 				D415722A26BA97B1009507D2 /* WeatherModel.swift */,
 				D415722D26BA97DC009507D2 /* WeatherManager.swift */,
@@ -505,6 +508,7 @@
 				D4429B6426A5673C000B5DD2 /* BreedImageViewController.swift in Sources */,
 				D4429B5526A556D4000B5DD2 /* BreedDetailController.swift in Sources */,
 				D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */,
+				D415724026BCFFF0009507D2 /* WeatherDetailViewController.swift in Sources */,
 				D44914752692F35D002EBF46 /* BottomCell.swift in Sources */,
 				D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */,
 				D41571D226B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld in Sources */,
