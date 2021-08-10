@@ -8,11 +8,41 @@
 import UIKit
 
 class WeatherDetailViewController: UITableViewController {
-  
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            self.navigationController?.navigationBar.tintColor = .white
-        }
+    
+    @IBOutlet weak var cityName: UILabel!
+    @IBOutlet weak var temperatute: UILabel!
+    @IBOutlet weak var tempFeelsLike: UILabel!
+    @IBOutlet weak var weatherImage: UIImageView!
+    @IBOutlet weak var cloudness: UILabel!
+    @IBOutlet weak var humidity: UILabel!
+    @IBOutlet weak var pressure: UILabel!
+    @IBOutlet weak var windSpeed: UILabel!
+    @IBOutlet weak var windDirection: UILabel!
+    
+    var name = ""
+    var temp = ""
+    var tempFL = 0.0
+    var image = ""
+    var clouds = 0
+    var humid = 0
+    var press = 0.0
+    var windS = 0.0
+    var windD = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = .white
+        
+        cityName.text = name
+        temperatute.text = temp
+        tempFeelsLike.text = "\(String(format: "%.f", tempFL))°С"
+        weatherImage.image = UIImage(systemName: image)
+        cloudness.text = "\(clouds)%"
+        humidity.text = "\(humid)%"
+        pressure.text = "\(String(format: "%.f", press)) mm hPa"
+        windSpeed.text = "\(String(format: "%.f", windS)) m/s"
+        windDirection.text = "\(windD)°"
+    }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
@@ -20,5 +50,6 @@ class WeatherDetailViewController: UITableViewController {
         header.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         header.textLabel?.frame = header.bounds
         header.textLabel?.textAlignment = .center
+        
     }
 }

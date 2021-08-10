@@ -8,15 +8,30 @@
 import UIKit
 import MapKit
 
-class CustomPin: NSObject, MKAnnotation {
+private class CustomPin: NSObject, MKAnnotation {
     var title: String?
     var subtitle: String?
     var coordinate: CLLocationCoordinate2D
+    var tempFeelsLike: Double?
+    var imageName: String?
+    var cloudness: Int?
+    var humidity: Int?
+    var pressure: Double?
+    var windSpeed: Double?
+    var windDirection: Int?
     
-    init(pinTitle: String, pinSubTitle: String, pinLocation: CLLocationCoordinate2D) {
+    init(pinTitle: String, pinSubTitle: String, pinLocation: CLLocationCoordinate2D, pintempFL: Double, pinImageName: String, pinClouds: Int, pinHumid: Int, pinPress: Double, pinWindS: Double, pinwindD: Int) {
+        
         self.title = pinTitle
         self.subtitle = pinSubTitle
         self.coordinate = pinLocation
+        self.tempFeelsLike = pintempFL
+        self.imageName = pinImageName
+        self.cloudness = pinClouds
+        self.humidity = pinHumid
+        self.pressure = pinPress
+        self.windSpeed = pinWindS
+        self.windDirection = pinwindD
     }
 }
 
@@ -50,10 +65,11 @@ class WeatherMapViewController: UIViewController {
         weatherManager.fetchWeather(latitude: location.latitude, longitude: location.longitude)
     }
     
-    func addSearchAnnotaion(name: String, temp: String, latitude: Double, longitude: Double) {
-        
+    func addSearchAnnotaion(weather: WeatherModel) {
+        print(weather.temperature)
         DispatchQueue.main.async { [self] in
-            let pin = CustomPin(pinTitle: name, pinSubTitle: "Temperature = \(temp) °C", pinLocation:  CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+            let pin = CustomPin(pinTitle: weather.cityName, pinSubTitle: "Temperature = \(String(format: "%.f", weather.temperature)) °C", pinLocation: CLLocationCoordinate2D(latitude: weather.latitude, longitude: weather.longitude), pintempFL: weather.feelsTemperature, pinImageName: weather.conditionName, pinClouds: weather.cloudness, pinHumid: weather.humidity, pinPress: weather.pressure, pinWindS: weather.windSpeed, pinwindD: weather.windDeg)
+            
             let region = MKCoordinateRegion(center: pin.coordinate, latitudinalMeters: 100, longitudinalMeters: 100)
             
             self.mapView.setRegion(region, animated: true)
@@ -72,7 +88,7 @@ class WeatherMapViewController: UIViewController {
 
 extension WeatherMapViewController: WeatherManagerDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
-        addSearchAnnotaion(name: weather.cityName, temp: weather.temperatureString, latitude: weather.latitude, longitude: weather.longitude)
+        addSearchAnnotaion(weather: weather)
     }
     
     func didFailWithError(error: Error) {
@@ -129,10 +145,24 @@ extension WeatherMapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == annotationView.rightCalloutAccessoryView {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let detailViewController = storyboard.instantiateViewController(identifier: "WeatherDetail") as? WeatherDetailViewController else { return }
-            // detailViewController.cityName = "Moscow"
-            show(detailViewController, sender: nil)
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            
+            guard let weatherDetailVC = storyBoard.instantiateViewController(withIdentifier: "WeatherDetail") as? WeatherDetailViewController else { return }
+            guard let weather = annotationView.annotation as? CustomPin else { return }
+            
+            if let name = weather.title, let temp = weather.subtitle, let tempFL = weather.tempFeelsLike, let image = weather.imageName, let clouds = weather.cloudness, let humid = weather.humidity, let press = weather.pressure, let windS = weather.windSpeed, let windD = weather.windDirection {
+                
+                weatherDetailVC.name = name
+                weatherDetailVC.temp = temp
+                weatherDetailVC.tempFL = tempFL
+                weatherDetailVC.image = image
+                weatherDetailVC.clouds = clouds
+                weatherDetailVC.humid = humid
+                weatherDetailVC.press = press
+                weatherDetailVC.windS = windS
+                weatherDetailVC.windD = windD
+            }
+            self.navigationController?.pushViewController(weatherDetailVC, animated: true)
         }
     }
 }

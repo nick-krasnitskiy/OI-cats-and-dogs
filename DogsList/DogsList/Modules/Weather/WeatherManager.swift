@@ -52,7 +52,7 @@ struct WeatherManager {
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             
-            let weather = WeatherModel(cityName: decodedData.name, temperature: decodedData.main.temp, feelsTemperature: decodedData.main.feels_like, humidity: decodedData.main.humidity, pressure: decodedData.main.pressure, latitude: decodedData.coord.lat, longitude: decodedData.coord.lon, windSpeed: decodedData.wind.speed, windDeg: decodedData.wind.deg, cloudness: decodedData.clouds.all)
+            let weather = WeatherModel(conditionId: decodedData.weather[0].id, cityName: decodedData.name, temperature: decodedData.main.temp, feelsTemperature: decodedData.main.feels_like, humidity: decodedData.main.humidity, pressure: decodedData.main.pressure, latitude: decodedData.coord.lat, longitude: decodedData.coord.lon, windSpeed: decodedData.wind.speed, windDeg: decodedData.wind.deg, cloudness: decodedData.clouds.all)
             return weather
             
         } catch {
