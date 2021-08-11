@@ -29,10 +29,13 @@ class WeatherDetailViewController: UITableViewController {
     var windS = 0.0
     var windD = 0
     
+    var forecasts = [ForecastModel]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.registerCell()
         self.navigationController?.navigationBar.tintColor = .white
-        
+
         cityName.text = name
         temperatute.text = temp
         tempFeelsLike.text = "\(String(format: "%.f", tempFL))°С"
@@ -42,6 +45,7 @@ class WeatherDetailViewController: UITableViewController {
         pressure.text = "\(String(format: "%.f", press)) mm hPa"
         windSpeed.text = "\(String(format: "%.f", windS)) m/s"
         windDirection.text = "\(windD)°"
+        
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -50,6 +54,23 @@ class WeatherDetailViewController: UITableViewController {
         header.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         header.textLabel?.frame = header.bounds
         header.textLabel?.textAlignment = .center
-        
+    
+    }
+    
+    private func registerCell() {
+        let cell = UINib(nibName: "ForecastCell",
+                            bundle: nil)
+        self.tableView.register(cell,
+                                forCellReuseIdentifier: "ForecastCell")
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            if indexPath.section == 2 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ForecastCell") as? ForecastCell else { return UITableViewCell() }
+                cell.configure(forecast: forecasts[indexPath[1]])
+                return cell
+            }
+      
+        return super.tableView(tableView, cellForRowAt: indexPath)
     }
 }

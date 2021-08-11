@@ -14,6 +14,12 @@
 		D415722E26BA97DC009507D2 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722D26BA97DC009507D2 /* WeatherManager.swift */; };
 		D415724026BCFFF0009507D2 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415723F26BCFFF0009507D2 /* WeatherDetailViewController.swift */; };
 		D42F742C3E05A9E6368E2FDA /* Pods_DogsList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */; };
+		D43507B226C39214009C9B04 /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B126C39214009C9B04 /* ForecastData.swift */; };
+		D43507B526C3932B009C9B04 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B426C3932B009C9B04 /* ForecastModel.swift */; };
+		D43507B826C398F7009C9B04 /* CustomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B726C398F7009C9B04 /* CustomPin.swift */; };
+		D43507BB26C3995C009C9B04 /* CustomForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507BA26C3995C009C9B04 /* CustomForecast.swift */; };
+		D43507BF26C3B464009C9B04 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507BD26C3B464009C9B04 /* ForecastCell.swift */; };
+		D43507C026C3B464009C9B04 /* ForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43507BE26C3B464009C9B04 /* ForecastCell.xib */; };
 		D4429B3626A1C264000B5DD2 /* AnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */; };
 		D4429B3B26A4B091000B5DD2 /* AnimalTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */; };
 		D4429B3C26A4B091000B5DD2 /* AnimalTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B3A26A4B091000B5DD2 /* AnimalTopCell.xib */; };
@@ -59,6 +65,12 @@
 		D415722A26BA97B1009507D2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		D415722D26BA97DC009507D2 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		D415723F26BCFFF0009507D2 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
+		D43507B126C39214009C9B04 /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
+		D43507B426C3932B009C9B04 /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
+		D43507B726C398F7009C9B04 /* CustomPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPin.swift; sourceTree = "<group>"; };
+		D43507BA26C3995C009C9B04 /* CustomForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomForecast.swift; sourceTree = "<group>"; };
+		D43507BD26C3B464009C9B04 /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		D43507BE26C3B464009C9B04 /* ForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastCell.xib; sourceTree = "<group>"; };
 		D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
 		D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTopCell.swift; sourceTree = "<group>"; };
 		D4429B3A26A4B091000B5DD2 /* AnimalTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalTopCell.xib; sourceTree = "<group>"; };
@@ -271,11 +283,9 @@
 		D415722426BA5FD5009507D2 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */,
-				D415723F26BCFFF0009507D2 /* WeatherDetailViewController.swift */,
-				D415722726BA972C009507D2 /* WeatherData.swift */,
-				D415722A26BA97B1009507D2 /* WeatherModel.swift */,
-				D415722D26BA97DC009507D2 /* WeatherManager.swift */,
+				D4F47FE026C3DFB500543FF3 /* Controllers */,
+				D4F47FE126C3DFCE00543FF3 /* Model */,
+				D4F47FE226C3E00B00543FF3 /* View */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -350,6 +360,38 @@
 			path = Xibs;
 			sourceTree = "<group>";
 		};
+		D4F47FE026C3DFB500543FF3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */,
+				D415723F26BCFFF0009507D2 /* WeatherDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D4F47FE126C3DFCE00543FF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D415722D26BA97DC009507D2 /* WeatherManager.swift */,
+				D43507B126C39214009C9B04 /* ForecastData.swift */,
+				D415722726BA972C009507D2 /* WeatherData.swift */,
+				D43507BA26C3995C009C9B04 /* CustomForecast.swift */,
+				D43507B426C3932B009C9B04 /* ForecastModel.swift */,
+				D415722A26BA97B1009507D2 /* WeatherModel.swift */,
+				D43507B726C398F7009C9B04 /* CustomPin.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D4F47FE226C3E00B00543FF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D43507BD26C3B464009C9B04 /* ForecastCell.swift */,
+				D43507BE26C3B464009C9B04 /* ForecastCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EE0D41BD84A476ABC00F943C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +464,7 @@
 				D4429B5B26A55F8C000B5DD2 /* DetailAnimalCell.xib in Resources */,
 				D4491439268D9132002EBF46 /* Assets.xcassets in Resources */,
 				D4491437268D912E002EBF46 /* Main.storyboard in Resources */,
+				D43507C026C3B464009C9B04 /* ForecastCell.xib in Resources */,
 				D4429B4526A4B11A000B5DD2 /* AnimalMiddleCell.xib in Resources */,
 				D4429B4A26A4B167000B5DD2 /* AnimalBottomCell.xib in Resources */,
 				D48B5BC8269C231600CF6EDB /* StarWarsCell.xib in Resources */,
@@ -499,8 +542,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4429B3626A1C264000B5DD2 /* AnimalListViewController.swift in Sources */,
+				D43507BB26C3995C009C9B04 /* CustomForecast.swift in Sources */,
 				D48B5BC1269C111C00CF6EDB /* Persons.swift in Sources */,
 				D4429B4426A4B11A000B5DD2 /* AnimalMiddleCell.swift in Sources */,
+				D43507B826C398F7009C9B04 /* CustomPin.swift in Sources */,
 				D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */,
 				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,
 				D4ACA39426A5DED800607750 /* AnimalManager.swift in Sources */,
@@ -509,12 +554,14 @@
 				D4429B5526A556D4000B5DD2 /* BreedDetailController.swift in Sources */,
 				D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */,
 				D415724026BCFFF0009507D2 /* WeatherDetailViewController.swift in Sources */,
+				D43507BF26C3B464009C9B04 /* ForecastCell.swift in Sources */,
 				D44914752692F35D002EBF46 /* BottomCell.swift in Sources */,
 				D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */,
 				D41571D226B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld in Sources */,
 				D4ACA39E26A5DF6000607750 /* Model.swift in Sources */,
 				D48B5BA42694582100CF6EDB /* Dog.swift in Sources */,
 				D415722E26BA97DC009507D2 /* WeatherManager.swift in Sources */,
+				D43507B226C39214009C9B04 /* ForecastData.swift in Sources */,
 				D415722226BA5FCF009507D2 /* WeatherMapViewController.swift in Sources */,
 				D4491451268DEF2B002EBF46 /* ListDogViewController.swift in Sources */,
 				D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */,
@@ -525,6 +572,7 @@
 				D4429B4926A4B167000B5DD2 /* AnimalBottomCell.swift in Sources */,
 				D4491432268D912E002EBF46 /* SceneDelegate.swift in Sources */,
 				D4429B3B26A4B091000B5DD2 /* AnimalTopCell.swift in Sources */,
+				D43507B526C3932B009C9B04 /* ForecastModel.swift in Sources */,
 				D449146B2692F313002EBF46 /* TopCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
