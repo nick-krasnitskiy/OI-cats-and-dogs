@@ -91,7 +91,20 @@
                         <viewLayoutGuide key="safeArea" id="xhT-hm-PZB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4RR-bo-wXK"/>
+                    <toolbarItems>
+                        <barButtonItem systemItem="cancel" id="zxX-90-DdP">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="4RR-bo-wXK">
+                        <barButtonItem key="rightBarButtonItem" image="clock.arrow.circlepath" catalog="system" id="Odn-rc-ZKd">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="searchHistoryPressed:" destination="4Qf-Id-fCz" id="Qdy-as-Gzp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3c-RD-FKl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

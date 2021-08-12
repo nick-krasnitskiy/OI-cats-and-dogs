@@ -20,6 +20,10 @@
 		D4429B5A26A55F8C000B5DD2 /* DetailAnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B5826A55F8C000B5DD2 /* DetailAnimalCell.swift */; };
 		D4429B5B26A55F8C000B5DD2 /* DetailAnimalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B5926A55F8C000B5DD2 /* DetailAnimalCell.xib */; };
 		D4429B6426A5673C000B5DD2 /* BreedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B6326A5673C000B5DD2 /* BreedImageViewController.swift */; };
+		D4429B2926A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B2726A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift */; };
+		D4429B2A26A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B2826A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib */; };
+		D4429B2F26A184EB000B5DD2 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B2D26A184EB000B5DD2 /* SearchHistoryViewController.swift */; };
+		D4429B3026A184EB000B5DD2 /* SearchHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B2E26A184EB000B5DD2 /* SearchHistoryViewController.xib */; };
 		D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D449142F268D912E002EBF46 /* AppDelegate.swift */; };
 		D4491432268D912E002EBF46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4491431268D912E002EBF46 /* SceneDelegate.swift */; };
 		D4491437268D912E002EBF46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4491435268D912E002EBF46 /* Main.storyboard */; };
@@ -41,6 +45,7 @@
 		D48B5BC8269C231600CF6EDB /* StarWarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */; };
 		D4ACA39426A5DED800607750 /* AnimalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA39326A5DED800607750 /* AnimalManager.swift */; };
 		D4ACA39E26A5DF6000607750 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA39D26A5DF6000607750 /* Model.swift */; };
+		D4ACA3AE26AED88900607750 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA3AD26AED88900607750 /* Extensions.swift */; };
 		D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +65,10 @@
 		D4429B5826A55F8C000B5DD2 /* DetailAnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimalCell.swift; sourceTree = "<group>"; };
 		D4429B5926A55F8C000B5DD2 /* DetailAnimalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailAnimalCell.xib; sourceTree = "<group>"; };
 		D4429B6326A5673C000B5DD2 /* BreedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageViewController.swift; sourceTree = "<group>"; };
+		D4429B2726A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsSearchHistoryViewCell.swift; sourceTree = "<group>"; };
+		D4429B2826A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarWarsSearchHistoryViewCell.xib; sourceTree = "<group>"; };
+		D4429B2D26A184EB000B5DD2 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
+		D4429B2E26A184EB000B5DD2 /* SearchHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryViewController.xib; sourceTree = "<group>"; };
 		D449142C268D912E002EBF46 /* DogsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D449142F268D912E002EBF46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4491431268D912E002EBF46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +92,7 @@
 		D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarWarsCell.xib; sourceTree = "<group>"; };
 		D4ACA39326A5DED800607750 /* AnimalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalManager.swift; sourceTree = "<group>"; };
 		D4ACA39D26A5DF6000607750 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D4ACA3AD26AED88900607750 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStarWarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +167,7 @@
 				D48B5BAD2695C30A00CF6EDB /* View */,
 				D4491438268D9132002EBF46 /* Assets.xcassets */,
 				D449143D268D9132002EBF46 /* Info.plist */,
+				D4ACA3B126AED89F00607750 /* Extensions */,
 			);
 			path = DogsList;
 			sourceTree = "<group>";
@@ -216,6 +227,7 @@
 				D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */,
 				D4429B5426A556D4000B5DD2 /* BreedDetailController.swift */,
 				D4429B6326A5673C000B5DD2 /* BreedImageViewController.swift */,
+				D4429B2D26A184EB000B5DD2 /* SearchHistoryViewController.swift */,
 				D44914782692F366002EBF46 /* Cells */,
 			);
 			path = Controllers;
@@ -235,6 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */,
+				D4429B2826A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib */,
+				D4429B2E26A184EB000B5DD2 /* SearchHistoryViewController.xib */,
 			);
 			path = StarWarsXibs;
 			sourceTree = "<group>";
@@ -243,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */,
+				D4429B2726A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift */,
 			);
 			path = StarWarsCells;
 			sourceTree = "<group>";
@@ -253,6 +268,14 @@
 				CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4ACA3B126AED89F00607750 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D4ACA3AD26AED88900607750 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,7 +345,9 @@
 				D4429B4526A4B11A000B5DD2 /* AnimalMiddleCell.xib in Resources */,
 				D4429B4A26A4B167000B5DD2 /* AnimalBottomCell.xib in Resources */,
 				D48B5BC8269C231600CF6EDB /* StarWarsCell.xib in Resources */,
+				D4429B2A26A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib in Resources */,
 				D449146C2692F313002EBF46 /* TopCell.xib in Resources */,
+				D4429B3026A184EB000B5DD2 /* SearchHistoryViewController.xib in Resources */,
 				D44914762692F35D002EBF46 /* BottomCell.xib in Resources */,
 				D44914712692F32C002EBF46 /* MiddleCell.xib in Resources */,
 				D4429B3C26A4B091000B5DD2 /* AnimalTopCell.xib in Resources */,
@@ -398,7 +423,9 @@
 				D4429B3626A1C264000B5DD2 /* AnimalListViewController.swift in Sources */,
 				D48B5BC1269C111C00CF6EDB /* Persons.swift in Sources */,
 				D4429B4426A4B11A000B5DD2 /* AnimalMiddleCell.swift in Sources */,
+				D4ACA3AE26AED88900607750 /* Extensions.swift in Sources */,
 				D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */,
+				D4429B2926A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift in Sources */,
 				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,
 				D4ACA39426A5DED800607750 /* AnimalManager.swift in Sources */,
 				D4429B6426A5673C000B5DD2 /* BreedImageViewController.swift in Sources */,
@@ -409,6 +436,7 @@
 				D41571D226B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld in Sources */,
 				D4ACA39E26A5DF6000607750 /* Model.swift in Sources */,
 				D48B5BA42694582100CF6EDB /* Dog.swift in Sources */,
+				D4429B2F26A184EB000B5DD2 /* SearchHistoryViewController.swift in Sources */,
 				D4491451268DEF2B002EBF46 /* ListDogViewController.swift in Sources */,
 				D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */,
 				D4429B5A26A55F8C000B5DD2 /* DetailAnimalCell.swift in Sources */,
