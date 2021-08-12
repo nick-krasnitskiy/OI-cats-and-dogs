@@ -53,6 +53,7 @@
 		D4ACA39426A5DED800607750 /* AnimalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA39326A5DED800607750 /* AnimalManager.swift */; };
 		D4ACA39E26A5DF6000607750 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA39D26A5DF6000607750 /* Model.swift */; };
 		D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */; };
+		D4F47FE526C3E80400543FF3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F47FE426C3E80400543FF3 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		D4ACA39326A5DED800607750 /* AnimalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalManager.swift; sourceTree = "<group>"; };
 		D4ACA39D26A5DF6000607750 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStarWarViewController.swift; sourceTree = "<group>"; };
+		D4F47FE426C3E80400543FF3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +367,7 @@
 			children = (
 				D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */,
 				D415723F26BCFFF0009507D2 /* WeatherDetailViewController.swift */,
+				D4F47FE426C3E80400543FF3 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -372,12 +375,12 @@
 		D4F47FE126C3DFCE00543FF3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D415722D26BA97DC009507D2 /* WeatherManager.swift */,
-				D43507B126C39214009C9B04 /* ForecastData.swift */,
 				D415722726BA972C009507D2 /* WeatherData.swift */,
-				D43507BA26C3995C009C9B04 /* CustomForecast.swift */,
-				D43507B426C3932B009C9B04 /* ForecastModel.swift */,
+				D43507B126C39214009C9B04 /* ForecastData.swift */,
 				D415722A26BA97B1009507D2 /* WeatherModel.swift */,
+				D43507B426C3932B009C9B04 /* ForecastModel.swift */,
+				D415722D26BA97DC009507D2 /* WeatherManager.swift */,
+				D43507BA26C3995C009C9B04 /* CustomForecast.swift */,
 				D43507B726C398F7009C9B04 /* CustomPin.swift */,
 			);
 			path = Model;
@@ -570,6 +573,7 @@
 				D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */,
 				D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */,
 				D4429B4926A4B167000B5DD2 /* AnimalBottomCell.swift in Sources */,
+				D4F47FE526C3E80400543FF3 /* SettingsViewController.swift in Sources */,
 				D4491432268D912E002EBF46 /* SceneDelegate.swift in Sources */,
 				D4429B3B26A4B091000B5DD2 /* AnimalTopCell.swift in Sources */,
 				D43507B526C3932B009C9B04 /* ForecastModel.swift in Sources */,

@@ -135,7 +135,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Get-2U-6qD">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Get-2U-6qD">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Yuu-v3-jDP">
@@ -205,6 +205,9 @@
                     <navigationItem key="navigationItem" title="Weather Map" id="zgn-tk-SXl">
                         <barButtonItem key="rightBarButtonItem" title="Setttings" image="gearshape" catalog="system" id="1Hl-Cf-Im9">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="OPL-Th-lMR" kind="show" identifier="" id="RN5-V7-XvE"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -329,13 +332,13 @@
                                                     <rect key="frame" x="20" y="10" width="374" height="23.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMm-fD-CIH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="79.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPl-ei-5Wd">
-                                                            <rect key="frame" x="100" y="0.0" width="274" height="23.5"/>
+                                                            <rect key="frame" x="89.5" y="0.0" width="284.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -363,13 +366,13 @@
                                                     <rect key="frame" x="20" y="10" width="374" height="23.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjT-pe-bsy">
-                                                            <rect key="frame" x="0.0" y="0.0" width="81" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="77" height="23.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmH-ws-xEh">
-                                                            <rect key="frame" x="91" y="0.0" width="283" height="23.5"/>
+                                                            <rect key="frame" x="87" y="0.0" width="287" height="23.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -397,13 +400,13 @@
                                                     <rect key="frame" x="20" y="10" width="374" height="23.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind Speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZI-kX-9rS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="127" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="108.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cZ-gl-jcG">
-                                                            <rect key="frame" x="137" y="0.0" width="237" height="23.5"/>
+                                                            <rect key="frame" x="118.5" y="0.0" width="255.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -431,13 +434,13 @@
                                                     <rect key="frame" x="20" y="10" width="374" height="23.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind Direction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="690-xP-sIe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="165.5" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="134.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAk-to-64F">
-                                                            <rect key="frame" x="175.5" y="0.0" width="198.5" height="23.5"/>
+                                                            <rect key="frame" x="144.5" y="0.0" width="229.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -546,20 +549,51 @@
             </objects>
             <point key="canvasLocation" x="2192.753623188406" y="2232.5892857142858"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="TlO-Lz-sN0">
             <objects>
-                <viewController id="OPL-Th-lMR" sceneMemberID="viewController">
+                <viewController id="OPL-Th-lMR" customClass="SettingsViewController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SlP-bw-hyN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APp-8p-ZJQ">
+                                <rect key="frame" x="20" y="128" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <color key="textColor" red="0.14693146939999999" green="0.259611547" blue="0.27392166849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6Xs-mq-0Xh">
+                                <rect key="frame" x="20" y="183" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Celsius"/>
+                                    <segment title="Fahrenheit"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.41453850269999998" green="0.62937808039999998" blue="0.66134238239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="tempControl:" destination="OPL-Th-lMR" eventType="valueChanged" id="FeX-su-hLu"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jhi-0s-LSY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jhi-0s-LSY" firstAttribute="trailing" secondItem="6Xs-mq-0Xh" secondAttribute="trailing" constant="20" id="5OV-RV-gGr"/>
+                            <constraint firstItem="6Xs-mq-0Xh" firstAttribute="top" secondItem="APp-8p-ZJQ" secondAttribute="bottom" constant="25" id="DJf-zL-8dU"/>
+                            <constraint firstItem="APp-8p-ZJQ" firstAttribute="leading" secondItem="jhi-0s-LSY" secondAttribute="leading" constant="20" id="GYJ-Sn-l8q"/>
+                            <constraint firstItem="jhi-0s-LSY" firstAttribute="trailing" secondItem="APp-8p-ZJQ" secondAttribute="trailing" constant="20" id="YH6-DE-TwW"/>
+                            <constraint firstItem="6Xs-mq-0Xh" firstAttribute="leading" secondItem="jhi-0s-LSY" secondAttribute="leading" constant="20" id="mdl-WP-QbI"/>
+                            <constraint firstItem="APp-8p-ZJQ" firstAttribute="top" secondItem="jhi-0s-LSY" secondAttribute="top" constant="40" id="ypZ-M1-2uV"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zaK-NE-NVF"/>
+                    <connections>
+                        <outlet property="controll" destination="6Xs-mq-0Xh" id="L1Y-oE-rID"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gc-2F-lwE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3668" y="2233"/>
+            <point key="canvasLocation" x="3011.594202898551" y="2232.5892857142858"/>
         </scene>
         <!--Breed Detail Controller-->
         <scene sceneID="PnG-h3-qcb">
@@ -585,11 +619,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-66-4jA" customClass="ImageScrollView" customModule="ImageScrollView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-66-4jA" customClass="ImageScrollView" customModule="ImageScrollView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" red="0.35803959829999998" green="0.63498240490000002" blue="0.67183073680000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="aSv-jK-d3o"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="6fz-Wg-qRM"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xzp-Wz-ELx"/>

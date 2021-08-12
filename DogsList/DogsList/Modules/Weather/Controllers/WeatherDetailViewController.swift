@@ -30,6 +30,7 @@ class WeatherDetailViewController: UITableViewController {
     var windD = 0
     
     var forecasts = [ForecastModel]()
+    var unit = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class WeatherDetailViewController: UITableViewController {
 
         cityName.text = name
         temperatute.text = temp
-        tempFeelsLike.text = "\(String(format: "%.f", tempFL))°С"
+        tempFeelsLike.text = "\(String(format: "%.f", tempFL))°\(unit)"
         weatherImage.image = UIImage(systemName: image)
         cloudness.text = "\(clouds)%"
         humidity.text = "\(humid)%"
@@ -67,7 +68,7 @@ class WeatherDetailViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             if indexPath.section == 2 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "ForecastCell") as? ForecastCell else { return UITableViewCell() }
-                cell.configure(forecast: forecasts[indexPath[1]])
+                cell.configure(forecast: forecasts[indexPath[1]], unit: unit)
                 return cell
             }
       

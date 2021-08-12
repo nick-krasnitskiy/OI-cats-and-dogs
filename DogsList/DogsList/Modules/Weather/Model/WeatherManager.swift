@@ -19,23 +19,23 @@ var forecast = [ForecastModel]()
 
 struct WeatherManager {
     
-    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=\(apiKey)&units=metric"
+    let weatherURL = "https://api.openweathermap.org/data/2.5/weather"
     let forecastURL = "https://api.openweathermap.org/data/2.5/onecall"
     
     weak var delegate: WeatherManagerDelegate?
     
-    func fetchWeather(cityName: String) {
-        let urlString = "\(weatherURL)&q=\(cityName)"
+    func fetchWeather(cityName: String, unit: String) {
+        let urlString = "\(weatherURL)?appid=\(apiKey)&units=\(unit)&q=\(cityName)"
         performRequestForWeather(with: urlString)
     }
     
-    func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-        let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
+    func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees, unit: String) {
+        let urlString = "\(weatherURL)?appid=\(apiKey)&units=\(unit)&lat=\(latitude)&lon=\(longitude)"
         performRequestForWeather(with: urlString)
     }
     
-    func fetchForecast(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-        let urlString = "\(forecastURL)?lat=\(latitude)&lon=\(longitude)&exclude=current,minutely,hourly,alerts&appid=\(apiKey)&units=metric"
+    func fetchForecast(latitude: CLLocationDegrees, longitude: CLLocationDegrees, unit: String) {
+        let urlString = "\(forecastURL)?lat=\(latitude)&lon=\(longitude)&exclude=current,minutely,hourly,alerts&appid=\(apiKey)&units=\(unit)"
         performRequestForForecast(with: urlString)
     }
     
@@ -93,6 +93,8 @@ struct WeatherManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ForecastData.self, from: forecastData)
+            forecast.removeAll()
+            
             for day in 1...7 {
                 forecast.append(ForecastModel(conditionId: decodedData.daily[day].weather[0].id, temperature: decodedData.daily[day].temp.day, timeInterval: decodedData.daily[day].dt))
             }

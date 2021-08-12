@@ -13,12 +13,12 @@ class ForecastCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var tempLabel: UILabel!
     
-    func configure(forecast: ForecastModel ) {
+    func configure(forecast: ForecastModel, unit: String ) {
         DispatchQueue.main.async {
             let day = self.getDayOfWeek(utcTime: forecast.timeInterval)
             self.dayLabel.text = day
             self.icon.image = UIImage(systemName: forecast.conditionName)
-            self.tempLabel.text = "\(String(format: "%.f", forecast.temperature)) °С"
+            self.tempLabel.text = "\(String(format: "%.f", forecast.temperature)) °\(unit)"
         }
     }
     
