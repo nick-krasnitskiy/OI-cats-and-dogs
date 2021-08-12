@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StarWarsSearchHistoryViewCell" customModule="DogsList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="227" height="66"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="227" height="66"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eho-xa-4s4">
+                        <rect key="frame" x="0.0" y="23" width="227" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Fou-SX-gdB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Eho-xa-4s4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9Yf-Cq-KkZ"/>
+                <constraint firstAttribute="trailing" secondItem="Eho-xa-4s4" secondAttribute="trailing" id="CCF-zP-KE0"/>
+                <constraint firstItem="Eho-xa-4s4" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="OUZ-JW-05o"/>
+            </constraints>
+            <size key="customSize" width="227" height="66"/>
+            <connections>
+                <outlet property="query" destination="Eho-xa-4s4" id="zuB-hu-Gat"/>
+            </connections>
+            <point key="canvasLocation" x="234.05797101449278" y="89.732142857142847"/>
+        </collectionViewCell>
+    </objects>
+</document>
