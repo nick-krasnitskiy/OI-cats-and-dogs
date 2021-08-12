@@ -60,7 +60,7 @@ struct AnimalManager {
             
             switch response.result {
             case .success(let breeds):
-                let breeds = breeds.message.keys.map{String($0)}
+                let breeds = breeds.message.keys.map {String($0)}
                 
                 for breed in breeds {
                     group.enter()
@@ -115,7 +115,7 @@ struct AnimalManager {
                         
                         switch response.result {
                         case .success(let objects):
-                            let images = objects.map{($0.url)}
+                            let images = objects.map {($0.url)}
                             animalImagesGenerate(breed: cat.name, images: images)
                             group.leave()
                         case .failure(let error):
@@ -173,7 +173,7 @@ struct AnimalManager {
         }
     }
     
-    func retrieveData( objects: inout [Animal])  {
+    func retrieveData( objects: inout [Animal]) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Animals")
