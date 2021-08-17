@@ -8,10 +8,16 @@
 import UIKit
 
 class LatestNewsCell: UICollectionViewCell {
+    
+    static let reuseIdentifier = "LatestNewsCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
+    func configure(animal: Animal) {
+        DispatchQueue.main.async {
+            // Configure image and labels
+        }
+    }
 }
