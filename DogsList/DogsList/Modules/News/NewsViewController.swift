@@ -12,7 +12,7 @@ enum NewsSections: Int, CaseIterable {
     case second
 }
 
-class NewsViewController: UIViewController, UICollectionViewDelegate, UISearchBarDelegate {
+class NewsViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<NewsSections, Int>?
@@ -151,4 +151,16 @@ class NewsViewController: UIViewController, UICollectionViewDelegate, UISearchBa
             dataSource.apply(self.snapshot, animatingDifferences: false)
         }
     }
+}
+
+extension NewsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+//        guard let new = self.dataSource.itemIdentifier(for: indexPath)?.new else {
+//            collectionView.deselectItem(at: indexPath, animated: true)
+//            return
+//        }
+        
+        performSegue(withIdentifier: "GoToCurrentNew", sender: nil)
+}
 }

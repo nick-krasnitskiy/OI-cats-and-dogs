@@ -14,6 +14,7 @@
 		D40ED3EB26CCF3D60010ED6B /* LatestNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40ED3E526CCF3D60010ED6B /* LatestNewsCell.xib */; };
 		D40ED3EC26CCF3D60010ED6B /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED3E626CCF3D60010ED6B /* NewsViewController.swift */; };
 		D40ED3ED26CCF3D60010ED6B /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED3E726CCF3D60010ED6B /* SectionHeader.swift */; };
+		D40ED40226CD2AAA0010ED6B /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED40026CD2AAA0010ED6B /* NewsDetailViewController.swift */; };
 		D41571D226B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D41571D026B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld */; };
 		D415722226BA5FCF009507D2 /* WeatherMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */; };
 		D415722826BA972D009507D2 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722726BA972C009507D2 /* WeatherData.swift */; };
@@ -72,6 +73,7 @@
 		D40ED3E526CCF3D60010ED6B /* LatestNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LatestNewsCell.xib; sourceTree = "<group>"; };
 		D40ED3E626CCF3D60010ED6B /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		D40ED3E726CCF3D60010ED6B /* SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		D40ED40026CD2AAA0010ED6B /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		D41571D126B7BDFE009507D2 /* ListAllBreeds.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListAllBreeds.xcdatamodel; sourceTree = "<group>"; };
 		D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMapViewController.swift; sourceTree = "<group>"; };
 		D415722726BA972C009507D2 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				D40ED3E126CCF3D60010ED6B /* Cells */,
 				D40ED3E626CCF3D60010ED6B /* NewsViewController.swift */,
 				D40ED3E726CCF3D60010ED6B /* SectionHeader.swift */,
+				D40ED40026CD2AAA0010ED6B /* NewsDetailViewController.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				D4429B4426A4B11A000B5DD2 /* AnimalMiddleCell.swift in Sources */,
 				D43507B826C398F7009C9B04 /* CustomPin.swift in Sources */,
 				D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */,
+				D40ED40226CD2AAA0010ED6B /* NewsDetailViewController.swift in Sources */,
 				D40ED3E926CCF3D60010ED6B /* TopNewsCell.swift in Sources */,
 				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,
 				D4ACA39426A5DED800607750 /* AnimalManager.swift in Sources */,
