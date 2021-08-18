@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0A21A01B32A8D4DE16200C /* Pods_DogsList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972BB04E4356D313861B9D35 /* Pods_DogsList.framework */; };
 		D40ED3E826CCF3D60010ED6B /* TopNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40ED3E226CCF3D60010ED6B /* TopNewsCell.xib */; };
 		D40ED3E926CCF3D60010ED6B /* TopNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED3E326CCF3D60010ED6B /* TopNewsCell.swift */; };
 		D40ED3EA26CCF3D60010ED6B /* LatestNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED3E426CCF3D60010ED6B /* LatestNewsCell.swift */; };
@@ -19,7 +20,6 @@
 		D415722B26BA97B1009507D2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722A26BA97B1009507D2 /* WeatherModel.swift */; };
 		D415722E26BA97DC009507D2 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722D26BA97DC009507D2 /* WeatherManager.swift */; };
 		D415724026BCFFF0009507D2 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415723F26BCFFF0009507D2 /* WeatherDetailViewController.swift */; };
-		D42F742C3E05A9E6368E2FDA /* Pods_DogsList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */; };
 		D43507B226C39214009C9B04 /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B126C39214009C9B04 /* ForecastData.swift */; };
 		D43507B526C3932B009C9B04 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B426C3932B009C9B04 /* ForecastModel.swift */; };
 		D43507B826C398F7009C9B04 /* CustomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B726C398F7009C9B04 /* CustomPin.swift */; };
@@ -63,9 +63,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		15210C7A2F8AB7B07176C368 /* Pods-DogsList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsList.release.xcconfig"; path = "Target Support Files/Pods-DogsList/Pods-DogsList.release.xcconfig"; sourceTree = "<group>"; };
-		7E1832DD3A3B589DE09974E1 /* Pods-DogsList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsList.debug.xcconfig"; path = "Target Support Files/Pods-DogsList/Pods-DogsList.debug.xcconfig"; sourceTree = "<group>"; };
-		CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogsList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E1868BAD554E08C9CC4DFEF /* Pods-DogsList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsList.debug.xcconfig"; path = "Target Support Files/Pods-DogsList/Pods-DogsList.debug.xcconfig"; sourceTree = "<group>"; };
+		972BB04E4356D313861B9D35 /* Pods_DogsList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogsList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CFA318F6AEFBCAF56B29589 /* Pods-DogsList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsList.release.xcconfig"; path = "Target Support Files/Pods-DogsList/Pods-DogsList.release.xcconfig"; sourceTree = "<group>"; };
 		D40ED3E226CCF3D60010ED6B /* TopNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopNewsCell.xib; sourceTree = "<group>"; };
 		D40ED3E326CCF3D60010ED6B /* TopNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopNewsCell.swift; sourceTree = "<group>"; };
 		D40ED3E426CCF3D60010ED6B /* LatestNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestNewsCell.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D42F742C3E05A9E6368E2FDA /* Pods_DogsList.framework in Frameworks */,
+				BB0A21A01B32A8D4DE16200C /* Pods_DogsList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +137,8 @@
 		18D2AB794AC7D2FC21C15223 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7E1832DD3A3B589DE09974E1 /* Pods-DogsList.debug.xcconfig */,
-				15210C7A2F8AB7B07176C368 /* Pods-DogsList.release.xcconfig */,
+				5E1868BAD554E08C9CC4DFEF /* Pods-DogsList.debug.xcconfig */,
+				9CFA318F6AEFBCAF56B29589 /* Pods-DogsList.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -332,7 +332,7 @@
 				D449142E268D912E002EBF46 /* DogsList */,
 				D449142D268D912E002EBF46 /* Products */,
 				18D2AB794AC7D2FC21C15223 /* Pods */,
-				EE0D41BD84A476ABC00F943C /* Frameworks */,
+				F71293C7A3F76C7EC076FCAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -429,10 +429,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		EE0D41BD84A476ABC00F943C /* Frameworks */ = {
+		F71293C7A3F76C7EC076FCAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */,
+				972BB04E4356D313861B9D35 /* Pods_DogsList.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -444,12 +444,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4491440268D9132002EBF46 /* Build configuration list for PBXNativeTarget "DogsList" */;
 			buildPhases = (
-				C533F2CDA65EDB16999E3284 /* [CP] Check Pods Manifest.lock */,
+				B6D555651DC1FBED5284A486 /* [CP] Check Pods Manifest.lock */,
 				D4491428268D912E002EBF46 /* Sources */,
 				D4491429268D912E002EBF46 /* Frameworks */,
 				D449142A268D912E002EBF46 /* Resources */,
 				D4491445268D9FFF002EBF46 /* ShellScript */,
-				5FD0BA0374DAAB2559CA5770 /* [CP] Embed Pods Frameworks */,
+				AEF79810A21C027A220FFA7C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -517,7 +517,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5FD0BA0374DAAB2559CA5770 /* [CP] Embed Pods Frameworks */ = {
+		AEF79810A21C027A220FFA7C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -534,7 +534,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DogsList/Pods-DogsList-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C533F2CDA65EDB16999E3284 /* [CP] Check Pods Manifest.lock */ = {
+		B6D555651DC1FBED5284A486 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -761,7 +761,7 @@
 		};
 		D4491441268D9132002EBF46 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E1832DD3A3B589DE09974E1 /* Pods-DogsList.debug.xcconfig */;
+			baseConfigurationReference = 5E1868BAD554E08C9CC4DFEF /* Pods-DogsList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -781,7 +781,7 @@
 		};
 		D4491442268D9132002EBF46 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15210C7A2F8AB7B07176C368 /* Pods-DogsList.release.xcconfig */;
+			baseConfigurationReference = 9CFA318F6AEFBCAF56B29589 /* Pods-DogsList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
