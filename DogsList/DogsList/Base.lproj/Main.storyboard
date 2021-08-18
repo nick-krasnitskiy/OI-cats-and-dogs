@@ -382,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzA-fW-iuG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4146.376811594203" y="2947.7678571428569"/>
+            <point key="canvasLocation" x="2290" y="2967"/>
         </scene>
         <!--Weather Detail View Controller-->
         <scene sceneID="gUz-6g-mr1">
@@ -599,13 +599,13 @@
                                                     <rect key="frame" x="20" y="10" width="374" height="23.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind Direction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="690-xP-sIe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="130" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="129.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAk-to-64F">
-                                                            <rect key="frame" x="140" y="0.0" width="234" height="23.5"/>
+                                                            <rect key="frame" x="139.5" y="0.0" width="234.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -666,7 +666,7 @@
                                         <rect key="frame" x="0.0" y="871" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GIU-4F-UuP" id="Uto-Wm-MiE">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.41453850269999998" green="0.62937808039999998" blue="0.66134238239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -675,7 +675,7 @@
                                         <rect key="frame" x="0.0" y="914.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Grq-og-0B6" id="Ga8-ML-EyZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.41453850269999998" green="0.62937808039999998" blue="0.66134238239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -684,7 +684,7 @@
                                         <rect key="frame" x="0.0" y="958" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="37w-vD-cnQ" id="brS-Wb-w0e">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.41453850269999998" green="0.62937808039999998" blue="0.66134238239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -863,7 +863,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lX7-5W-M0B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3240.579710144928" y="2947.7678571428569"/>
+            <point key="canvasLocation" x="1422" y="2948"/>
         </scene>
         <!--Dog List-->
         <scene sceneID="2c3-5l-Q74">
