@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hjo-uZ-p1A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ryr-ma-eTE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="Od2-nI-vNz" customClass="ListDogViewController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Xe-fI-w19">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Z5-G3-wPI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="568" height="480"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q49-Lc-fnD">
                                     <size key="itemSize" width="128" height="128"/>
@@ -52,7 +52,14 @@
                             <constraint firstItem="3Z5-G3-wPI" firstAttribute="leading" secondItem="NQR-JJ-tyF" secondAttribute="leading" id="u19-Qp-jzw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RZr-7b-inS"/>
+                    <navigationItem key="navigationItem" id="RZr-7b-inS">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="XQJ-vY-17S">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="hamburgerMenu:" destination="Od2-nI-vNz" id="loj-K6-rVV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="3Z5-G3-wPI" id="1Au-CW-w8D"/>
                     </connections>
@@ -60,6 +67,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1c-kq-l9c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2288" y="123"/>
+        </scene>
+        <!--Container View Controller-->
+        <scene sceneID="dGg-Bv-1yd">
+            <objects>
+                <viewController id="ryr-ma-eTE" customClass="ContainerViewController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="854-El-dYX">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zs-3u-AqR">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxk-I5-LYJ" userLabel="Left Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="568"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="hWZ-vj-djg"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="ygX-Fo-hzS" kind="embed" id="UVA-OL-UrP"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwm-14-I0h" userLabel="Right Container View">
+                                        <rect key="frame" x="260" y="0.0" width="568" height="568"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="hjo-uZ-p1A" kind="embed" identifier="" id="C28-Mi-lUO"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yxk-I5-LYJ" firstAttribute="top" secondItem="GZa-jP-Z1h" secondAttribute="top" id="CqH-Uz-ixw"/>
+                                    <constraint firstItem="uwm-14-I0h" firstAttribute="top" secondItem="9zs-3u-AqR" secondAttribute="top" id="IEs-3T-nzO"/>
+                                    <constraint firstItem="yxk-I5-LYJ" firstAttribute="bottom" secondItem="9zs-3u-AqR" secondAttribute="bottom" id="Uc3-HI-Ujm"/>
+                                    <constraint firstItem="uwm-14-I0h" firstAttribute="leading" secondItem="yxk-I5-LYJ" secondAttribute="trailing" id="hVr-b3-m3a"/>
+                                    <constraint firstItem="uwm-14-I0h" firstAttribute="trailing" secondItem="9zs-3u-AqR" secondAttribute="trailing" id="o4O-65-oUJ"/>
+                                    <constraint firstItem="uwm-14-I0h" firstAttribute="bottom" secondItem="9zs-3u-AqR" secondAttribute="bottom" id="qwN-he-GfX"/>
+                                    <constraint firstItem="yxk-I5-LYJ" firstAttribute="leading" secondItem="9zs-3u-AqR" secondAttribute="leading" id="ueK-ki-dNn"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="n4R-vB-Wrn"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="GZa-jP-Z1h"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jZZ-N6-cCv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9zs-3u-AqR" firstAttribute="leading" secondItem="854-El-dYX" secondAttribute="leading" id="0VR-cP-bwW"/>
+                            <constraint firstItem="9zs-3u-AqR" firstAttribute="top" secondItem="854-El-dYX" secondAttribute="top" id="45h-59-iGz"/>
+                            <constraint firstItem="uwm-14-I0h" firstAttribute="width" secondItem="854-El-dYX" secondAttribute="width" id="Dgp-ww-5mf"/>
+                            <constraint firstItem="yxk-I5-LYJ" firstAttribute="height" secondItem="854-El-dYX" secondAttribute="height" id="E2Y-AM-Q03"/>
+                            <constraint firstAttribute="bottom" secondItem="9zs-3u-AqR" secondAttribute="bottom" id="I38-ql-yTp"/>
+                            <constraint firstItem="uwm-14-I0h" firstAttribute="height" secondItem="854-El-dYX" secondAttribute="height" id="RJK-wB-TWu"/>
+                            <constraint firstItem="9zs-3u-AqR" firstAttribute="trailing" secondItem="854-El-dYX" secondAttribute="trailing" id="cEJ-Ey-ZNl"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="568" height="568"/>
+                    <connections>
+                        <outlet property="scrollView" destination="9zs-3u-AqR" id="EF4-UI-qK9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5h4-bl-gmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2335" y="1011"/>
+        </scene>
+        <!--Left Menu Table View Controller-->
+        <scene sceneID="2pk-ur-YXX">
+            <objects>
+                <tableViewController id="ygX-Fo-hzS" customClass="LeftMenuTableViewController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IkZ-D7-Y8N">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Scr-Xc-EMQ" customClass="MenuCell" customModule="DogsList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="260" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Scr-Xc-EMQ" id="DGx-PY-D8M">
+                                    <rect key="frame" x="0.0" y="0.0" width="260" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ygX-Fo-hzS" id="gX1-cJ-yRd"/>
+                            <outlet property="delegate" destination="ygX-Fo-hzS" id="Gh8-FQ-md3"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fmv-Ix-AXi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2335" y="1595"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZRl-eS-mNg">
@@ -185,19 +285,26 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-1677" y="2356"/>
+            <point key="canvasLocation" x="-1319" y="1011"/>
         </scene>
         <!--Search Star War View Controller-->
         <scene sceneID="T7o-Ed-bBY">
             <objects>
                 <viewController id="4Qf-Id-fCz" customClass="SearchStarWarViewController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e7H-HA-Gas">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="xhT-hm-PZB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4RR-bo-wXK"/>
+                    <navigationItem key="navigationItem" id="4RR-bo-wXK">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="oYC-XW-AmS">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="hamburgerMenu:" destination="4Qf-Id-fCz" id="I4c-8u-8v7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3c-RD-FKl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,7 +317,7 @@
                     <tabBarItem key="tabBarItem" title="Star War" image="star.leadinghalf.fill" catalog="system" selectedImage="star.leadinghalf.fill" id="huC-8r-Sbv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="juI-nL-Tv6">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="568" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -227,11 +334,11 @@
             <objects>
                 <viewController id="c0J-dh-TFK" customClass="AnimalListViewController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lUf-Oc-0Si">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TR7-St-ToP">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="568" height="480"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cAa-hY-GrN">
                                     <size key="itemSize" width="128" height="128"/>
@@ -260,7 +367,14 @@
                             <constraint firstAttribute="trailing" secondItem="TR7-St-ToP" secondAttribute="trailing" id="xJ9-7C-iiS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JhF-ff-2x6"/>
+                    <navigationItem key="navigationItem" id="JhF-ff-2x6">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="yXx-Sq-5Jw">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="hamburgerMenu:" destination="c0J-dh-TFK" id="DlY-4S-s3E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="TR7-St-ToP" id="sY9-zz-GVr"/>
                     </connections>
@@ -274,14 +388,14 @@
             <objects>
                 <viewController id="elT-oB-JIo" customClass="WeatherMapViewController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Jf-29-s9y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wRL-k3-1qf">
-                                <rect key="frame" x="10" y="98" width="394" height="705"/>
+                                <rect key="frame" x="10" y="98" width="548" height="377"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" placeholder="Enter a nearest town/city name" translatesAutoresizingMaskIntoConstraints="NO" id="2Da-mO-hVL">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="548" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="PGh-KW-SC0"/>
                                         </constraints>
@@ -293,7 +407,7 @@
                                         </scopeButtonTitles>
                                     </searchBar>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="A6T-QF-v8b">
-                                        <rect key="frame" x="0.0" y="54" width="394" height="651"/>
+                                        <rect key="frame" x="0.0" y="54" width="548" height="323"/>
                                     </mapView>
                                 </subviews>
                             </stackView>
@@ -308,6 +422,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Weather Map" id="zgn-tk-SXl">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="SF1-Ix-pGF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="hamburgerMenu:" destination="elT-oB-JIo" id="pzB-Qe-HD0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Setttings" image="gearshape" catalog="system" id="1Hl-Cf-Im9">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -329,11 +449,11 @@
             <objects>
                 <viewController id="WXa-uX-P0l" customClass="NewsViewController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="30p-a9-Ls0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CCF-ZG-OtQ">
-                                <rect key="frame" x="0.0" y="164" width="414" height="649"/>
+                                <rect key="frame" x="0.0" y="164" width="568" height="321"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H17-O0-yjy">
                                     <size key="itemSize" width="128" height="128"/>
@@ -356,7 +476,7 @@
                                 </cells>
                             </collectionView>
                             <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="gog-6o-4gt">
-                                <rect key="frame" x="10" y="98" width="394" height="56"/>
+                                <rect key="frame" x="10" y="98" width="548" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -373,12 +493,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="IFr-NI-imp">
-                        <barButtonItem key="leftBarButtonItem" image="slider.vertical.3" catalog="system" id="NNL-gg-N9f">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="R41-L1-a67">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="hamburgerMenu:" destination="WXa-uX-P0l" id="966-7s-tw3"/>
+                            </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="Gbk-wa-MNn">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="bookmarks" id="Gbk-wa-MNn">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                            <barButtonItem image="slider.vertical.3" catalog="system" id="NNL-gg-N9f">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="CCF-ZG-OtQ" id="WhY-u8-keX"/>
@@ -392,18 +520,18 @@
         <scene sceneID="OUR-XQ-4Qf">
             <objects>
                 <viewController id="9wR-dc-mtu" customClass="NewsDetailViewController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eyo-VG-HTU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="eyo-VG-HTU">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topnews" translatesAutoresizingMaskIntoConstraints="NO" id="M5I-pf-NcJ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="286"/>
+                                <rect key="frame" x="0.0" y="88" width="568" height="506"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="M5I-pf-NcJ" secondAttribute="height" multiplier="207:143" id="tH5-n9-acr"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjf-pw-xyz">
-                                <rect key="frame" x="20" y="394" width="374" height="75"/>
+                                <rect key="frame" x="20" y="614" width="528" height="50"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Qatar's Hamad International: World's most luxurious airport?">
                                         <attributes>
@@ -416,27 +544,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="97v-y1-Etg">
-                                <rect key="frame" x="20" y="484" width="374" height="26"/>
+                                <rect key="frame" x="20" y="679" width="528" height="26"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="World" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZa-us-MRb">
-                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="26"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="126.5" height="26"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16/08/2021" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGN-xX-v5B">
-                                        <rect key="frame" x="89.5" y="0.0" width="189.5" height="26"/>
+                                        <rect key="frame" x="126.5" y="0.0" width="267" height="26"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sSJ-JC-aOY">
-                                        <rect key="frame" x="279" y="0.0" width="95" height="26"/>
+                                        <rect key="frame" x="393.5" y="0.0" width="134.5" height="26"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5e-Ng-ssS">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -444,7 +572,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYY-X3-zsN">
-                                                <rect key="frame" x="50" y="0.0" width="45" height="26"/>
+                                                <rect key="frame" x="70" y="0.0" width="64.5" height="26"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal">
                                                     <imageReference key="image" image="bookmark" catalog="system" symbolScale="large"/>
@@ -457,8 +585,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="peR-FO-4ZF">
                                 <rect key="frame" x="0.0" y="503" width="414" height="300"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6XV-dU-z7M">
-                                        <rect key="frame" x="17" y="10" width="377" height="293"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6XV-dU-z7M">
+                                        <rect key="frame" x="17" y="10" width="531" height="0.0"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                         <color key="textColor" systemColor="labelColor"/>
@@ -839,17 +967,17 @@
             <objects>
                 <viewController id="OPL-Th-lMR" customClass="SettingsViewController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SlP-bw-hyN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APp-8p-ZJQ">
-                                <rect key="frame" x="20" y="128" width="374" height="30"/>
+                                <rect key="frame" x="20" y="128" width="528" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                 <color key="textColor" red="0.14693146939999999" green="0.259611547" blue="0.27392166849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6Xs-mq-0Xh">
-                                <rect key="frame" x="20" y="183" width="374" height="32"/>
+                                <rect key="frame" x="20" y="183" width="528" height="32"/>
                                 <segments>
                                     <segment title="Celsius"/>
                                     <segment title="Fahrenheit"/>
@@ -934,7 +1062,7 @@
                     <tabBarItem key="tabBarItem" title="Animals List " image="doc.on.doc" catalog="system" id="ipY-nq-AQB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zd8-aM-3bu">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="568" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -953,7 +1081,7 @@
                     <tabBarItem key="tabBarItem" title="Weather" image="cloud.drizzle" catalog="system" id="v80-0O-tuB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yjZ-XQ-NGQ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="568" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -973,7 +1101,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="14i-d4-dKt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UD3-pb-l9S">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="568" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -991,8 +1119,9 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aeB-qU-zHa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Dog List" image="doc.text" catalog="system" selectedImage="doc.text" id="4Qe-MR-OOl"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="olQ-KD-m8W"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qtq-2k-lHZ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="568" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1012,6 +1141,7 @@
         <image name="doc.on.doc" catalog="system" width="116" height="128"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="hamburger" width="30" height="30"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="slider.vertical.3" catalog="system" width="128" height="111"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>

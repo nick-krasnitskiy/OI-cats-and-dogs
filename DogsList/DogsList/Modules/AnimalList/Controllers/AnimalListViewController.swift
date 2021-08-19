@@ -34,7 +34,7 @@ enum NewSection: Int, CaseIterable {
     
 }
 
-class AnimalListViewController: UIViewController {
+class AnimalListViewController: TabViewControllerTemplate {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     private let indicator = UIActivityIndicatorView(style: .large)
@@ -53,6 +53,10 @@ class AnimalListViewController: UIViewController {
         animalManager.performRequest()
         startActivityIndicator()
         
+    }
+    
+    @IBAction func hamburgerMenu(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
     }
     
     private func configureCollectionView() {

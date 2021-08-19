@@ -12,7 +12,7 @@ enum NewsSections: Int, CaseIterable {
     case second
 }
 
-class NewsViewController: UIViewController, UISearchBarDelegate {
+class NewsViewController: TabViewControllerTemplate, UISearchBarDelegate {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<NewsSections, Int>?
@@ -28,6 +28,10 @@ class NewsViewController: UIViewController, UISearchBarDelegate {
         configureCollectionView()
         addSnapshot()
         navigationController?.navigationBar.backgroundColor = .white
+    }
+    
+    @IBAction func hamburgerMenu(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
     }
     
     private func configureCollectionView() {

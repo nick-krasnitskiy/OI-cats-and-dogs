@@ -15,6 +15,9 @@
 		D40ED3EC26CCF3D60010ED6B /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED3E626CCF3D60010ED6B /* NewsViewController.swift */; };
 		D40ED3ED26CCF3D60010ED6B /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED3E726CCF3D60010ED6B /* SectionHeader.swift */; };
 		D40ED40226CD2AAA0010ED6B /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED40026CD2AAA0010ED6B /* NewsDetailViewController.swift */; };
+		D40ED41326CD6EE70010ED6B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED41226CD6EE70010ED6B /* ContainerViewController.swift */; };
+		D40ED41826CD75EF0010ED6B /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED41726CD75EF0010ED6B /* LeftMenuTableViewController.swift */; };
+		D40ED41C26CD7CBD0010ED6B /* TabViewControllerTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED41B26CD7CBD0010ED6B /* TabViewControllerTemplate.swift */; };
 		D41571D226B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D41571D026B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld */; };
 		D415722226BA5FCF009507D2 /* WeatherMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */; };
 		D415722826BA972D009507D2 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722726BA972C009507D2 /* WeatherData.swift */; };
@@ -74,6 +77,9 @@
 		D40ED3E626CCF3D60010ED6B /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		D40ED3E726CCF3D60010ED6B /* SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		D40ED40026CD2AAA0010ED6B /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		D40ED41226CD6EE70010ED6B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		D40ED41726CD75EF0010ED6B /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
+		D40ED41B26CD7CBD0010ED6B /* TabViewControllerTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewControllerTemplate.swift; sourceTree = "<group>"; };
 		D41571D126B7BDFE009507D2 /* ListAllBreeds.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListAllBreeds.xcdatamodel; sourceTree = "<group>"; };
 		D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMapViewController.swift; sourceTree = "<group>"; };
 		D415722726BA972C009507D2 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -165,6 +171,16 @@
 				D40ED3E526CCF3D60010ED6B /* LatestNewsCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D40ED40F26CD6E6B0010ED6B /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D40ED41226CD6EE70010ED6B /* ContainerViewController.swift */,
+				D40ED41726CD75EF0010ED6B /* LeftMenuTableViewController.swift */,
+				D40ED41B26CD7CBD0010ED6B /* TabViewControllerTemplate.swift */,
+			);
+			path = SlideMenu;
 			sourceTree = "<group>";
 		};
 		D41571FB26BA56AB009507D2 /* DogList */ = {
@@ -352,6 +368,7 @@
 			children = (
 				D449142F268D912E002EBF46 /* AppDelegate.swift */,
 				D4491431268D912E002EBF46 /* SceneDelegate.swift */,
+				D40ED40F26CD6E6B0010ED6B /* SlideMenu */,
 				D415720426BA5735009507D2 /* Modules */,
 				D4491438268D9132002EBF46 /* Assets.xcassets */,
 				D4491435268D912E002EBF46 /* Main.storyboard */,
@@ -585,10 +602,12 @@
 			files = (
 				D4429B3626A1C264000B5DD2 /* AnimalListViewController.swift in Sources */,
 				D43507BB26C3995C009C9B04 /* CustomForecast.swift in Sources */,
+				D40ED41326CD6EE70010ED6B /* ContainerViewController.swift in Sources */,
 				D48B5BC1269C111C00CF6EDB /* Persons.swift in Sources */,
 				D4429B4426A4B11A000B5DD2 /* AnimalMiddleCell.swift in Sources */,
 				D43507B826C398F7009C9B04 /* CustomPin.swift in Sources */,
 				D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */,
+				D40ED41826CD75EF0010ED6B /* LeftMenuTableViewController.swift in Sources */,
 				D40ED40226CD2AAA0010ED6B /* NewsDetailViewController.swift in Sources */,
 				D40ED3E926CCF3D60010ED6B /* TopNewsCell.swift in Sources */,
 				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,
@@ -613,6 +632,7 @@
 				D40ED3ED26CCF3D60010ED6B /* SectionHeader.swift in Sources */,
 				D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */,
 				D415722B26BA97B1009507D2 /* WeatherModel.swift in Sources */,
+				D40ED41C26CD7CBD0010ED6B /* TabViewControllerTemplate.swift in Sources */,
 				D4429B5A26A55F8C000B5DD2 /* DetailAnimalCell.swift in Sources */,
 				D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */,
 				D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */,

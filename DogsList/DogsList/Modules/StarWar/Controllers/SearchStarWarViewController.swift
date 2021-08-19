@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchStarWarViewController: UIViewController {
+class SearchStarWarViewController: TabViewControllerTemplate {
     
     enum Section: CaseIterable {
         case main
@@ -31,6 +31,11 @@ class SearchStarWarViewController: UIViewController {
             UIColor(red: 0.1469314694, green: 0.259611547, blue: 0.2739216685, alpha: 1)
         personManager.delegate = self
     }
+    
+    @IBAction func hamburgerMenu(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
+    }
+    
 }
 
 extension SearchStarWarViewController {
