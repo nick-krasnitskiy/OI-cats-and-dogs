@@ -24,8 +24,7 @@ class SearchHistoryViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, String>
-    private var dataSource: DataSource!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, String>?
     private var collectionView: UICollectionView! = nil
     
     override func viewDidLoad() {
@@ -44,7 +43,8 @@ private extension SearchHistoryViewController {
         var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         config.trailingSwipeActionsConfigurationProvider = { [weak self] indexPath in
             guard let `self` = self else { return nil }
-            let selectedItem = self.dataSource.itemIdentifier(for: indexPath)
+            guard let data = self.dataSource else { return nil }
+            let selectedItem = data.itemIdentifier(for: indexPath)
             return self.deleteItemOnSwipe(item: selectedItem!)
         }
         return UICollectionViewCompositionalLayout.list(using: config)
@@ -60,7 +60,7 @@ private extension SearchHistoryViewController {
     }
     
     private func configureDataSource() {
-        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, query) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, query) -> UICollectionViewCell? in
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StarWarsSearchHistoryViewCell", for: indexPath) as? StarWarsSearchHistoryViewCell else { fatalError("Cannot create the cell") }
             cell.configure(previousQuery: query)
@@ -71,10 +71,10 @@ private extension SearchHistoryViewController {
     private func deleteItemOnSwipe(item: String) -> UISwipeActionsConfiguration? {
         let actionHandler: UIContextualAction.Handler = { _, _, completion in
             completion(true)
-            
-            var snapShot = self.dataSource.snapshot()
+            guard let data = self.dataSource else { return  }
+            var snapShot = data.snapshot()
             snapShot.deleteItems([item])
-            self.dataSource.apply(snapShot)
+            data.apply(snapShot)
         }
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: actionHandler)
@@ -87,14 +87,15 @@ private extension SearchHistoryViewController {
     private func addSnaphot(searchHistory: [String]?) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
         snapshot.appendSections([.main])
+        guard let data = self.dataSource else { return  }
         if let queries = searchHistory {
             DispatchQueue.main.async {
                 snapshot.appendItems(queries)
-                self.dataSource.apply(snapshot, animatingDifferences: false)
+                data.apply(snapshot, animatingDifferences: false)
             }
         } else {
             DispatchQueue.main.async {
-                self.dataSource.apply(snapshot, animatingDifferences: false)
+                data.apply(snapshot, animatingDifferences: false)
             }
         }
     }

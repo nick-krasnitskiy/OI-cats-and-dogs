@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D40ED43D26CF89DB0010ED6B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED43C26CF89DB0010ED6B /* Constants.swift */; };
 		D41571D226B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D41571D026B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld */; };
 		D415722826BA972D009507D2 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722726BA972C009507D2 /* WeatherData.swift */; };
 		D415722B26BA97B1009507D2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722A26BA97B1009507D2 /* WeatherModel.swift */; };
@@ -65,6 +66,7 @@
 		15210C7A2F8AB7B07176C368 /* Pods-DogsList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsList.release.xcconfig"; path = "Target Support Files/Pods-DogsList/Pods-DogsList.release.xcconfig"; sourceTree = "<group>"; };
 		7E1832DD3A3B589DE09974E1 /* Pods-DogsList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsList.debug.xcconfig"; path = "Target Support Files/Pods-DogsList/Pods-DogsList.debug.xcconfig"; sourceTree = "<group>"; };
 		CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogsList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D40ED43C26CF89DB0010ED6B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D41571D126B7BDFE009507D2 /* ListAllBreeds.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListAllBreeds.xcdatamodel; sourceTree = "<group>"; };
 		D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMapViewController.swift; sourceTree = "<group>"; };
 		D415722726BA972C009507D2 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -77,7 +79,6 @@
 		D43507BA26C3995C009C9B04 /* CustomForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomForecast.swift; sourceTree = "<group>"; };
 		D4429B2726A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsSearchHistoryViewCell.swift; sourceTree = "<group>"; };
 		D4429B2826A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarWarsSearchHistoryViewCell.xib; sourceTree = "<group>"; };
-		D4429B2D26A184EB000B5DD2 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
 		D4429B2E26A184EB000B5DD2 /* SearchHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryViewController.xib; sourceTree = "<group>"; };
 		D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
 		D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTopCell.swift; sourceTree = "<group>"; };
@@ -330,6 +331,7 @@
 			children = (
 				D449142F268D912E002EBF46 /* AppDelegate.swift */,
 				D4491431268D912E002EBF46 /* SceneDelegate.swift */,
+				D40ED43C26CF89DB0010ED6B /* Constants.swift */,
 				D415720426BA5735009507D2 /* Modules */,
 				D4491438268D9132002EBF46 /* Assets.xcassets */,
 				D4491435268D912E002EBF46 /* Main.storyboard */,
@@ -356,7 +358,6 @@
 				D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */,
 				D4429B5426A556D4000B5DD2 /* BreedDetailController.swift */,
 				D4429B6326A5673C000B5DD2 /* BreedImageViewController.swift */,
-				D4429B2D26A184EB000B5DD2 /* SearchHistoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -582,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4429B3626A1C264000B5DD2 /* AnimalListViewController.swift in Sources */,
+				D40ED43D26CF89DB0010ED6B /* Constants.swift in Sources */,
 				D43507BB26C3995C009C9B04 /* CustomForecast.swift in Sources */,
 				D48B5BC1269C111C00CF6EDB /* Persons.swift in Sources */,
 				D4429B4426A4B11A000B5DD2 /* AnimalMiddleCell.swift in Sources */,
