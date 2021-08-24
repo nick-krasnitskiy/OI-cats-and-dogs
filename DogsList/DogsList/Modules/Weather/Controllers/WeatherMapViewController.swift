@@ -44,7 +44,6 @@ class WeatherMapViewController: TabViewControllerTemplate {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
     }
     
-    
     func addPinTapAction(mapView: MKMapView, target: AnyObject, action: Selector) {
         let gestureRecognizer = UITapGestureRecognizer(target: target, action: action)
         mapView.addGestureRecognizer(gestureRecognizer)

@@ -15,19 +15,26 @@ enum NewsSections: Int, CaseIterable {
 class NewsViewController: TabViewControllerTemplate, UISearchBarDelegate {
     
     @IBOutlet private weak var collectionView: UICollectionView!
-    private var dataSource: UICollectionViewDiffableDataSource<NewsSections, Int>?
-    private var snapshot = NSDiffableDataSourceSnapshot<NewsSections, Int>()
+    @IBOutlet private weak var searchBar: UISearchBar!
+    
+    private var dataSource: UICollectionViewDiffableDataSource<NewsSections, Article>?
+    private var snapshot = NSDiffableDataSourceSnapshot<NewsSections, Article>()
+    private let indicator = UIActivityIndicatorView(style: .medium)
     
     private let size: CGFloat = 1.0
     private let null: CGFloat = 0.0
     private let ten: CGFloat = 10.0
     
+    private var newsManager = NewsManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDataSource()
         configureCollectionView()
-        addSnapshot()
         navigationController?.navigationBar.backgroundColor = .white
+        newsManager.delegate = self
+        newsManager.fetchTopNews()
+        startActivityIndicator()
     }
     
     @IBAction func hamburgerMenu(_ sender: Any) {
@@ -116,16 +123,18 @@ class NewsViewController: TabViewControllerTemplate, UISearchBarDelegate {
     
     private func configureDataSource() {
         
-        dataSource = UICollectionViewDiffableDataSource<NewsSections, Int>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, _) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<NewsSections, Article>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, news) -> UICollectionViewCell? in
             
             guard let sectionKind = NewsSections(rawValue: indexPath.section) else { return nil }
             
             switch sectionKind {
             case .first:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopNewsCell", for: indexPath) as? TopNewsCell else { fatalError("Cannot create the cell") }
+                cell.configure(news: news)
                 return cell
             case .second:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LatestNewsCell", for: indexPath) as? LatestNewsCell else { fatalError("Cannot create the cell") }
+                cell.configure(news: news)
                 return cell
             }
         })
@@ -146,25 +155,72 @@ class NewsViewController: TabViewControllerTemplate, UISearchBarDelegate {
         }
     }
     
-    func addSnapshot() {
+    func addSnapshot(news: [Article]) {
         guard let dataSource = self.dataSource else { return }
         DispatchQueue.main.async {
             self.snapshot.appendSections([.first, .second])
-            self.snapshot.appendItems(Array(0..<5),  toSection: .first)
-            self.snapshot.appendItems(Array(6..<100),  toSection: .second)
+            self.snapshot.appendItems(Array(news[0...4]),  toSection: .first)
+            self.snapshot.appendItems(Array(news[5..<news.count]),  toSection: .second)
             dataSource.apply(self.snapshot, animatingDifferences: false)
+            self.stopActivityIndicator()
         }
     }
+    
+    func startActivityIndicator() {
+        indicator.center = self.view.center
+        indicator.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        indicator.startAnimating()
+        view.addSubview(indicator)
+        collectionView.isHidden = true
+        searchBar.isHidden = true
+    }
+    
+    func stopActivityIndicator() {
+        DispatchQueue.main.async {
+            self.indicator.hidesWhenStopped = true
+            self.indicator.stopAnimating()
+            self.collectionView.isHidden = false
+            self.searchBar.isHidden = false
+        }
+    }
+    
 }
+
+// MARK: - UICollectionViewDelegate
 
 extension NewsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        guard let new = self.dataSource.itemIdentifier(for: indexPath)?.new else {
-//            collectionView.deselectItem(at: indexPath, animated: true)
-//            return
-//        }
+        guard let new = self.dataSource?.itemIdentifier(for: indexPath) else {
+            collectionView.deselectItem(at: indexPath, animated: true)
+            return
+        }
         
-        performSegue(withIdentifier: "GoToCurrentNew", sender: nil)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let newsDetailViewController = storyBoard.instantiateViewController(withIdentifier: "NewsDetailVC") as? NewsDetailViewController else { return }
+        
+        newsDetailViewController.headerNews = new.title
+        newsDetailViewController.dateNews = new.publishedAt
+        newsDetailViewController.sourceNews = new.source.name
+        
+        guard let image = new.urlToImage else { return }
+        guard let content = new.content else { return }
+        
+        newsDetailViewController.imageName = image
+        newsDetailViewController.textNews = content
+        
+        self.navigationController?.pushViewController(newsDetailViewController, animated: true)
+    }
 }
+
+// MARK: - NewsManagerDelegate
+
+extension NewsViewController: NewsManagerDelegate {
+    func didUpdateNews(_ newsManager: NewsManager, news: News) {
+        addSnapshot(news: news.articles)
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
 }

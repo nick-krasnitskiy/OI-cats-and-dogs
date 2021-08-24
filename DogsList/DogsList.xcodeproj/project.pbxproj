@@ -18,6 +18,8 @@
 		D40ED41326CD6EE70010ED6B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED41226CD6EE70010ED6B /* ContainerViewController.swift */; };
 		D40ED41826CD75EF0010ED6B /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED41726CD75EF0010ED6B /* LeftMenuTableViewController.swift */; };
 		D40ED41C26CD7CBD0010ED6B /* TabViewControllerTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED41B26CD7CBD0010ED6B /* TabViewControllerTemplate.swift */; };
+		D40ED44726CF9C330010ED6B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED44626CF9C330010ED6B /* News.swift */; };
+		D40ED45026CF9DE10010ED6B /* NewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED44F26CF9DE10010ED6B /* NewsManager.swift */; };
 		D41571D226B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D41571D026B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld */; };
 		D415722226BA5FCF009507D2 /* WeatherMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */; };
 		D415722826BA972D009507D2 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722726BA972C009507D2 /* WeatherData.swift */; };
@@ -80,6 +82,8 @@
 		D40ED41226CD6EE70010ED6B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D40ED41726CD75EF0010ED6B /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
 		D40ED41B26CD7CBD0010ED6B /* TabViewControllerTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewControllerTemplate.swift; sourceTree = "<group>"; };
+		D40ED44626CF9C330010ED6B /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		D40ED44F26CF9DE10010ED6B /* NewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsManager.swift; sourceTree = "<group>"; };
 		D41571D126B7BDFE009507D2 /* ListAllBreeds.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListAllBreeds.xcdatamodel; sourceTree = "<group>"; };
 		D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMapViewController.swift; sourceTree = "<group>"; };
 		D415722726BA972C009507D2 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 			children = (
 				D40ED3E126CCF3D60010ED6B /* Cells */,
 				D40ED3E626CCF3D60010ED6B /* NewsViewController.swift */,
+				D40ED44926CF9C390010ED6B /* Model */,
 				D40ED3E726CCF3D60010ED6B /* SectionHeader.swift */,
 				D40ED40026CD2AAA0010ED6B /* NewsDetailViewController.swift */,
 			);
@@ -181,6 +186,15 @@
 				D40ED41B26CD7CBD0010ED6B /* TabViewControllerTemplate.swift */,
 			);
 			path = SlideMenu;
+			sourceTree = "<group>";
+		};
+		D40ED44926CF9C390010ED6B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D40ED44626CF9C330010ED6B /* News.swift */,
+				D40ED44F26CF9DE10010ED6B /* NewsManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D41571FB26BA56AB009507D2 /* DogList */ = {
@@ -626,6 +640,7 @@
 				D48B5BA42694582100CF6EDB /* Dog.swift in Sources */,
 				D415722E26BA97DC009507D2 /* WeatherManager.swift in Sources */,
 				D40ED3EA26CCF3D60010ED6B /* LatestNewsCell.swift in Sources */,
+				D40ED44726CF9C330010ED6B /* News.swift in Sources */,
 				D43507B226C39214009C9B04 /* ForecastData.swift in Sources */,
 				D415722226BA5FCF009507D2 /* WeatherMapViewController.swift in Sources */,
 				D4491451268DEF2B002EBF46 /* ListDogViewController.swift in Sources */,
@@ -635,6 +650,7 @@
 				D40ED41C26CD7CBD0010ED6B /* TabViewControllerTemplate.swift in Sources */,
 				D4429B5A26A55F8C000B5DD2 /* DetailAnimalCell.swift in Sources */,
 				D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */,
+				D40ED45026CF9DE10010ED6B /* NewsManager.swift in Sources */,
 				D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */,
 				D4429B4926A4B167000B5DD2 /* AnimalBottomCell.swift in Sources */,
 				D4F47FE526C3E80400543FF3 /* SettingsViewController.swift in Sources */,
