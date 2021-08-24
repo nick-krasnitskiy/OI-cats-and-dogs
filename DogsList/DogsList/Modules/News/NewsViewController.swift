@@ -29,6 +29,7 @@ class NewsViewController: TabViewControllerTemplate, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.endEditing(true)
         configureDataSource()
         configureCollectionView()
         navigationController?.navigationBar.backgroundColor = .white
@@ -162,28 +163,15 @@ class NewsViewController: TabViewControllerTemplate, UISearchBarDelegate {
             self.snapshot.appendItems(Array(news[0...4]),  toSection: .first)
             self.snapshot.appendItems(Array(news[5..<news.count]),  toSection: .second)
             dataSource.apply(self.snapshot, animatingDifferences: false)
-            self.stopActivityIndicator()
         }
     }
     
-    func startActivityIndicator() {
-        indicator.center = self.view.center
-        indicator.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        indicator.startAnimating()
-        view.addSubview(indicator)
-        collectionView.isHidden = true
-        searchBar.isHidden = true
+    func alertGeenrate(alertTitle: String, alertMessage: String, actionTitle: String, handler: ((UIAlertAction) -> Void)? = nil) {
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default) {(_: UIAlertAction!) in
+            self.viewDidLoad()})
+        present(alert, animated: true, completion: nil)
     }
-    
-    func stopActivityIndicator() {
-        DispatchQueue.main.async {
-            self.indicator.hidesWhenStopped = true
-            self.indicator.stopAnimating()
-            self.collectionView.isHidden = false
-            self.searchBar.isHidden = false
-        }
-    }
-    
 }
 
 // MARK: - UICollectionViewDelegate
@@ -216,11 +204,42 @@ extension NewsViewController: UICollectionViewDelegate {
 // MARK: - NewsManagerDelegate
 
 extension NewsViewController: NewsManagerDelegate {
+    func didFailWithResponce(response: HTTPURLResponse) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.alertGeenrate(alertTitle: "Failure!", alertMessage: "Response has status unacceptable code: \(response.statusCode)", actionTitle: "Try again")
+            
+        }
+    }
+    
+    func notResponce() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.alertGeenrate(alertTitle: "Failure!", alertMessage: "Data not received due to network connection", actionTitle: "Try again")
+        }
+    }
+    
     func didUpdateNews(_ newsManager: NewsManager, news: News) {
         addSnapshot(news: news.articles)
     }
     
     func didFailWithError(error: Error) {
         print(error)
+    }
+    
+    func startActivityIndicator() {
+        indicator.center = self.view.center
+        indicator.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        indicator.startAnimating()
+        view.addSubview(indicator)
+        collectionView.isHidden = true
+        searchBar.isHidden = true
+    }
+    
+    func stopActivityIndicator() {
+        DispatchQueue.main.async {
+            self.indicator.hidesWhenStopped = true
+            self.indicator.stopAnimating()
+            self.collectionView.isHidden = false
+            self.searchBar.isHidden = false
+        }
     }
 }

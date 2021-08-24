@@ -10,6 +10,10 @@ import Foundation
 protocol NewsManagerDelegate: AnyObject {
     func didUpdateNews(_ newsManager: NewsManager, news: News)
     func didFailWithError(error: Error)
+    func startActivityIndicator()
+    func stopActivityIndicator()
+    func didFailWithResponce(response: HTTPURLResponse)
+    func notResponce()
 }
 
 private let apiNewsKey = "97ac8d9db2c64e82995a456fca6f29f6"
@@ -40,17 +44,32 @@ struct NewsManager {
     func performRequestForTopNews(with url: URL) {
         
         let session = URLSession(configuration: .default)
+
         let task = session.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                self.delegate?.didFailWithError(error: error!)
+            if let error = error {
+                self.delegate?.didFailWithError(error: error)
                 return
-            }
-            if let safeData = data {
-                if let topNews = self.parseJSONForTopNews(safeData) {
-                    self.delegate?.didUpdateNews(self, news: topNews)
+            } else {
+                if let httpResponse = response as? HTTPURLResponse {
+                    switch httpResponse.statusCode {
+                    case 200:
+                        if let safeData = data {
+                            if let topNews = self.parseJSONForTopNews(safeData) {
+                                self.delegate?.didUpdateNews(self, news: topNews)
+                                self.delegate?.stopActivityIndicator()
+                            }
+                        }
+                    case nil:
+                        self.delegate?.notResponce()
+                        self.delegate?.stopActivityIndicator()
+                    default:
+                        self.delegate?.didFailWithResponce(response: httpResponse)
+                        self.delegate?.stopActivityIndicator()
+                    }
                 }
             }
         }
+        
         task.resume()
     }
     
