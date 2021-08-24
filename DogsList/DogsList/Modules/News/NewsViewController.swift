@@ -190,6 +190,7 @@ extension NewsViewController: UICollectionViewDelegate {
         newsDetailViewController.headerNews = new.title
         newsDetailViewController.dateNews = new.publishedAt
         newsDetailViewController.sourceNews = new.source.name
+        newsDetailViewController.urlString = new.url
         
         guard let image = new.urlToImage else { return }
         guard let content = new.content else { return }

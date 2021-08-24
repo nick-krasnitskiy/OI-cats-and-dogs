@@ -18,13 +18,14 @@ struct News: Codable, Hashable {
 struct Article: Codable, Hashable {
     let source: Source
     let title: String
+    let url: String
     let urlToImage: String?
     let publishedAt: String
     let content: String?
 
     enum CodingKeys: String, CodingKey {
         case source, title
-        case urlToImage, publishedAt, content
+        case url, urlToImage, publishedAt, content
     }
 }
 

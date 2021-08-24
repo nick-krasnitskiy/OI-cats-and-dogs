@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class NewsDetailViewController: UIViewController {
     
@@ -20,6 +21,7 @@ class NewsDetailViewController: UIViewController {
     var sourceNews = ""
     var dateNews = ""
     var textNews = ""
+    var urlString = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,4 +50,12 @@ class NewsDetailViewController: UIViewController {
         return dateFormatter.string(from: localDate)
         
     }
+    
+    @IBAction func readMorePressed(_ sender: UIButton) {
+        
+        guard let urlNews = URL(string: urlString) else { return }
+        let vc = SFSafariViewController(url: urlNews)
+        present(vc, animated: true)
+    }
+    
 }
