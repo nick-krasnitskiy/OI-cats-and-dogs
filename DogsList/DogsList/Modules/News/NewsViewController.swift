@@ -12,13 +12,13 @@ enum NewsSections: Int, CaseIterable {
     case second
 }
 
-class NewsViewController: TabViewControllerTemplate, UISearchBarDelegate {
+class NewsViewController: TabViewControllerTemplate {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var searchBar: UISearchBar!
     
     private var dataSource: UICollectionViewDiffableDataSource<NewsSections, Article>?
-    private var snapshot = NSDiffableDataSourceSnapshot<NewsSections, Article>()
+    //private var snapshot = NSDiffableDataSourceSnapshot<NewsSections, Article>()
     private let indicator = UIActivityIndicatorView(style: .medium)
     
     private let size: CGFloat = 1.0
@@ -30,12 +30,20 @@ class NewsViewController: TabViewControllerTemplate, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.endEditing(true)
+        
         configureDataSource()
         configureCollectionView()
+        
         navigationController?.navigationBar.backgroundColor = .white
+        searchBar.searchTextField.textColor = .black
+        
         newsManager.delegate = self
-        newsManager.fetchTopNews()
+        searchBar.delegate = self
+        
         startActivityIndicator()
+        hideKeyboardWhenTappedAround()
+        
+        newsManager.fetchTopNews()
     }
     
     @IBAction func hamburgerMenu(_ sender: Any) {
@@ -157,12 +165,14 @@ class NewsViewController: TabViewControllerTemplate, UISearchBarDelegate {
     }
     
     func addSnapshot(news: [Article]) {
+        var snapshot = NSDiffableDataSourceSnapshot<NewsSections, Article>()
         guard let dataSource = self.dataSource else { return }
+        
         DispatchQueue.main.async {
-            self.snapshot.appendSections([.first, .second])
-            self.snapshot.appendItems(Array(news[0...4]),  toSection: .first)
-            self.snapshot.appendItems(Array(news[5..<news.count]),  toSection: .second)
-            dataSource.apply(self.snapshot, animatingDifferences: false)
+            snapshot.appendSections([.first, .second])
+            snapshot.appendItems(Array(news[0...4]),  toSection: .first)
+            snapshot.appendItems(Array(news[5..<news.count]),  toSection: .second)
+            dataSource.apply(snapshot, animatingDifferences: false)
         }
     }
     
@@ -199,6 +209,31 @@ extension NewsViewController: UICollectionViewDelegate {
         newsDetailViewController.textNews = content
         
         self.navigationController?.pushViewController(newsDetailViewController, animated: true)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension NewsViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text, !text.isEmpty {
+            newsManager.fetchSearchNews(ketWord: text)
+        }
+        searchBar.resignFirstResponder()
+    }
+}
+
+// MARK: - DismissKeyboard
+
+extension NewsViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:    #selector(WeatherMapViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 

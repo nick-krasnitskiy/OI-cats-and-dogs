@@ -475,6 +475,9 @@
                             <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Enter a keyword or phrase from the news" translatesAutoresizingMaskIntoConstraints="NO" id="gog-6o-4gt">
                                 <rect key="frame" x="10" y="98" width="548" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string></string>
+                                </scopeButtonTitles>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CUz-Zx-vHf"/>

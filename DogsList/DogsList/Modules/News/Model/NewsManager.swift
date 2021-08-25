@@ -41,6 +41,11 @@ struct NewsManager {
         performRequestForTopNews(with: endpointOne)
     }
     
+    func fetchSearchNews(ketWord: String) {
+        let endpointTwo = NewsEndpoint.searchEndPoint(keyWord: ketWord).url
+        performRequestForTopNews(with: endpointTwo)
+    }
+    
     func performRequestForTopNews(with url: URL) {
         
         let session = URLSession(configuration: .default)
