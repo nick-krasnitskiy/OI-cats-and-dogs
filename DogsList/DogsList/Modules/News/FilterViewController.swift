@@ -8,6 +8,8 @@
 import UIKit
 
 class FilterViewController: UITableViewController {
+    
+    weak var delegate: NewsViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +27,36 @@ class FilterViewController: UITableViewController {
                 sender.transform = .identity
             }, completion: nil)
         }
+        
+        switch sender.tag {
+        case 1:
+            saveSettings(category: "business")
+            delegate?.update(category: "business")
+        case 2:
+            saveSettings(category: "entertainment")
+            delegate?.update(category: "entertainment")
+        case 3:
+            saveSettings(category: "general")
+            delegate?.update(category: "general")
+        case 4:
+            saveSettings(category: "health")
+            delegate?.update(category: "health")
+        case 5:
+            saveSettings(category: "science")
+            delegate?.update(category: "science")
+        case 6:
+            saveSettings(category: "sports")
+            delegate?.update(category: "sports")
+        case 7:
+            saveSettings(category: "technology")
+            delegate?.update(category: "technology")
+        default:
+            print("")
+        }
+    }
+    
+    func saveSettings(category: String) {
+        let defaults = UserDefaults.standard
+        defaults.setValue(category, forKey: "category")
     }
 }

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol NewsViewControllerDelegate: AnyObject {
+    func update(category: String)
+}
+
 enum NewsSections: Int, CaseIterable {
     case first
     case second
@@ -25,11 +29,12 @@ class NewsViewController: TabViewControllerTemplate {
     private let ten: CGFloat = 10.0
     
     private var newsManager = NewsManager()
+    var newsCategory = UserDefaults.standard.string(forKey: "category") ?? ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startActivityIndicator()
-        view.endEditing(true)
+        update(category: newsCategory)
         
         configureDataSource()
         configureCollectionView()
@@ -39,9 +44,8 @@ class NewsViewController: TabViewControllerTemplate {
         
         newsManager.delegate = self
         searchBar.delegate = self
-        
+    
         hideKeyboardWhenTappedAround()
-        newsManager.fetchTopNews()
     }
     
     @IBAction func hamburgerMenu(_ sender: Any) {
@@ -275,5 +279,21 @@ extension NewsViewController: NewsManagerDelegate {
             self.collectionView.isHidden = false
             self.searchBar.isHidden = false
         }
+    }
+}
+
+// MARK: - NewsViewControllerDelegate
+
+extension NewsViewController: NewsViewControllerDelegate {
+    func update(category: String) {
+        DispatchQueue.main.async {
+            self.newsCategory = category
+            self.newsManager.fetchTopNews(category: self.newsCategory)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? FilterViewController else { return }
+        destination.delegate = self
     }
 }

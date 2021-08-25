@@ -20,14 +20,14 @@ private let apiNewsKey = "97ac8d9db2c64e82995a456fca6f29f6"
 
 enum NewsEndpoint {
     case searchEndPoint(keyWord: String)
-    case topNewsEndPoint(counry: String)
+    case topNewsEndPoint(category: String)
     
     var url: URL {
         switch self {
         case .searchEndPoint(let keyWord):
             return .makeEndpointForSearch(parameter: keyWord, apikey: apiNewsKey)
-        case .topNewsEndPoint(let country):
-            return .makeEndpointForTopNews(country: country, apikey: apiNewsKey)
+        case .topNewsEndPoint(let category):
+            return .makeEndpointForTopNews(category: category, apikey: apiNewsKey)
         }
     }
 }
@@ -36,8 +36,8 @@ struct NewsManager {
     
     weak var delegate: NewsManagerDelegate?
     
-    func fetchTopNews() {
-        let endpointOne = NewsEndpoint.topNewsEndPoint(counry: "us").url
+    func fetchTopNews(category: String) {
+        let endpointOne = NewsEndpoint.topNewsEndPoint(category: category).url
         performRequestForTopNews(with: endpointOne)
     }
     
@@ -74,7 +74,6 @@ struct NewsManager {
                 }
             }
         }
-        
         task.resume()
     }
     
@@ -98,7 +97,7 @@ private extension URL {
         URL(string: "https://newsapi.org/v2/everything?q=\(parameter)&apiKey=\(apikey)&sortBy=relevancy")!
     }
     
-    static func makeEndpointForTopNews(country: String, apikey: String) -> URL {
-        URL(string: "https://newsapi.org/v2/top-headlines?country=\(country)&apiKey=\(apikey)")!
+    static func makeEndpointForTopNews(category: String, apikey: String) -> URL {
+        URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=\(apikey)&category=\(category)")!
     }
 }
