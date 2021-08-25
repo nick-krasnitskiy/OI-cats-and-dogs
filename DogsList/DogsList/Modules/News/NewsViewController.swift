@@ -18,7 +18,6 @@ class NewsViewController: TabViewControllerTemplate {
     @IBOutlet private weak var searchBar: UISearchBar!
     
     private var dataSource: UICollectionViewDiffableDataSource<NewsSections, Article>?
-    //private var snapshot = NSDiffableDataSourceSnapshot<NewsSections, Article>()
     private let indicator = UIActivityIndicatorView(style: .medium)
     
     private let size: CGFloat = 1.0
@@ -29,6 +28,7 @@ class NewsViewController: TabViewControllerTemplate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startActivityIndicator()
         view.endEditing(true)
         
         configureDataSource()
@@ -40,9 +40,7 @@ class NewsViewController: TabViewControllerTemplate {
         newsManager.delegate = self
         searchBar.delegate = self
         
-        startActivityIndicator()
         hideKeyboardWhenTappedAround()
-        
         newsManager.fetchTopNews()
     }
     
