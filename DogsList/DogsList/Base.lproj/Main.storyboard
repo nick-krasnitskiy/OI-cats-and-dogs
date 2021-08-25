@@ -728,12 +728,19 @@
                                                             <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9E-85-ekM">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9E-85-ekM">
                                                             <rect key="frame" x="85" y="0.0" width="443" height="23.5"/>
                                                             <color key="tintColor" red="0.14693146939999999" green="0.259611547" blue="0.27392166849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal">
-                                                                <imageReference key="image" image="checkmark" catalog="system" symbolScale="large"/>
+                                                                <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                             </state>
+                                                            <state key="selected" image="checkmark.circle" catalog="system">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="checkBoxTapped:" destination="EsT-f4-5oH" eventType="touchUpInside" id="MpC-2X-nVR"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -761,12 +768,18 @@
                                                             <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDK-N9-KUc">
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDK-N9-KUc">
                                                             <rect key="frame" x="129.5" y="0.0" width="398.5" height="23.5"/>
                                                             <color key="tintColor" red="0.14693146939999999" green="0.259611547" blue="0.27392166849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal">
-                                                                <imageReference key="image" image="checkmark" catalog="system" symbolScale="large"/>
+                                                                <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
                                                             </state>
+                                                            <state key="selected">
+                                                                <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="large"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="checkBoxTapped:" destination="EsT-f4-5oH" eventType="touchUpInside" id="iCY-vb-n8D"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -794,12 +807,18 @@
                                                             <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBo-if-zcd">
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBo-if-zcd">
                                                             <rect key="frame" x="74.5" y="0.0" width="453.5" height="23.5"/>
                                                             <color key="tintColor" red="0.14693146939999999" green="0.259611547" blue="0.27392166849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal">
-                                                                <imageReference key="image" image="checkmark" catalog="system" symbolScale="large"/>
+                                                                <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
                                                             </state>
+                                                            <state key="selected">
+                                                                <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="large"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="checkBoxTapped:" destination="EsT-f4-5oH" eventType="touchUpInside" id="Sym-cy-5Te"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -827,12 +846,18 @@
                                                             <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmU-Tt-BPY">
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmU-Tt-BPY">
                                                             <rect key="frame" x="64.5" y="0.0" width="463.5" height="23.5"/>
                                                             <color key="tintColor" red="0.14693146939999999" green="0.259611547" blue="0.27392166849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal">
-                                                                <imageReference key="image" image="checkmark" catalog="system" symbolScale="large"/>
+                                                                <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
                                                             </state>
+                                                            <state key="selected">
+                                                                <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="large"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="checkBoxTapped:" destination="EsT-f4-5oH" eventType="touchUpInside" id="DAL-I1-w9r"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -860,12 +885,18 @@
                                                             <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVt-W0-eFb">
+                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVt-W0-eFb">
                                                             <rect key="frame" x="76" y="0.0" width="452" height="23.5"/>
                                                             <color key="tintColor" red="0.14693146939999999" green="0.259611547" blue="0.27392166849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal">
-                                                                <imageReference key="image" image="checkmark" catalog="system" symbolScale="large"/>
+                                                                <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
                                                             </state>
+                                                            <state key="selected">
+                                                                <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="large"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="checkBoxTapped:" destination="EsT-f4-5oH" eventType="touchUpInside" id="ZIw-gt-Ubg"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -893,12 +924,18 @@
                                                             <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEe-zj-2Qz">
+                                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEe-zj-2Qz">
                                                             <rect key="frame" x="66.5" y="0.0" width="461.5" height="23.5"/>
                                                             <color key="tintColor" red="0.14693146939999999" green="0.259611547" blue="0.27392166849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal">
-                                                                <imageReference key="image" image="checkmark" catalog="system" symbolScale="large"/>
+                                                                <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
                                                             </state>
+                                                            <state key="selected">
+                                                                <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="large"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="checkBoxTapped:" destination="EsT-f4-5oH" eventType="touchUpInside" id="DnM-2G-yHI"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -926,12 +963,18 @@
                                                             <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYi-kg-ERL">
+                                                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYi-kg-ERL">
                                                             <rect key="frame" x="106" y="0.0" width="422" height="23.5"/>
                                                             <color key="tintColor" red="0.14693146939999999" green="0.259611547" blue="0.27392166849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal">
-                                                                <imageReference key="image" image="checkmark" catalog="system" symbolScale="large"/>
+                                                                <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
                                                             </state>
+                                                            <state key="selected">
+                                                                <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="large"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="checkBoxTapped:" destination="EsT-f4-5oH" eventType="touchUpInside" id="7LF-cX-3Ck"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -1462,7 +1505,8 @@
     </scenes>
     <resources>
         <image name="bookmark" catalog="system" width="112" height="128"/>
-        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="circle" catalog="system" width="128" height="121"/>
         <image name="cloud.drizzle" catalog="system" width="128" height="125"/>
         <image name="cloud.sun.fill" catalog="system" width="128" height="93"/>
         <image name="doc.on.doc" catalog="system" width="116" height="128"/>
