@@ -13,92 +13,85 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LatestNewsCell" customModule="DogsList" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="494" height="487"/>
+            <rect key="frame" x="0.0" y="0.0" width="523" height="506"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="494" height="487"/>
+                <rect key="frame" x="0.0" y="0.0" width="523" height="506"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fc5-3p-D1i">
-                        <rect key="frame" x="0.0" y="0.0" width="494" height="321"/>
+                        <rect key="frame" x="0.0" y="0.0" width="523" height="80"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="fc5-3p-D1i" secondAttribute="height" multiplier="494:321" id="DsQ-s8-nUD"/>
+                            <constraint firstAttribute="height" constant="80" id="3D0-Zf-k6I"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="m98-Xl-2i8">
-                        <rect key="frame" x="0.0" y="326" width="494" height="161"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="O1c-cs-l9O">
+                        <rect key="frame" x="0.0" y="80" width="523" height="426"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="59g-MQ-t4Z">
-                                <rect key="frame" x="0.0" y="0.0" width="494" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SDY-T9-CK3">
+                                <rect key="frame" x="0.0" y="0.0" width="44.5" height="362"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rlr-gT-Tss">
-                                        <rect key="frame" x="0.0" y="0.0" width="494" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLF-TL-04w">
-                                                <rect key="frame" x="0.0" y="0.0" width="242" height="50"/>
-                                                <color key="tintColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="9"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cas-RD-LSS">
-                                                <rect key="frame" x="252" y="0.0" width="242" height="50"/>
-                                                <color key="tintColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="9"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhS-iI-gm7">
+                                        <rect key="frame" x="0.0" y="0.0" width="19" height="362"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="medium"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x5-I6-SkQ">
+                                        <rect key="frame" x="27" y="0.0" width="17.5" height="362"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="bookmark" catalog="system" symbolScale="medium"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rlr-gT-Tss">
+                                <rect key="frame" x="0.0" y="369" width="523" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLF-TL-04w">
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="50"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="9"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cas-RD-LSS">
+                                        <rect key="frame" x="245" y="0.0" width="278" height="50"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="9"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVz-uQ-sSL">
-                                <rect key="frame" x="0.0" y="55" width="494" height="106"/>
+                                <rect key="frame" x="0.0" y="426" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SDY-T9-CK3">
-                        <rect key="frame" x="436" y="5" width="53" height="22"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhS-iI-gm7">
-                                <rect key="frame" x="0.0" y="0.0" width="27.5" height="22"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="medium"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x5-I6-SkQ">
-                                <rect key="frame" x="35.5" y="0.0" width="17.5" height="22"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="bookmark" catalog="system" symbolScale="medium"/>
-                                </state>
-                            </button>
-                        </subviews>
-                    </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="SDY-T9-CK3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="2Tq-tA-nv5"/>
-                <constraint firstAttribute="bottom" secondItem="m98-Xl-2i8" secondAttribute="bottom" id="6Xn-Ub-bjH"/>
-                <constraint firstAttribute="trailing" secondItem="fc5-3p-D1i" secondAttribute="trailing" id="G29-JR-A4a"/>
-                <constraint firstItem="fc5-3p-D1i" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JaH-Xs-yvx"/>
-                <constraint firstItem="m98-Xl-2i8" firstAttribute="top" secondItem="fc5-3p-D1i" secondAttribute="bottom" constant="5" id="KHD-oZ-nUy"/>
-                <constraint firstItem="fc5-3p-D1i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Urg-Z7-r7e"/>
-                <constraint firstAttribute="trailing" secondItem="m98-Xl-2i8" secondAttribute="trailing" id="ZGR-Sd-C13"/>
-                <constraint firstAttribute="trailing" secondItem="SDY-T9-CK3" secondAttribute="trailing" constant="5" id="aUE-cc-uML"/>
-                <constraint firstItem="m98-Xl-2i8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lCK-E4-v9j"/>
+                <constraint firstItem="O1c-cs-l9O" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CfS-9T-gdb"/>
+                <constraint firstAttribute="trailing" secondItem="fc5-3p-D1i" secondAttribute="trailing" id="H59-aU-Oug"/>
+                <constraint firstAttribute="bottom" secondItem="O1c-cs-l9O" secondAttribute="bottom" id="Ht0-bB-awM"/>
+                <constraint firstAttribute="trailing" secondItem="O1c-cs-l9O" secondAttribute="trailing" id="IpG-n6-wYt"/>
+                <constraint firstItem="fc5-3p-D1i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="X0T-HI-He2"/>
+                <constraint firstItem="fc5-3p-D1i" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pHe-zh-050"/>
+                <constraint firstItem="O1c-cs-l9O" firstAttribute="top" secondItem="fc5-3p-D1i" secondAttribute="bottom" id="qWX-sq-X79"/>
             </constraints>
-            <size key="customSize" width="494" height="487"/>
+            <size key="customSize" width="523" height="506"/>
             <connections>
                 <outlet property="date" destination="cas-RD-LSS" id="eeS-Iz-MpY"/>
                 <outlet property="image" destination="fc5-3p-D1i" id="DMP-lq-XZ1"/>
                 <outlet property="source" destination="oLF-TL-04w" id="feY-zs-yIX"/>
                 <outlet property="title" destination="SVz-uQ-sSL" id="6P0-6M-5jR"/>
             </connections>
-            <point key="canvasLocation" x="266.66666666666669" y="288.28125"/>
+            <point key="canvasLocation" x="287.68115942028987" y="294.64285714285711"/>
         </collectionViewCell>
     </objects>
     <resources>

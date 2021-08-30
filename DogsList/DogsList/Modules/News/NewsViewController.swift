@@ -29,23 +29,27 @@ class NewsViewController: TabViewControllerTemplate {
     private let ten: CGFloat = 10.0
     
     private var newsManager = NewsManager()
+    var newsArray = [Article]()
     var newsCategory = UserDefaults.standard.string(forKey: "category") ?? ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startActivityIndicator()
-        update(category: newsCategory)
         
         configureDataSource()
+        view.endEditing(true)
+        
         configureCollectionView()
+        configureDataSource()
         
         navigationController?.navigationBar.backgroundColor = .white
         searchBar.searchTextField.textColor = .black
         
         newsManager.delegate = self
         searchBar.delegate = self
-    
+        
+        newsManager.fetchTopNews(category: self.newsCategory)
         hideKeyboardWhenTappedAround()
+        startActivityIndicator()
     }
     
     @IBAction func hamburgerMenu(_ sender: Any) {
@@ -153,6 +157,11 @@ class NewsViewController: TabViewControllerTemplate {
         dataSource?.supplementaryViewProvider = { collectionView, kind, indexPath in
             guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuserIdentifier, for: indexPath) as? SectionHeader else { return nil }
             
+            sectionHeader.sortButtonDidTapped = { [weak self] in
+                self?.newsArray.reverse()
+                self?.addSnapshot(news: self!.newsArray)
+            }
+            
             guard let sectionType = NewsSections(rawValue: indexPath.section) else { fatalError("unknown section kind") }
             
             switch sectionType {
@@ -160,6 +169,7 @@ class NewsViewController: TabViewControllerTemplate {
                 sectionHeader.title.text = "Top 5 news"
             case .second:
                 sectionHeader.title.text = "Latest news"
+                sectionHeader.sortButton.isHidden = true
             }
             return sectionHeader
             
@@ -169,19 +179,18 @@ class NewsViewController: TabViewControllerTemplate {
     func addSnapshot(news: [Article]) {
         var snapshot = NSDiffableDataSourceSnapshot<NewsSections, Article>()
         guard let dataSource = self.dataSource else { return }
-        
-        DispatchQueue.main.async {
-            snapshot.appendSections([.first, .second])
-            snapshot.appendItems(Array(news[0...4]),  toSection: .first)
-            snapshot.appendItems(Array(news[5..<news.count]),  toSection: .second)
-            dataSource.apply(snapshot, animatingDifferences: false)
-        }
+
+        snapshot.appendSections([.first, .second])
+        snapshot.appendItems(Array(news[0...4]),  toSection: .first)
+        snapshot.appendItems(Array(news[5..<news.count]),  toSection: .second)
+        dataSource.apply(snapshot, animatingDifferences: false)
+        self.stopActivityIndicator()
     }
     
     func alertGeenrate(alertTitle: String, alertMessage: String, actionTitle: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: actionTitle, style: .default) {(_: UIAlertAction!) in
-            self.viewDidLoad()})
+                            self.viewDidLoad()})
         present(alert, animated: true, completion: nil)
     }
 }
@@ -242,6 +251,7 @@ extension NewsViewController {
 // MARK: - NewsManagerDelegate
 
 extension NewsViewController: NewsManagerDelegate {
+
     func didFailWithResponce(response: HTTPURLResponse) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.alertGeenrate(alertTitle: "Failure!", alertMessage: "Response has status unacceptable code: \(response.statusCode)", actionTitle: "Try again")
@@ -256,7 +266,8 @@ extension NewsViewController: NewsManagerDelegate {
     }
     
     func didUpdateNews(_ newsManager: NewsManager, news: News) {
-        addSnapshot(news: news.articles)
+        newsArray = news.articles
+        addSnapshot(news: newsArray)
     }
     
     func didFailWithError(error: Error) {
@@ -285,13 +296,12 @@ extension NewsViewController: NewsManagerDelegate {
 // MARK: - NewsViewControllerDelegate
 
 extension NewsViewController: NewsViewControllerDelegate {
-    func update(category: String) {
-        DispatchQueue.main.async {
-            self.newsCategory = category
-            self.newsManager.fetchTopNews(category: self.newsCategory)
-        }
-    }
     
+    func update(category: String) {
+        newsCategory = category
+        newsManager.fetchTopNews(category: newsCategory)
+    }
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? FilterViewController else { return }
         destination.delegate = self

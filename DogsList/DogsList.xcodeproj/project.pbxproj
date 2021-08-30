@@ -33,6 +33,7 @@
 		D43507BF26C3B464009C9B04 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507BD26C3B464009C9B04 /* ForecastCell.swift */; };
 		D43507C026C3B464009C9B04 /* ForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43507BE26C3B464009C9B04 /* ForecastCell.xib */; };
 		D43E8A1126D614CD00345AF8 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E8A1026D614CD00345AF8 /* FilterViewController.swift */; };
+		D43E8A3826D8BD0D00345AF8 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E8A3726D8BD0C00345AF8 /* Utilities.swift */; };
 		D4429B3626A1C264000B5DD2 /* AnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */; };
 		D4429B3B26A4B091000B5DD2 /* AnimalTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */; };
 		D4429B3C26A4B091000B5DD2 /* AnimalTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B3A26A4B091000B5DD2 /* AnimalTopCell.xib */; };
@@ -98,6 +99,7 @@
 		D43507BD26C3B464009C9B04 /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
 		D43507BE26C3B464009C9B04 /* ForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastCell.xib; sourceTree = "<group>"; };
 		D43E8A1026D614CD00345AF8 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		D43E8A3726D8BD0C00345AF8 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
 		D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTopCell.swift; sourceTree = "<group>"; };
 		D4429B3A26A4B091000B5DD2 /* AnimalTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalTopCell.xib; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				D40ED44926CF9C390010ED6B /* Model */,
 				D40ED3E726CCF3D60010ED6B /* SectionHeader.swift */,
 				D40ED40026CD2AAA0010ED6B /* NewsDetailViewController.swift */,
+				D43E8A3726D8BD0C00345AF8 /* Utilities.swift */,
 				D43E8A1026D614CD00345AF8 /* FilterViewController.swift */,
 			);
 			path = News;
@@ -629,6 +632,7 @@
 				D40ED3E926CCF3D60010ED6B /* TopNewsCell.swift in Sources */,
 				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,
 				D4ACA39426A5DED800607750 /* AnimalManager.swift in Sources */,
+				D43E8A3826D8BD0D00345AF8 /* Utilities.swift in Sources */,
 				D415722826BA972D009507D2 /* WeatherData.swift in Sources */,
 				D4429B6426A5673C000B5DD2 /* BreedImageViewController.swift in Sources */,
 				D4429B5526A556D4000B5DD2 /* BreedDetailController.swift in Sources */,

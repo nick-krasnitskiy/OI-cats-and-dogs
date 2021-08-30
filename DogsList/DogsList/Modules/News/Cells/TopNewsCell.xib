@@ -41,7 +41,6 @@
                         <rect key="frame" x="269" y="10" width="20" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="SWD-mN-q1Z"/>
-                            <constraint firstAttribute="width" constant="20" id="TKv-Ps-eZD"/>
                         </constraints>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" image="bookmark" catalog="system"/>

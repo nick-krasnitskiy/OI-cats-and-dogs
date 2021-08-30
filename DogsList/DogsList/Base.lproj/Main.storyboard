@@ -588,7 +588,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="peR-FO-4ZF">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="peR-FO-4ZF">
                                 <rect key="frame" x="0.0" y="415" width="414" height="447"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6HD-Eh-UgX">

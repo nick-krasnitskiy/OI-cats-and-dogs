@@ -5,7 +5,7 @@
 //  Created by Nick Krasnitskiy on 20.08.2021.
 //
 
-import Foundation
+import UIKit
 
 protocol NewsManagerDelegate: AnyObject {
     func didUpdateNews(_ newsManager: NewsManager, news: News)
@@ -51,6 +51,7 @@ struct NewsManager {
         let session = URLSession(configuration: .default)
 
         let task = session.dataTask(with: url) { (data, response, error) in
+            DispatchQueue.main.async {
             if let error = error {
                 self.delegate?.didFailWithError(error: error)
                 return
@@ -59,9 +60,8 @@ struct NewsManager {
                     switch httpResponse.statusCode {
                     case 200:
                         if let safeData = data {
-                            if let topNews = self.parseJSONForTopNews(safeData) {
-                                self.delegate?.didUpdateNews(self, news: topNews)
-                                self.delegate?.stopActivityIndicator()
+                            if let news = self.parseJSONForTopNews(safeData) {
+                                self.delegate?.didUpdateNews(self, news: news)
                             }
                         }
                     case nil:
@@ -74,6 +74,7 @@ struct NewsManager {
                 }
             }
         }
+        }
         task.resume()
     }
     
@@ -82,8 +83,8 @@ struct NewsManager {
         do {
             let decodedData = try decoder.decode(News.self, from: newsData)
             
-            let topNews = News(status: decodedData.status, totalResults: decodedData.totalResults, articles: decodedData.articles)
-            return topNews
+            let news = News(status: decodedData.status, totalResults: decodedData.totalResults, articles: decodedData.articles)
+            return news
             
         } catch {
             delegate?.didFailWithError(error: error)

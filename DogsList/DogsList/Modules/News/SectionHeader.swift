@@ -15,6 +15,8 @@ class SectionHeader: UICollectionReusableView {
     let title = UILabel()
     let sortButton = UIButton()
     
+    var sortButtonDidTapped: (() -> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         customizeElements()
@@ -33,9 +35,26 @@ class SectionHeader: UICollectionReusableView {
         title.font = UIFont.boldSystemFont(ofSize: 25)
         
         let largeConfig = UIImage.SymbolConfiguration(scale: .medium)
-        let infoImage = UIImage(systemName: "arrow.up.arrow.down", withConfiguration: largeConfig)?.withTintColor(#colorLiteral(red: 0.1443712413, green: 0.2595478296, blue: 0.2738721073, alpha: 1), renderingMode: .alwaysOriginal)
+        
+        let infoImage = UIImage(systemName: "arrow.down", withConfiguration: largeConfig)?.withTintColor(#colorLiteral(red: 0.1443712413, green: 0.2595478296, blue: 0.2738721073, alpha: 1), renderingMode: .alwaysOriginal)
         sortButton.setImage(infoImage, for: .normal)
-   
+        
+        let infoImageTwo = UIImage(systemName: "arrow.up", withConfiguration: largeConfig)?.withTintColor(#colorLiteral(red: 0.1443712413, green: 0.2595478296, blue: 0.2738721073, alpha: 1), renderingMode: .alwaysOriginal)
+        sortButton.setImage(infoImageTwo, for: .selected)
+        
+        sortButton.addAction(UIAction(handler: { [unowned self] (_) in
+            self.sortButtonDidTapped?()
+            
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+                self.sortButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            }) { (_) in
+                self.sortButton.isSelected = !sortButton.isSelected
+                UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+                    self.sortButton.transform = .identity
+                }, completion: nil)
+            }
+        }), for: .touchUpInside)
+        
         stackView.addArrangedSubview(title)
         stackView.addArrangedSubview(sortButton)
     }
