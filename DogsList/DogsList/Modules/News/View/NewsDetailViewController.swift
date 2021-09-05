@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import SDWebImage
 
 class NewsDetailViewController: UIViewController {
     
@@ -28,10 +29,8 @@ class NewsDetailViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .white
         
         guard let url = URL(string: imageName) else { return }
-        guard let data = try? Data(contentsOf: url) else { return }
-        guard let realImage = UIImage(data: data) else { return }
+        image.sd_setImage(with: url)
         
-        self.image.image = realImage
         self.header.text = headerNews
         self.source.text = sourceNews
         self.date.text = self.dateConvert(dateString: dateNews)

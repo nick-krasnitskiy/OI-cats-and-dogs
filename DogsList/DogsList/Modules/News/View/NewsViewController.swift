@@ -251,22 +251,9 @@ extension NewsViewController {
 // MARK: - NewsManagerDelegate
 
 extension NewsViewController: NewsManagerDelegate {
-
-    func didFailWithResponce(response: HTTPURLResponse) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.alertGeenrate(alertTitle: "Failure!", alertMessage: "Response has status unacceptable code: \(response.statusCode)", actionTitle: "Try again")
-            
-        }
-    }
     
-    func notResponce() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.alertGeenrate(alertTitle: "Failure!", alertMessage: "Data not received due to network connection", actionTitle: "Try again")
-        }
-    }
-    
-    func didUpdateNews(_ newsManager: NewsManager, news: News) {
-        newsArray = news.articles
+    func didUpdateNews(_ newsManager: NewsManager, news: [Article]) {
+        newsArray = news
         addSnapshot(news: newsArray)
     }
     

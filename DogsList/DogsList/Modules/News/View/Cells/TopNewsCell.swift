@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class TopNewsCell: UICollectionViewCell {
     
@@ -24,7 +25,8 @@ class TopNewsCell: UICollectionViewCell {
         guard let urlString = news.urlToImage else { return }
         guard let url = URL(string: urlString) else { return }
         
-        image.load(url: url)
+        image.sd_setImage(with: url)
+        
         source.text = news.source.name
         date.text = date.dateConvert(dateString: news.publishedAt)
         title.text = news.title

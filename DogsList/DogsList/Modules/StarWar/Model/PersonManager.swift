@@ -32,7 +32,7 @@ struct PersonManager {
         
             let task = session.dataTask(with: url) { (data, response, error) in
                 if let error = error {
-                     self.delegate?.didFailWithError(error: error)
+                    // self.delegate?.didFailWithError(error: error)
                     return
                 } else {
                     if let httpResponse = response as? HTTPURLResponse {
@@ -45,10 +45,10 @@ struct PersonManager {
                             }
                         case nil:
                             print("Nil")
-                             self.delegate?.notResponce()
+                            //self.delegate?.notResponce()
                         default:
                             print("Default")
-                             self.delegate?.didFailWithResponce(response: httpResponse)
+                             //self.delegate?.didFailWithResponce(response: httpResponse)
                         }
                     }
                 }

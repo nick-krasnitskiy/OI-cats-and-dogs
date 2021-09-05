@@ -6,17 +6,18 @@
 //
 
 import UIKit
+import CoreData
 
 protocol NewsManagerDelegate: AnyObject {
-    func didUpdateNews(_ newsManager: NewsManager, news: News)
+    func didUpdateNews(_ newsManager: NewsManager, news: [Article])
     func didFailWithError(error: Error)
     func startActivityIndicator()
     func stopActivityIndicator()
-    func didFailWithResponce(response: HTTPURLResponse)
-    func notResponce()
 }
 
 private let apiNewsKey = "97ac8d9db2c64e82995a456fca6f29f6"
+private let dataModel = CoreDataModel()
+private var articles = [Article]()
 
 enum NewsEndpoint {
     case searchEndPoint(keyWord: String)
@@ -49,31 +50,27 @@ struct NewsManager {
     func performRequestForTopNews(with url: URL) {
         
         let session = URLSession(configuration: .default)
-
-        let task = session.dataTask(with: url) { (data, response, error) in
+        
+        let task = session.dataTask(with: url) { (data, _, error) in
             DispatchQueue.main.async {
-            if let error = error {
-                self.delegate?.didFailWithError(error: error)
-                return
-            } else {
-                if let httpResponse = response as? HTTPURLResponse {
-                    switch httpResponse.statusCode {
-                    case 200:
-                        if let safeData = data {
-                            if let news = self.parseJSONForTopNews(safeData) {
-                                self.delegate?.didUpdateNews(self, news: news)
+                if error != nil {
+                    articles = dataModel.getDataFromCD()
+                    self.delegate?.didUpdateNews(self, news: articles)
+                    return
+                } else {
+                    if let safeData = data {
+                        if let news = self.parseJSONForTopNews(safeData) {
+                            dataModel.deleteAllData()
+                            self.delegate?.didUpdateNews(self, news: news.articles)
+                            news.articles.forEach {
+                                let source = Source(id: $0.source.id, name: $0.source.name)
+                                let article = Article(source: source, title: $0.title, url: $0.url, urlToImage: $0.urlToImage, publishedAt: $0.publishedAt, content: $0.content)
+                                dataModel.saveData(with: article)
                             }
                         }
-                    case nil:
-                        self.delegate?.notResponce()
-                        self.delegate?.stopActivityIndicator()
-                    default:
-                        self.delegate?.didFailWithResponce(response: httpResponse)
-                        self.delegate?.stopActivityIndicator()
                     }
                 }
             }
-        }
         }
         task.resume()
     }
@@ -82,7 +79,6 @@ struct NewsManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(News.self, from: newsData)
-            
             let news = News(status: decodedData.status, totalResults: decodedData.totalResults, articles: decodedData.articles)
             return news
             

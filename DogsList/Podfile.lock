@@ -1,20 +1,26 @@
 PODS:
   - Alamofire (5.4.3)
   - ImageScrollView (1.9.3)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - ImageScrollView
+  - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - ImageScrollView
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   ImageScrollView: d3ce8371e0d44299b2b638410db45387e18aa83f
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: b1bbaf869ed195538589303d9de9469b1dbf4bf2
+PODFILE CHECKSUM: aa87e4a8f6a362ae4ca451957ea58af94890d3e4
 
 COCOAPODS: 1.10.2
