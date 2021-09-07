@@ -31,4 +31,5 @@ class TopNewsCell: UICollectionViewCell {
         date.text = date.dateConvert(dateString: news.publishedAt)
         title.text = news.title
     }
+    
 }

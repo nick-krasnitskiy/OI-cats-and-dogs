@@ -3,9 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,39 +23,20 @@
                             <constraint firstAttribute="height" constant="80" id="3D0-Zf-k6I"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="O1c-cs-l9O">
-                        <rect key="frame" x="0.0" y="80" width="523" height="426"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="O1c-cs-l9O">
+                        <rect key="frame" x="0.0" y="90" width="523" height="416"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SDY-T9-CK3">
-                                <rect key="frame" x="0.0" y="0.0" width="44.5" height="362"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhS-iI-gm7">
-                                        <rect key="frame" x="0.0" y="0.0" width="19" height="362"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal">
-                                            <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="medium"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x5-I6-SkQ">
-                                        <rect key="frame" x="27" y="0.0" width="17.5" height="362"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal">
-                                            <imageReference key="image" image="bookmark" catalog="system" symbolScale="medium"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rlr-gT-Tss">
-                                <rect key="frame" x="0.0" y="369" width="523" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rlr-gT-Tss">
+                                <rect key="frame" x="0.0" y="0.0" width="523" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLF-TL-04w">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="256.5" height="50"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="9"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cas-RD-LSS">
-                                        <rect key="frame" x="245" y="0.0" width="278" height="50"/>
+                                        <rect key="frame" x="266.5" y="0.0" width="256.5" height="50"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="9"/>
                                         <nil key="highlightedColor"/>
@@ -65,7 +44,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVz-uQ-sSL">
-                                <rect key="frame" x="0.0" y="426" width="0.0" height="0.0"/>
+                                <rect key="frame" x="0.0" y="60" width="0.0" height="356"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -82,7 +61,7 @@
                 <constraint firstAttribute="trailing" secondItem="O1c-cs-l9O" secondAttribute="trailing" id="IpG-n6-wYt"/>
                 <constraint firstItem="fc5-3p-D1i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="X0T-HI-He2"/>
                 <constraint firstItem="fc5-3p-D1i" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pHe-zh-050"/>
-                <constraint firstItem="O1c-cs-l9O" firstAttribute="top" secondItem="fc5-3p-D1i" secondAttribute="bottom" id="qWX-sq-X79"/>
+                <constraint firstItem="O1c-cs-l9O" firstAttribute="top" secondItem="fc5-3p-D1i" secondAttribute="bottom" constant="10" id="qWX-sq-X79"/>
             </constraints>
             <size key="customSize" width="523" height="506"/>
             <connections>
@@ -95,8 +74,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="bookmark" catalog="system" width="112" height="128"/>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

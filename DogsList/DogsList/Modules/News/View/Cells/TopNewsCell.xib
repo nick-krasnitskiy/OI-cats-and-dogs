@@ -37,40 +37,21 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFY-Oo-lTx">
-                        <rect key="frame" x="269" y="10" width="20" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="16" id="SWD-mN-q1Z"/>
-                        </constraints>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" image="bookmark" catalog="system"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuJ-MJ-uhU">
-                        <rect key="frame" x="245" y="5" width="19" height="22"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" image="square.and.arrow.up" catalog="system"/>
-                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="LdW-TR-0sG" firstAttribute="leading" secondItem="bdf-g6-PkZ" secondAttribute="trailing" constant="20" id="5zS-Hx-eHe"/>
-                <constraint firstAttribute="trailing" secondItem="lFY-Oo-lTx" secondAttribute="trailing" constant="10" id="BNj-8a-Cg4"/>
-                <constraint firstItem="QuJ-MJ-uhU" firstAttribute="width" secondItem="lFY-Oo-lTx" secondAttribute="width" multiplier="0.95" id="DAg-Rh-YqK"/>
                 <constraint firstItem="id0-oQ-Yf5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="203" id="DPW-MT-qng"/>
                 <constraint firstItem="id0-oQ-Yf5" firstAttribute="top" secondItem="bdf-g6-PkZ" secondAttribute="bottom" constant="5" id="EZB-PI-hWS"/>
                 <constraint firstItem="bdf-g6-PkZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="JBe-WZ-Tqs"/>
-                <constraint firstItem="QuJ-MJ-uhU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="MBx-Vm-yzn"/>
                 <constraint firstAttribute="bottom" secondItem="id0-oQ-Yf5" secondAttribute="bottom" constant="10" id="PYV-tr-734"/>
                 <constraint firstAttribute="trailing" secondItem="id0-oQ-Yf5" secondAttribute="trailing" constant="10" id="SXo-Dr-Xu4"/>
-                <constraint firstItem="lFY-Oo-lTx" firstAttribute="leading" secondItem="QuJ-MJ-uhU" secondAttribute="trailing" constant="5" id="VMn-r0-zgr"/>
                 <constraint firstItem="ur3-8l-G21" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wlg-zM-02v"/>
                 <constraint firstItem="id0-oQ-Yf5" firstAttribute="top" secondItem="LdW-TR-0sG" secondAttribute="bottom" constant="5" id="WmR-12-4zU"/>
                 <constraint firstAttribute="trailing" secondItem="ur3-8l-G21" secondAttribute="trailing" id="XD6-TS-IZL"/>
                 <constraint firstItem="id0-oQ-Yf5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="XoL-iX-e2w"/>
-                <constraint firstItem="lFY-Oo-lTx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Z9W-MD-asf"/>
                 <constraint firstAttribute="bottom" secondItem="ur3-8l-G21" secondAttribute="bottom" id="dAR-xh-68v"/>
-                <constraint firstItem="QuJ-MJ-uhU" firstAttribute="height" secondItem="lFY-Oo-lTx" secondAttribute="height" multiplier="1.375" id="ioG-V8-iXk"/>
                 <constraint firstItem="ur3-8l-G21" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jTV-cS-LI8"/>
             </constraints>
             <size key="customSize" width="299" height="266"/>
@@ -83,8 +64,4 @@
             <point key="canvasLocation" x="92.028985507246389" y="158.70535714285714"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="bookmark" catalog="system" width="112" height="128"/>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-    </resources>
 </document>

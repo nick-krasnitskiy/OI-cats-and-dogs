@@ -57,4 +57,10 @@ class NewsDetailViewController: UIViewController {
         present(vc, animated: true)
     }
     
+    @IBAction func shareButtonPressed(_ sender: UIButton) {
+        
+        let activityViewContoller = UIActivityViewController(activityItems: [self.textView.text], applicationActivities: nil)
+        activityViewContoller.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewContoller, animated: true, completion: nil)
+    }
 }
