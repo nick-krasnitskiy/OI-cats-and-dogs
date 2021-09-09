@@ -20,6 +20,7 @@ class NewsViewController: TabViewControllerTemplate {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var searchBar: UISearchBar!
+    private var viewModel: CollectionViewViewModel?
     
     private var dataSource: UICollectionViewDiffableDataSource<NewsSections, Article>?
     private let indicator = UIActivityIndicatorView(style: .medium)
@@ -29,13 +30,13 @@ class NewsViewController: TabViewControllerTemplate {
     private let ten: CGFloat = 10.0
     
     private var newsManager = NewsManager()
+    
     var newsArray = [Article]()
     var newsCategory = UserDefaults.standard.string(forKey: "category") ?? ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureDataSource()
+    
         view.endEditing(true)
         
         configureCollectionView()
@@ -46,8 +47,10 @@ class NewsViewController: TabViewControllerTemplate {
         
         newsManager.delegate = self
         searchBar.delegate = self
-        
+    
+        viewModel = CollectionViewViewModel()
         newsManager.fetchTopNews(category: self.newsCategory)
+
         hideKeyboardWhenTappedAround()
         startActivityIndicator()
     }
@@ -138,18 +141,20 @@ class NewsViewController: TabViewControllerTemplate {
     
     private func configureDataSource() {
         
-        dataSource = UICollectionViewDiffableDataSource<NewsSections, Article>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, news) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<NewsSections, Article>(collectionView: collectionView, cellProvider: {(collectionView, indexPath, article) -> UICollectionViewCell? in
             
             guard let sectionKind = NewsSections(rawValue: indexPath.section) else { return nil }
             
             switch sectionKind {
             case .first:
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopNewsCell", for: indexPath) as? TopNewsCell else { fatalError("Cannot create the cell") }
-                cell.configure(news: news)
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopNewsCell", for: indexPath) as? TopNewsCell, let viewModel = self.viewModel else { fatalError("cell wasn't configured")}
+                let cellViewModel = viewModel.cellViewModel(article: article)
+                cell.viewModel = cellViewModel
                 return cell
             case .second:
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LatestNewsCell", for: indexPath) as? LatestNewsCell else { fatalError("Cannot create the cell") }
-                cell.configure(news: news)
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LatestNewsCell", for: indexPath) as? LatestNewsCell, let viewModel = self.viewModel else { fatalError("cell wasn't configured")}
+                let cellViewModel = viewModel.cellViewModel(article: article)
+                cell.viewModel = cellViewModel
                 return cell
             }
         })
@@ -206,20 +211,10 @@ extension NewsViewController: UICollectionViewDelegate {
         }
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        guard let newsDetailViewController = storyBoard.instantiateViewController(withIdentifier: "NewsDetailVC") as? NewsDetailViewController else { return }
+        guard let detailVC = storyBoard.instantiateViewController(withIdentifier: "NewsDetailVC") as? NewsDetailViewController, let viewModel = viewModel else { fatalError("DetailVC wasn't configured") }
         
-        newsDetailViewController.headerNews = new.title
-        newsDetailViewController.dateNews = new.publishedAt
-        newsDetailViewController.sourceNews = new.source.name
-        newsDetailViewController.urlString = new.url
-        
-        guard let image = new.urlToImage else { return }
-        guard let content = new.content else { return }
-        
-        newsDetailViewController.imageName = image
-        newsDetailViewController.textNews = content
-        
-        self.navigationController?.pushViewController(newsDetailViewController, animated: true)
+        detailVC.viewModel = viewModel.viewModelForSelectedRow(article: new)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
@@ -229,7 +224,8 @@ extension NewsViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text, !text.isEmpty {
-            newsManager.fetchSearchNews(ketWord: text)
+            
+            newsManager.fetchSearchNews(keyWord: text)
         }
         searchBar.resignFirstResponder()
     }

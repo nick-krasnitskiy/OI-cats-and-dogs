@@ -17,19 +17,26 @@ class TopNewsCell: UICollectionViewCell {
     @IBOutlet private weak var date: UILabel!
     @IBOutlet private weak var title: UILabel!
     
+    weak var viewModel: CollectionViewCellViewModelType? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else { return }
+            setup(header: viewModel.title, publisher: viewModel.source, urlToImage: viewModel.urlToImage, publishedAt: viewModel.publishedAt)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func configure(news: Article) {
-        guard let urlString = news.urlToImage else { return }
+    private func setup(header: String, publisher: String, urlToImage: String?, publishedAt: String) {
+        
+        guard let urlString = urlToImage else { return }
         guard let url = URL(string: urlString) else { return }
         
         image.sd_setImage(with: url)
         
-        source.text = news.source.name
-        date.text = date.dateConvert(dateString: news.publishedAt)
-        title.text = news.title
+        source.text = publisher
+        date.text = publishedAt.dateConvert(dateString: publishedAt)
+        title.text = header
     }
-    
 }

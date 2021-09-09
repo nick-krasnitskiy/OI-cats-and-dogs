@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UILabel {
+extension String {
     func dateConvert(dateString: String) -> String {
         let dateFormatter = DateFormatter()
         
@@ -18,6 +18,5 @@ extension UILabel {
         
         dateFormatter.dateFormat = "MMM d"
         return dateFormatter.string(from: localDate)
-        
     }
 }
