@@ -18,7 +18,7 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet private weak var textView: UITextView!
     
     var viewModel: DetailViewModelType?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = .white
@@ -58,8 +58,13 @@ class NewsDetailViewController: UIViewController {
     
     @IBAction func shareButtonPressed(_ sender: UIButton) {
         
-        let activityViewContoller = UIActivityViewController(activityItems: [self.textView.text], applicationActivities: nil)
-        activityViewContoller.popoverPresentationController?.sourceView = self.view
-        self.present(activityViewContoller, animated: true, completion: nil)
+        if let viewModel = viewModel {
+            let activityViewController = UIActivityViewController(activityItems: [viewModel.title, viewModel.content, viewModel.url], applicationActivities: nil)
+            
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            activityViewController.isModalInPresentation = true
+            self.present(activityViewController, animated: true, completion: nil)
+        }
     }
+    
 }
