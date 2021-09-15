@@ -30,9 +30,8 @@ class SectionHeader: UICollectionReusableView {
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        title.textColor = #colorLiteral(red: 0.1443712413, green: 0.2595478296, blue: 0.2738721073, alpha: 1)
-        title.font = UIFont(name: "Hiragino Sans", size: 25)
-        title.font = UIFont.boldSystemFont(ofSize: 25)
+        title.textColor = K.Colors.sectionHeaderColor
+        title.font = K.Fonts.sectionTitleFont
         
         let largeConfig = UIImage.SymbolConfiguration(scale: .medium)
         
@@ -45,14 +44,13 @@ class SectionHeader: UICollectionReusableView {
         sortButton.addAction(UIAction(handler: { [unowned self] (_) in
             self.sortButtonDidTapped?()
             
-            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
-                self.sortButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-            }) { (_) in
+            UIView.animate(withDuration: K.Animation.duration, delay: K.Animation.delay, options: .curveLinear, animations: {
+                self.sortButton.transform = CGAffineTransform(scaleX: K.Animation.transformSort, y: K.Animation.transformSort)
                 self.sortButton.isSelected = !sortButton.isSelected
-                UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+                UIView.animate(withDuration: K.Animation.duration, delay: K.Animation.delay, options: .curveLinear, animations: {
                     self.sortButton.transform = .identity
                 }, completion: nil)
-            }
+            })
         }), for: .touchUpInside)
         
         stackView.addArrangedSubview(title)

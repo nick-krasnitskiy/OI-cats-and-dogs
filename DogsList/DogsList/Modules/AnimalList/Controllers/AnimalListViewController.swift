@@ -200,11 +200,9 @@ extension AnimalListViewController: UICollectionViewDelegate {
             return
         }
         
-        for object in images {
-            if breed == object.breed {
-                let breedDetailViewController = BreedDetailController(with: object)
-                self.navigationController?.pushViewController(breedDetailViewController, animated: true)
-            }
+        for object in images where breed == object.breed {
+            let breedDetailViewController = BreedDetailController(with: object)
+            self.navigationController?.pushViewController(breedDetailViewController, animated: true)
         }
     }
 }

@@ -24,11 +24,7 @@ class NewsViewController: TabViewControllerTemplate {
     
     private var dataSource: UICollectionViewDiffableDataSource<NewsSections, Article>?
     private let indicator = UIActivityIndicatorView(style: .medium)
-    
-    private let size: CGFloat = 1.0
-    private let null: CGFloat = 0.0
-    private let ten: CGFloat = 10.0
-    
+
     private var newsManager = NewsManager()
     
     var newsArray = [Article]()
@@ -91,18 +87,18 @@ class NewsViewController: TabViewControllerTemplate {
     }
     
     func createTopNewsSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(size),
-                                              heightDimension: .fractionalHeight(size))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.LayoutDimensions.standartDimension),
+                                              heightDimension: .fractionalHeight(K.LayoutDimensions.standartDimension))
         let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-        layoutItem.contentInsets = NSDirectionalEdgeInsets.init(top: null, leading: null, bottom: ten, trailing: 4*ten)
+        layoutItem.contentInsets = NSDirectionalEdgeInsets.init(top: K.LayoutDimensions.nullDimension, leading: K.LayoutDimensions.nullDimension, bottom: K.LayoutDimensions.tenDimension, trailing: K.LayoutDimensions.fortyDimension)
         
-        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(size),
-                                                     heightDimension: .fractionalHeight(size/2))
+        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.LayoutDimensions.standartDimension),
+                                                     heightDimension: .fractionalHeight(K.LayoutDimensions.halfDimension))
         let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
         
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
         layoutSection.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-        layoutSection.contentInsets = NSDirectionalEdgeInsets.init(top: ten, leading: 2*ten, bottom: 2*ten, trailing: 2*ten)
+        layoutSection.contentInsets = NSDirectionalEdgeInsets.init(top: K.LayoutDimensions.tenDimension, leading: K.LayoutDimensions.twentyDimension, bottom: K.LayoutDimensions.twentyDimension, trailing: K.LayoutDimensions.twentyDimension)
         
         let header = createSectionHeader()
         layoutSection.boundarySupplementaryItems = [header]
@@ -112,20 +108,20 @@ class NewsViewController: TabViewControllerTemplate {
     
     func createLatesNewsSection() -> NSCollectionLayoutSection {
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(size),
-                                              heightDimension: .fractionalHeight(size))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.LayoutDimensions.standartDimension),
+                                              heightDimension: .fractionalHeight(K.LayoutDimensions.standartDimension))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets.init(top: null, leading: null, bottom: null, trailing: null)
+        item.contentInsets = NSDirectionalEdgeInsets.init(top: K.LayoutDimensions.nullDimension, leading: K.LayoutDimensions.nullDimension, bottom: K.LayoutDimensions.nullDimension, trailing: K.LayoutDimensions.nullDimension)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(size),
-                                               heightDimension: .fractionalWidth(size/2))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.LayoutDimensions.standartDimension),
+                                               heightDimension: .fractionalWidth(K.LayoutDimensions.halfDimension))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
-        let spacing = CGFloat(2*ten)
+        let spacing = K.LayoutDimensions.twentyDimension
         group.interItemSpacing = .fixed(spacing)
         
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = spacing
-        section.contentInsets = NSDirectionalEdgeInsets(top: ten, leading: 2*ten, bottom: ten, trailing: 2*ten)
+        section.contentInsets = NSDirectionalEdgeInsets(top: K.LayoutDimensions.tenDimension, leading: K.LayoutDimensions.twentyDimension, bottom: K.LayoutDimensions.tenDimension, trailing: K.LayoutDimensions.twentyDimension)
         
         let header = createSectionHeader()
         section.boundarySupplementaryItems = [header]
@@ -134,7 +130,7 @@ class NewsViewController: TabViewControllerTemplate {
     }
     
     func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
-        let layoutSectionHEaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(size), heightDimension: .estimated(1))
+        let layoutSectionHEaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.LayoutDimensions.standartDimension), heightDimension: .estimated(K.LayoutDimensions.standartDimension))
         let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHEaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         return layoutSectionHeader
     }
@@ -259,7 +255,7 @@ extension NewsViewController: NewsManagerDelegate {
     
     func startActivityIndicator() {
         indicator.center = self.view.center
-        indicator.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        indicator.color = K.Colors.indicatorColor
         indicator.startAnimating()
         view.addSubview(indicator)
         collectionView.isHidden = true

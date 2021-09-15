@@ -29,7 +29,7 @@ struct DogManager {
         
             let task = session.dataTask(with: url) { (data, response, error) in
                 if let error = error {
-                    //self.delegate?.didFailWithError(error: error)
+                    self.delegate?.didFailWithError(error: error)
                     return
                 } else {
                     if let httpResponse = response as? HTTPURLResponse {
@@ -42,10 +42,10 @@ struct DogManager {
                                 }
                             }
                         case nil:
-                            //self.delegate?.notResponce()
+                            self.delegate?.notResponce()
                             self.delegate?.stopActivityIndicator()
                         default:
-                            //self.delegate?.didFailWithResponce(response: httpResponse)
+                            self.delegate?.didFailWithResponce(response: httpResponse)
                             self.delegate?.stopActivityIndicator()
                         }
                     }

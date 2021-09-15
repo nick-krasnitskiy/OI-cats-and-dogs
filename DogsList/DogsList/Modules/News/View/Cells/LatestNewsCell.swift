@@ -36,7 +36,7 @@ class LatestNewsCell: UICollectionViewCell {
         image.sd_setImage(with: url)
         
         source.text = publisher
-        date.text = publishedAt.dateConvert(dateString: publishedAt)
+        date.text = DateConvert.shared.getDate(date: publishedAt)
         title.text = header
     }
 }

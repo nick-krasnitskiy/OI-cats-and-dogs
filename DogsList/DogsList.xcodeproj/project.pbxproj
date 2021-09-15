@@ -66,6 +66,7 @@
 		D44914712692F32C002EBF46 /* MiddleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D449146F2692F32C002EBF46 /* MiddleCell.xib */; };
 		D44914752692F35D002EBF46 /* BottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44914732692F35D002EBF46 /* BottomCell.swift */; };
 		D44914762692F35D002EBF46 /* BottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44914742692F35D002EBF46 /* BottomCell.xib */; };
+		D466DFCE26F1E9A000FE046F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466DFCD26F1E99F00FE046F /* Constants.swift */; };
 		D48B5BA42694582100CF6EDB /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BA32694582100CF6EDB /* Dog.swift */; };
 		D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */; };
 		D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */; };
@@ -156,6 +157,7 @@
 		D449146F2692F32C002EBF46 /* MiddleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiddleCell.xib; sourceTree = "<group>"; };
 		D44914732692F35D002EBF46 /* BottomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCell.swift; sourceTree = "<group>"; };
 		D44914742692F35D002EBF46 /* BottomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomCell.xib; sourceTree = "<group>"; };
+		D466DFCD26F1E99F00FE046F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D48B5BA32694582100CF6EDB /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogManager.swift; sourceTree = "<group>"; };
 		D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStarWarViewController.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				D40ED40F26CD6E6B0010ED6B /* SlideMenu */,
 				D415720426BA5735009507D2 /* Modules */,
 				D4491438268D9132002EBF46 /* Assets.xcassets */,
+				D466DFCD26F1E99F00FE046F /* Constants.swift */,
 				D4491435268D912E002EBF46 /* Main.storyboard */,
 				D449143A268D9132002EBF46 /* LaunchScreen.storyboard */,
 				D449143D268D9132002EBF46 /* Info.plist */,
@@ -740,6 +743,7 @@
 				D40ED3ED26CCF3D60010ED6B /* SectionHeader.swift in Sources */,
 				D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */,
 				D415722B26BA97B1009507D2 /* WeatherModel.swift in Sources */,
+				D466DFCE26F1E9A000FE046F /* Constants.swift in Sources */,
 				D40ED41C26CD7CBD0010ED6B /* TabViewControllerTemplate.swift in Sources */,
 				D4429B5A26A55F8C000B5DD2 /* DetailAnimalCell.swift in Sources */,
 				D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */,

@@ -19,14 +19,13 @@ class FilterViewController: UITableViewController {
 
     @IBAction func checkBoxTapped(_ sender: UIButton) {
         
-        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
-            sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        }) { (_) in
+        UIView.animate(withDuration: K.Animation.duration, delay: K.Animation.delay, options: .curveLinear, animations: {
+            sender.transform = CGAffineTransform(scaleX: K.Animation.transformCheck, y: K.Animation.transformCheck)
             sender.isSelected = !sender.isSelected
-            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+            UIView.animate(withDuration: K.Animation.duration, delay: K.Animation.delay, options: .curveLinear, animations: {
                 sender.transform = .identity
             }, completion: nil)
-        }
+        })
         
         switch sender.tag {
         case 1:

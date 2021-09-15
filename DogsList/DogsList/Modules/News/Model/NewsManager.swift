@@ -62,9 +62,9 @@ struct NewsManager {
                         if let news = self.parseJSONForTopNews(safeData) {
                             dataModel.deleteAllData()
                             self.delegate?.didUpdateNews(self, news: news.articles)
-                            news.articles.forEach {
-                                let source = Source(id: $0.source.id, name: $0.source.name)
-                                let article = Article(source: source, title: $0.title, url: $0.url, urlToImage: $0.urlToImage, publishedAt: $0.publishedAt, content: $0.content)
+                            for article in news.articles {
+                                let source = Source(id: article.source.id, name: article.source.name)
+                                let article = Article(source: source, title: article.title, url: article.url, urlToImage: article.urlToImage, publishedAt: article.publishedAt, content: article.content)
                                 dataModel.saveData(with: article)
                             }
                         }
@@ -91,10 +91,16 @@ struct NewsManager {
 
 private extension URL {
     static func makeEndpointForSearch(parameter: String, apikey: String) -> URL {
-        URL(string: "https://newsapi.org/v2/everything?q=\(parameter)&apiKey=\(apikey)&sortBy=relevancy")!
+        guard let url  = URL(string: "https://newsapi.org/v2/everything?q=\(parameter)&apiKey=\(apikey)&sortBy=relevancy") else {
+             fatalError("Endpoint was not сreated")
+        }
+        return url
     }
     
     static func makeEndpointForTopNews(category: String, apikey: String) -> URL {
-        URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=\(apikey)&category=\(category)")!
+        guard let url  = URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=\(apikey)&category=\(category)") else {
+            fatalError("Endpoint was not сreated")
+       }
+       return url
     }
 }

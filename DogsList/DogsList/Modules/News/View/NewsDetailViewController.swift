@@ -30,22 +30,9 @@ class NewsDetailViewController: UIViewController {
         if let viewModel = viewModel {
             self.header.text = viewModel.title
             self.source.text = viewModel.source
-            self.date.text = viewModel.publishedAt.dateConvert(dateString: viewModel.publishedAt)
+            self.date.text = DateConvert.shared.getDate(date: viewModel.publishedAt)
             self.textView.text = viewModel.content
         }
-    }
-    
-    func dateConvert(dateString: String) -> String {
-        let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        
-        guard let localDate = dateFormatter.date(from: dateString) else { return "" }
-        
-        dateFormatter.dateFormat = "MMM d"
-        return dateFormatter.string(from: localDate)
-        
     }
     
     @IBAction func readMorePressed(_ sender: UIButton) {
@@ -59,7 +46,7 @@ class NewsDetailViewController: UIViewController {
     @IBAction func shareButtonPressed(_ sender: UIButton) {
         
         if let viewModel = viewModel {
-            let activityViewController = UIActivityViewController(activityItems: [viewModel.title, viewModel.content, viewModel.url], applicationActivities: nil)
+            let activityViewController = UIActivityViewController(activityItems: [viewModel.title, viewModel.content ?? "", viewModel.url], applicationActivities: nil)
             
             activityViewController.popoverPresentationController?.sourceView = self.view
             activityViewController.isModalInPresentation = true

@@ -7,16 +7,25 @@
 
 import UIKit
 
-extension String {
-    func dateConvert(dateString: String) -> String {
+class DateConvert: NSObject {
+    static let shared = DateConvert()
+
+    func getDate(date: String) -> String {
+        let dateFormatter = DateFormatter.serverDateFormatter()
+        let date = dateFormatter.date(from: date) ?? Date()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        dateFormatter.timeZone = NSTimeZone.local
+        return dateFormatter.string(from: date)
+    }
+
+}
+
+extension DateFormatter {
+    static func serverDateFormatter() -> DateFormatter {
         let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        
-        guard let localDate = dateFormatter.date(from: dateString) else { return "" }
-        
-        dateFormatter.dateFormat = "MMM d"
-        return dateFormatter.string(from: localDate)
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+        return dateFormatter
     }
 }

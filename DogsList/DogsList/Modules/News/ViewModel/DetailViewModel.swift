@@ -11,7 +11,6 @@ class DetailViewModel: DetailViewModelType {
    
     private var article: Article
     
-
     var title: String {
         return article.title
     }
