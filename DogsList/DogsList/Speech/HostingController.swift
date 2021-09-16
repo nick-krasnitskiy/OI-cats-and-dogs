@@ -11,7 +11,7 @@ import SwiftUI
 class HostingController: UIHostingController<ContentView> {
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder, rootView: ContentView())
+        super.init(coder: aDecoder, rootView: ContentView(speechRecorder: SpeechRecorder()))
     }
     
     override func viewDidLoad() {
