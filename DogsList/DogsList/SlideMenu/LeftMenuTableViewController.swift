@@ -13,15 +13,15 @@ enum SelectedTab: Int {
     case animalList
     case weather
     case news
+    case speech
 }
 
 class LeftMenuTableViewController: UITableViewController {
     
-    let menuOptions = ["Dog List", "Star War", "Animal List", "Weather", "News"]
+    let menuOptions = ["Dog List", "Star War", "Animal List", "Weather", "News", "Speech"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
 }
@@ -45,6 +45,9 @@ extension LeftMenuTableViewController {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "openWeather"), object: nil)
             case .news:
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "openNews"), object: nil)
+                
+            case .speech:
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "openSpeech"), object: nil)
             }
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "closeMenuViaNotification"), object: nil)
@@ -58,13 +61,13 @@ extension LeftMenuTableViewController {
 extension LeftMenuTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
         cell.textLabel?.text = menuOptions[indexPath.row]
-        cell.textLabel?.textColor = #colorLiteral(red: 0.1469314694, green: 0.259611547, blue: 0.2739216685, alpha: 1)
+        cell.textLabel?.textColor = K.Colors.sectionHeaderColor
         cell.textLabel?.font = UIFont.systemFont(ofSize: 22.0)
         return cell
     }
