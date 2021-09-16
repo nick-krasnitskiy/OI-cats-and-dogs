@@ -69,6 +69,7 @@
 		D466DFCE26F1E9A000FE046F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466DFCD26F1E99F00FE046F /* Constants.swift */; };
 		D466DFD726F3151400FE046F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466DFD626F3151300FE046F /* ContentView.swift */; };
 		D466DFDB26F315B900FE046F /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466DFDA26F315B900FE046F /* HostingController.swift */; };
+		D466DFE226F3270E00FE046F /* SpeechRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466DFE126F3270E00FE046F /* SpeechRecorder.swift */; };
 		D48B5BA42694582100CF6EDB /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BA32694582100CF6EDB /* Dog.swift */; };
 		D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */; };
 		D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */; };
@@ -162,6 +163,7 @@
 		D466DFCD26F1E99F00FE046F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D466DFD626F3151300FE046F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D466DFDA26F315B900FE046F /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		D466DFE126F3270E00FE046F /* SpeechRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecorder.swift; sourceTree = "<group>"; };
 		D48B5BA32694582100CF6EDB /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogManager.swift; sourceTree = "<group>"; };
 		D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStarWarViewController.swift; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 			children = (
 				D466DFD626F3151300FE046F /* ContentView.swift */,
 				D466DFDA26F315B900FE046F /* HostingController.swift */,
+				D466DFE126F3270E00FE046F /* SpeechRecorder.swift */,
 			);
 			path = Speech;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				D4429B4426A4B11A000B5DD2 /* AnimalMiddleCell.swift in Sources */,
 				D43507B826C398F7009C9B04 /* CustomPin.swift in Sources */,
 				D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */,
+				D466DFE226F3270E00FE046F /* SpeechRecorder.swift in Sources */,
 				D466DFD726F3151400FE046F /* ContentView.swift in Sources */,
 				D40ED41826CD75EF0010ED6B /* LeftMenuTableViewController.swift in Sources */,
 				D40ED40226CD2AAA0010ED6B /* NewsDetailViewController.swift in Sources */,
