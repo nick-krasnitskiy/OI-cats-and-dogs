@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D40ED43D26CF89DB0010ED6B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40ED43C26CF89DB0010ED6B /* Constants.swift */; };
 		D41571D226B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D41571D026B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld */; };
+		D415722826BA972D009507D2 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722726BA972C009507D2 /* WeatherData.swift */; };
+		D415722B26BA97B1009507D2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722A26BA97B1009507D2 /* WeatherModel.swift */; };
+		D415724026BCFFF0009507D2 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415723F26BCFFF0009507D2 /* WeatherDetailViewController.swift */; };
 		D42F742C3E05A9E6368E2FDA /* Pods_DogsList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */; };
+		D43507B526C3932B009C9B04 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B426C3932B009C9B04 /* ForecastModel.swift */; };
+		D43507B826C398F7009C9B04 /* CustomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B726C398F7009C9B04 /* CustomPin.swift */; };
+		D43507BB26C3995C009C9B04 /* CustomForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507BA26C3995C009C9B04 /* CustomForecast.swift */; };
+		D4429B2A26A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B2826A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib */; };
+		D4429B3026A184EB000B5DD2 /* SearchHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B2E26A184EB000B5DD2 /* SearchHistoryViewController.xib */; };
 		D4429B3626A1C264000B5DD2 /* AnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */; };
 		D4429B3B26A4B091000B5DD2 /* AnimalTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */; };
 		D4429B3C26A4B091000B5DD2 /* AnimalTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B3A26A4B091000B5DD2 /* AnimalTopCell.xib */; };
@@ -20,10 +29,6 @@
 		D4429B5A26A55F8C000B5DD2 /* DetailAnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B5826A55F8C000B5DD2 /* DetailAnimalCell.swift */; };
 		D4429B5B26A55F8C000B5DD2 /* DetailAnimalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B5926A55F8C000B5DD2 /* DetailAnimalCell.xib */; };
 		D4429B6426A5673C000B5DD2 /* BreedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B6326A5673C000B5DD2 /* BreedImageViewController.swift */; };
-		D4429B2926A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B2726A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift */; };
-		D4429B2A26A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B2826A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib */; };
-		D4429B2F26A184EB000B5DD2 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4429B2D26A184EB000B5DD2 /* SearchHistoryViewController.swift */; };
-		D4429B3026A184EB000B5DD2 /* SearchHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4429B2E26A184EB000B5DD2 /* SearchHistoryViewController.xib */; };
 		D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D449142F268D912E002EBF46 /* AppDelegate.swift */; };
 		D4491432268D912E002EBF46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4491431268D912E002EBF46 /* SceneDelegate.swift */; };
 		D4491437268D912E002EBF46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4491435268D912E002EBF46 /* Main.storyboard */; };
@@ -47,13 +52,34 @@
 		D4ACA39E26A5DF6000607750 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA39D26A5DF6000607750 /* Model.swift */; };
 		D4ACA3AE26AED88900607750 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA3AD26AED88900607750 /* Extensions.swift */; };
 		D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */; };
+		D4F47FE526C3E80400543FF3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F47FE426C3E80400543FF3 /* SettingsViewController.swift */; };
+		D4F4801626C548CF00543FF3 /* ForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F4801426C548CF00543FF3 /* ForecastCell.xib */; };
+		D4F4801726C548CF00543FF3 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4801526C548CF00543FF3 /* ForecastCell.swift */; };
+		D4F4803826C54CF500543FF3 /* StarWarsSearchHistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4803726C54CF500543FF3 /* StarWarsSearchHistoryViewCell.swift */; };
+		D4F4803C26C54D1900543FF3 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4803B26C54D1900543FF3 /* SearchHistoryViewController.swift */; };
+		D4F4804226C54DC300543FF3 /* WeatherMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */; };
+		D4F4804426C54DD800543FF3 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D415722D26BA97DC009507D2 /* WeatherManager.swift */; };
+		D4F4804626C54DEE00543FF3 /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B126C39214009C9B04 /* ForecastData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		15210C7A2F8AB7B07176C368 /* Pods-DogsList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsList.release.xcconfig"; path = "Target Support Files/Pods-DogsList/Pods-DogsList.release.xcconfig"; sourceTree = "<group>"; };
 		7E1832DD3A3B589DE09974E1 /* Pods-DogsList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsList.debug.xcconfig"; path = "Target Support Files/Pods-DogsList/Pods-DogsList.debug.xcconfig"; sourceTree = "<group>"; };
 		CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogsList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D40ED43C26CF89DB0010ED6B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D41571D126B7BDFE009507D2 /* ListAllBreeds.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListAllBreeds.xcdatamodel; sourceTree = "<group>"; };
+		D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMapViewController.swift; sourceTree = "<group>"; };
+		D415722726BA972C009507D2 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		D415722A26BA97B1009507D2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		D415722D26BA97DC009507D2 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		D415723F26BCFFF0009507D2 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
+		D43507B126C39214009C9B04 /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
+		D43507B426C3932B009C9B04 /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
+		D43507B726C398F7009C9B04 /* CustomPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPin.swift; sourceTree = "<group>"; };
+		D43507BA26C3995C009C9B04 /* CustomForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomForecast.swift; sourceTree = "<group>"; };
+		D4429B2726A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsSearchHistoryViewCell.swift; sourceTree = "<group>"; };
+		D4429B2826A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarWarsSearchHistoryViewCell.xib; sourceTree = "<group>"; };
+		D4429B2E26A184EB000B5DD2 /* SearchHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryViewController.xib; sourceTree = "<group>"; };
 		D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
 		D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTopCell.swift; sourceTree = "<group>"; };
 		D4429B3A26A4B091000B5DD2 /* AnimalTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalTopCell.xib; sourceTree = "<group>"; };
@@ -65,10 +91,6 @@
 		D4429B5826A55F8C000B5DD2 /* DetailAnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimalCell.swift; sourceTree = "<group>"; };
 		D4429B5926A55F8C000B5DD2 /* DetailAnimalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailAnimalCell.xib; sourceTree = "<group>"; };
 		D4429B6326A5673C000B5DD2 /* BreedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageViewController.swift; sourceTree = "<group>"; };
-		D4429B2726A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsSearchHistoryViewCell.swift; sourceTree = "<group>"; };
-		D4429B2826A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarWarsSearchHistoryViewCell.xib; sourceTree = "<group>"; };
-		D4429B2D26A184EB000B5DD2 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
-		D4429B2E26A184EB000B5DD2 /* SearchHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryViewController.xib; sourceTree = "<group>"; };
 		D449142C268D912E002EBF46 /* DogsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D449142F268D912E002EBF46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4491431268D912E002EBF46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +116,11 @@
 		D4ACA39D26A5DF6000607750 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D4ACA3AD26AED88900607750 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStarWarViewController.swift; sourceTree = "<group>"; };
+		D4F47FE426C3E80400543FF3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D4F4801426C548CF00543FF3 /* ForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastCell.xib; sourceTree = "<group>"; };
+		D4F4801526C548CF00543FF3 /* ForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		D4F4803726C54CF500543FF3 /* StarWarsSearchHistoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarWarsSearchHistoryViewCell.swift; sourceTree = "<group>"; };
+		D4F4803B26C54D1900543FF3 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +144,111 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D4429B4026A4B0B7000B5DD2 /* AnimalCells */ = {
+		D41571FB26BA56AB009507D2 /* DogList */ = {
+			isa = PBXGroup;
+			children = (
+				D415720626BA5745009507D2 /* Model */,
+				D415720D26BA577B009507D2 /* Controller */,
+				D415721426BA57FA009507D2 /* View */,
+			);
+			path = DogList;
+			sourceTree = "<group>";
+		};
+		D41571FF26BA56CA009507D2 /* StarWar */ = {
+			isa = PBXGroup;
+			children = (
+				D415720A26BA5751009507D2 /* Model */,
+				D415720F26BA57A2009507D2 /* Controllers */,
+				D415721D26BA5833009507D2 /* View */,
+			);
+			path = StarWar;
+			sourceTree = "<group>";
+		};
+		D415720326BA56E9009507D2 /* AnimalList */ = {
+			isa = PBXGroup;
+			children = (
+				D415720B26BA5762009507D2 /* Model */,
+				D48B5BAE2695C31E00CF6EDB /* Controllers */,
+				D415721926BA581B009507D2 /* View */,
+			);
+			path = AnimalList;
+			sourceTree = "<group>";
+		};
+		D415720426BA5735009507D2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D41571FB26BA56AB009507D2 /* DogList */,
+				D41571FF26BA56CA009507D2 /* StarWar */,
+				D415720326BA56E9009507D2 /* AnimalList */,
+				D415722426BA5FD5009507D2 /* Weather */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D415720626BA5745009507D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BA32694582100CF6EDB /* Dog.swift */,
+				D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */,
+				D4ACA39D26A5DF6000607750 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D415720A26BA5751009507D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BC0269C111C00CF6EDB /* Persons.swift */,
+				D48B5BBC269C080A00CF6EDB /* PersonManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D415720B26BA5762009507D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4ACA39326A5DED800607750 /* AnimalManager.swift */,
+				D41571D026B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D415720D26BA577B009507D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D4491450268DEF2B002EBF46 /* ListDogViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D415720F26BA57A2009507D2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */,
+				D4F4803B26C54D1900543FF3 /* SearchHistoryViewController.swift */,
+				D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D415721226BA57F4009507D2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BC3269C22DC00CF6EDB /* DogCells */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D415721426BA57FA009507D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D449147C2692F372002EBF46 /* Xibs */,
+				D415721226BA57F4009507D2 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D415721726BA5816009507D2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				D4429B3926A4B091000B5DD2 /* AnimalTopCell.swift */,
@@ -125,10 +256,37 @@
 				D4429B4726A4B167000B5DD2 /* AnimalBottomCell.swift */,
 				D4429B5826A55F8C000B5DD2 /* DetailAnimalCell.swift */,
 			);
-			path = AnimalCells;
+			path = Cells;
 			sourceTree = "<group>";
 		};
-		D4429B4D26A4B1A0000B5DD2 /* AnimalXibs */ = {
+		D415721926BA581B009507D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D415721F26BA5853009507D2 /* Xibs */,
+				D415721726BA5816009507D2 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D415721B26BA582B009507D2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */,
+				D4F4803726C54CF500543FF3 /* StarWarsSearchHistoryViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D415721D26BA5833009507D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D48B5BCA269C233F00CF6EDB /* Xibs */,
+				D415721B26BA582B009507D2 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D415721F26BA5853009507D2 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
 				D4429B5926A55F8C000B5DD2 /* DetailAnimalCell.xib */,
@@ -136,7 +294,17 @@
 				D4429B4326A4B11A000B5DD2 /* AnimalMiddleCell.xib */,
 				D4429B4826A4B167000B5DD2 /* AnimalBottomCell.xib */,
 			);
-			path = AnimalXibs;
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		D415722426BA5FD5009507D2 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				D4F47FE126C3DFCE00543FF3 /* Model */,
+				D4F47FE026C3DFB500543FF3 /* Controllers */,
+				D4F4801326C548CF00543FF3 /* View */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 		D4491423268D912E002EBF46 = {
@@ -146,6 +314,7 @@
 				D449142D268D912E002EBF46 /* Products */,
 				18D2AB794AC7D2FC21C15223 /* Pods */,
 				EE0D41BD84A476ABC00F943C /* Frameworks */,
+				D4F4800E26C546EE00543FF3 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,73 +331,33 @@
 			children = (
 				D449142F268D912E002EBF46 /* AppDelegate.swift */,
 				D4491431268D912E002EBF46 /* SceneDelegate.swift */,
-				D48B5BA72694582A00CF6EDB /* Model */,
-				D48B5BAE2695C31E00CF6EDB /* Controllers */,
-				D48B5BAD2695C30A00CF6EDB /* View */,
+				D40ED43C26CF89DB0010ED6B /* Constants.swift */,
+				D415720426BA5735009507D2 /* Modules */,
 				D4491438268D9132002EBF46 /* Assets.xcassets */,
+				D4491435268D912E002EBF46 /* Main.storyboard */,
+				D449143A268D9132002EBF46 /* LaunchScreen.storyboard */,
 				D449143D268D9132002EBF46 /* Info.plist */,
 				D4ACA3B126AED89F00607750 /* Extensions */,
 			);
 			path = DogsList;
 			sourceTree = "<group>";
 		};
-		D44914782692F366002EBF46 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				D4429B4026A4B0B7000B5DD2 /* AnimalCells */,
-				D48B5BCB269C235F00CF6EDB /* StarWarsCells */,
-				D48B5BC3269C22DC00CF6EDB /* DogCells */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		D449147C2692F372002EBF46 /* DogXibs */ = {
+		D449147C2692F372002EBF46 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
 				D449146A2692F313002EBF46 /* TopCell.xib */,
 				D449146F2692F32C002EBF46 /* MiddleCell.xib */,
 				D44914742692F35D002EBF46 /* BottomCell.xib */,
 			);
-			path = DogXibs;
-			sourceTree = "<group>";
-		};
-		D48B5BA72694582A00CF6EDB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D48B5BA32694582100CF6EDB /* Dog.swift */,
-				D48B5BC0269C111C00CF6EDB /* Persons.swift */,
-				D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */,
-				D48B5BBC269C080A00CF6EDB /* PersonManager.swift */,
-				D4ACA39D26A5DF6000607750 /* Model.swift */,
-				D4ACA39326A5DED800607750 /* AnimalManager.swift */,
-				D41571D026B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D48B5BAD2695C30A00CF6EDB /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D4429B4D26A4B1A0000B5DD2 /* AnimalXibs */,
-				D48B5BCA269C233F00CF6EDB /* StarWarsXibs */,
-				D449147C2692F372002EBF46 /* DogXibs */,
-				D4491435268D912E002EBF46 /* Main.storyboard */,
-				D449143A268D9132002EBF46 /* LaunchScreen.storyboard */,
-			);
-			path = View;
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		D48B5BAE2695C31E00CF6EDB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D4491450268DEF2B002EBF46 /* ListDogViewController.swift */,
-				D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */,
-				D4D085BD269C5A7F0080CA80 /* DetailStarWarViewController.swift */,
 				D4429B3526A1C264000B5DD2 /* AnimalListViewController.swift */,
 				D4429B5426A556D4000B5DD2 /* BreedDetailController.swift */,
 				D4429B6326A5673C000B5DD2 /* BreedImageViewController.swift */,
-				D4429B2D26A184EB000B5DD2 /* SearchHistoryViewController.swift */,
-				D44914782692F366002EBF46 /* Cells */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -243,31 +372,14 @@
 			path = DogCells;
 			sourceTree = "<group>";
 		};
-		D48B5BCA269C233F00CF6EDB /* StarWarsXibs */ = {
+		D48B5BCA269C233F00CF6EDB /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
 				D48B5BC6269C231600CF6EDB /* StarWarsCell.xib */,
 				D4429B2826A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib */,
 				D4429B2E26A184EB000B5DD2 /* SearchHistoryViewController.xib */,
 			);
-			path = StarWarsXibs;
-			sourceTree = "<group>";
-		};
-		D48B5BCB269C235F00CF6EDB /* StarWarsCells */ = {
-			isa = PBXGroup;
-			children = (
-				D48B5BC5269C231600CF6EDB /* StarWarsCell.swift */,
-				D4429B2726A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift */,
-			);
-			path = StarWarsCells;
-			sourceTree = "<group>";
-		};
-		EE0D41BD84A476ABC00F943C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */,
-			);
-			name = Frameworks;
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		D4ACA3B126AED89F00607750 /* Extensions */ = {
@@ -276,6 +388,55 @@
 				D4ACA3AD26AED88900607750 /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D4F47FE026C3DFB500543FF3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D415722126BA5FCF009507D2 /* WeatherMapViewController.swift */,
+				D415723F26BCFFF0009507D2 /* WeatherDetailViewController.swift */,
+				D4F47FE426C3E80400543FF3 /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D4F47FE126C3DFCE00543FF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D415722726BA972C009507D2 /* WeatherData.swift */,
+				D43507B126C39214009C9B04 /* ForecastData.swift */,
+				D415722A26BA97B1009507D2 /* WeatherModel.swift */,
+				D43507B426C3932B009C9B04 /* ForecastModel.swift */,
+				D415722D26BA97DC009507D2 /* WeatherManager.swift */,
+				D43507BA26C3995C009C9B04 /* CustomForecast.swift */,
+				D43507B726C398F7009C9B04 /* CustomPin.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D4F4800E26C546EE00543FF3 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				D4429B2726A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		D4F4801326C548CF00543FF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4F4801426C548CF00543FF3 /* ForecastCell.xib */,
+				D4F4801526C548CF00543FF3 /* ForecastCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE0D41BD84A476ABC00F943C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF1D86A6130480BD3C924E6E /* Pods_DogsList.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +507,7 @@
 				D4429B4A26A4B167000B5DD2 /* AnimalBottomCell.xib in Resources */,
 				D48B5BC8269C231600CF6EDB /* StarWarsCell.xib in Resources */,
 				D4429B2A26A16257000B5DD2 /* StarWarsSearchHistoryViewCell.xib in Resources */,
+				D4F4801626C548CF00543FF3 /* ForecastCell.xib in Resources */,
 				D449146C2692F313002EBF46 /* TopCell.xib in Resources */,
 				D4429B3026A184EB000B5DD2 /* SearchHistoryViewController.xib in Resources */,
 				D44914762692F35D002EBF46 /* BottomCell.xib in Resources */,
@@ -421,30 +583,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4429B3626A1C264000B5DD2 /* AnimalListViewController.swift in Sources */,
+				D40ED43D26CF89DB0010ED6B /* Constants.swift in Sources */,
+				D43507BB26C3995C009C9B04 /* CustomForecast.swift in Sources */,
 				D48B5BC1269C111C00CF6EDB /* Persons.swift in Sources */,
 				D4429B4426A4B11A000B5DD2 /* AnimalMiddleCell.swift in Sources */,
+				D43507B826C398F7009C9B04 /* CustomPin.swift in Sources */,
 				D4ACA3AE26AED88900607750 /* Extensions.swift in Sources */,
+				D4F4804426C54DD800543FF3 /* WeatherManager.swift in Sources */,
+				D4F4804226C54DC300543FF3 /* WeatherMapViewController.swift in Sources */,
+				D4F4803826C54CF500543FF3 /* StarWarsSearchHistoryViewCell.swift in Sources */,
+				D4F4804626C54DEE00543FF3 /* ForecastData.swift in Sources */,
 				D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */,
-				D4429B2926A16257000B5DD2 /* StarWarsSearchHistoryViewCell.swift in Sources */,
 				D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */,
 				D4ACA39426A5DED800607750 /* AnimalManager.swift in Sources */,
+				D415722826BA972D009507D2 /* WeatherData.swift in Sources */,
 				D4429B6426A5673C000B5DD2 /* BreedImageViewController.swift in Sources */,
 				D4429B5526A556D4000B5DD2 /* BreedDetailController.swift in Sources */,
 				D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */,
+				D415724026BCFFF0009507D2 /* WeatherDetailViewController.swift in Sources */,
 				D44914752692F35D002EBF46 /* BottomCell.swift in Sources */,
+				D4F4801726C548CF00543FF3 /* ForecastCell.swift in Sources */,
+				D4F4803C26C54D1900543FF3 /* SearchHistoryViewController.swift in Sources */,
 				D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */,
 				D41571D226B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld in Sources */,
 				D4ACA39E26A5DF6000607750 /* Model.swift in Sources */,
 				D48B5BA42694582100CF6EDB /* Dog.swift in Sources */,
-				D4429B2F26A184EB000B5DD2 /* SearchHistoryViewController.swift in Sources */,
 				D4491451268DEF2B002EBF46 /* ListDogViewController.swift in Sources */,
 				D4491430268D912E002EBF46 /* AppDelegate.swift in Sources */,
+				D415722B26BA97B1009507D2 /* WeatherModel.swift in Sources */,
 				D4429B5A26A55F8C000B5DD2 /* DetailAnimalCell.swift in Sources */,
 				D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */,
 				D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */,
 				D4429B4926A4B167000B5DD2 /* AnimalBottomCell.swift in Sources */,
+				D4F47FE526C3E80400543FF3 /* SettingsViewController.swift in Sources */,
 				D4491432268D912E002EBF46 /* SceneDelegate.swift in Sources */,
 				D4429B3B26A4B091000B5DD2 /* AnimalTopCell.swift in Sources */,
+				D43507B526C3932B009C9B04 /* ForecastModel.swift in Sources */,
 				D449146B2692F313002EBF46 /* TopCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
