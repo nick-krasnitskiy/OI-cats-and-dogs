@@ -23,7 +23,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Obc-1n-4Mw">
                                 <rect key="frame" x="20" y="20" width="539" height="264"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hfn-np-tvH">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hfn-np-tvH">
                                         <rect key="frame" x="0.0" y="0.0" width="308" height="264"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tka-gy-nzD">
@@ -39,7 +39,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.38823529410000002" green="0.23529411759999999" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.3580395982513" green="0.63498240487471602" blue="0.67183073680238725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Obc-1n-4Mw" secondAttribute="trailing" constant="20" id="4uW-sE-Kje"/>
                             <constraint firstItem="Obc-1n-4Mw" firstAttribute="leading" secondItem="C4o-Gv-vfM" secondAttribute="leading" constant="20" id="RXr-x6-mwZ"/>

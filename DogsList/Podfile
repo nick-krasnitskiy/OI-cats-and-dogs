@@ -1,0 +1,10 @@
+platform :ios, '13.0'
+
+target 'DogsList' do
+
+  use_frameworks!
+
+  pod 'ImageScrollView'
+  pod 'Alamofire', '~> 5.2'
+
+end

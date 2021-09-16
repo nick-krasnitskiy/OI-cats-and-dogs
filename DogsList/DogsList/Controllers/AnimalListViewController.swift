@@ -1,25 +1,16 @@
 //
-//  ViewController.swift
+//  AinalListViewController.swift
 //  DogsList
 //
-//  Created by Nick Krasnitskiy on 01.07.2021.
+//  Created by Nick Krasnitskiy on 16.07.2021.
 //
 
 import UIKit
 
-enum Section: Int, CaseIterable {
+enum NewSection: Int, CaseIterable {
     case first
     case second
     case third
-    
-    var columnCount: Int {
-        switch self {
-        case .first, .third:
-            return 1
-        case .second:
-            return 2
-        }
-    }
     
     var groupHeight: NSCollectionLayoutDimension {
         switch self {
@@ -43,45 +34,47 @@ enum Section: Int, CaseIterable {
     
 }
 
-class ListDogViewController: UIViewController {
+class AnimalListViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
-
     private let indicator = UIActivityIndicatorView(style: .large)
-
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, String>
+  
+    typealias DataSource = UICollectionViewDiffableDataSource<NewSection, Animal>
     private var dataSource: DataSource!
-    private var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
-    var dogManager = DogManager()
+    private var snapshot = NSDiffableDataSourceSnapshot<NewSection, Animal>()
+    private var animalManager = AnimalManager()
+    private var images = [AnimalImages]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDataSource()
         configureCollectionView()
-        dogManager.delegate = self
-        dogManager.performRequest(with: dogManager.imageURL)
+        animalManager.delegate = self
+        animalManager.performRequest()
         startActivityIndicator()
+        
     }
     
     private func configureCollectionView() {
         collectionView.collectionViewLayout = createLayout()
         
-        let nibOne = UINib(nibName: TopCell.reuseIdentifier, bundle: nil)
-        let nibTwo = UINib(nibName: MiddleCell.reuseIdentifier, bundle: nil)
-        let nibThree = UINib(nibName: BottomCell.reuseIdentifier, bundle: nil)
+        let nibOne = UINib(nibName: AnimalTopCell.reuseIdentifier, bundle: nil)
+        let nibTwo = UINib(nibName: AnimalMiddleCell.reuseIdentifier, bundle: nil)
+        let nibThree = UINib(nibName: AnimalBottomCell.reuseIdentifier, bundle: nil)
         
-        collectionView.register(nibOne, forCellWithReuseIdentifier: TopCell.reuseIdentifier)
-        collectionView.register(nibTwo, forCellWithReuseIdentifier: MiddleCell.reuseIdentifier)
-        collectionView.register(nibThree, forCellWithReuseIdentifier: BottomCell.reuseIdentifier)
+        collectionView.register(nibOne, forCellWithReuseIdentifier: AnimalTopCell.reuseIdentifier)
+        collectionView.register(nibTwo, forCellWithReuseIdentifier: AnimalMiddleCell.reuseIdentifier)
+        collectionView.register(nibThree, forCellWithReuseIdentifier: AnimalBottomCell.reuseIdentifier)
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.delegate = self
         view.addSubview(collectionView)
     }
     
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, _) -> NSCollectionLayoutSection? in
             
-            guard let sectionType = Section(rawValue: sectionIndex) else { return nil }
-            
+            guard let sectionType = NewSection(rawValue: sectionIndex) else { fatalError("unknown section kind") }
+        
             let heights = sectionType.groupHeight
             let widths = sectionType.groupWidth
             
@@ -102,52 +95,58 @@ class ListDogViewController: UIViewController {
     }
     
     private func configureDataSource() {
-        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, imageURL) -> UICollectionViewCell? in
+        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, animal) -> UICollectionViewCell? in
             
-            let sectionKind = Section(rawValue: indexPath.section)!
-        
+            let sectionKind = NewSection(rawValue: indexPath.section)!
+
             switch sectionKind {
             case .first:
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCell", for: indexPath) as? TopCell else { fatalError("Cannot create the cell") }
-                cell.congigure(urlString: imageURL)
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalTopCell", for: indexPath) as? AnimalTopCell else { fatalError("Cannot create the cell") }
+                cell.configure(animal: animal)
                 return cell
             case .second:
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MiddleCell", for: indexPath) as? MiddleCell else { fatalError("Cannot create the cell") }
-                cell.congigure(urlString: imageURL)
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalMiddleCell", for: indexPath) as? AnimalMiddleCell else { fatalError("Cannot create the cell") }
+                cell.configure(animal: animal)
                 return cell
             case .third:
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BottomCell", for: indexPath) as? BottomCell else { fatalError("Cannot create the cell") }
-                cell.congigure(urlString: imageURL)
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalBottomCell", for: indexPath) as? AnimalBottomCell else { fatalError("Cannot create the cell") }
+                cell.configure(animal: animal)
                 return cell
             }
         })
     }
     
-    func add(imageURL: [String], animate: Bool = true) {
+    func add(animals: [Animal], animate: Bool = true) {
         guard let dataSource = self.dataSource else { return }
+        
         DispatchQueue.main.async {
             self.snapshot.appendSections([.first, .second, .third])
-            self.snapshot.appendItems([imageURL[0]], toSection: .first)
-            self.snapshot.appendItems([imageURL[1], imageURL[2]], toSection: .second)
-            self.snapshot.appendItems([imageURL[3], imageURL[4], imageURL[5]], toSection: .third)
+            self.snapshot.appendItems([animals[0]],  toSection: .first)
+            self.snapshot.appendItems(Array(animals[1...2]), toSection: .second)
+            self.snapshot.appendItems(Array(animals[3...animals.count - 1]), toSection: .third)
             dataSource.apply(self.snapshot, animatingDifferences: false)
+            self.stopActivityIndicator()
         }
     }
     
     func alertGeenrate(alertTitle: String, alertMessage: String, actionTitle: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: actionTitle, style: .default) {(_: UIAlertAction!) in
-            self.viewDidLoad()})
+                            self.viewDidLoad()})
         present(alert, animated: true, completion: nil)
     }
-
+    
 }
 
-// MARK: - DogManagerDelegate
+// MARK: - AnimalManagerDelegate
 
-extension ListDogViewController: DogManagerDelegate {
-    func addDogs(dogImages: [String]) {
-        self.add(imageURL: dogImages)
+extension AnimalListViewController: AnimalDelegate {
+    func addAnimal(animals: [Animal]) {
+        self.add(animals: animals)
+    }
+    
+    func addAnimalImage(animalImages: [AnimalImages]) {
+        images = animalImages
     }
     
     func startActivityIndicator() {
@@ -158,7 +157,7 @@ extension ListDogViewController: DogManagerDelegate {
         view.addSubview(indicator)
         collectionView.isHidden = true
     }
-    
+
     func stopActivityIndicator() {
         DispatchQueue.main.async {
             self.indicator.hidesWhenStopped = true
@@ -183,6 +182,25 @@ extension ListDogViewController: DogManagerDelegate {
     func notResponce() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.alertGeenrate(alertTitle: "Failure!", alertMessage: "Data not received due to network connection", actionTitle: "Try again")
+        }
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension AnimalListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let breed = self.dataSource.itemIdentifier(for: indexPath)?.breed else {
+            collectionView.deselectItem(at: indexPath, animated: true)
+            return
+        }
+        
+        for object in images {
+            if breed == object.breed {
+                let breedDetailViewController = BreedDetailController(with: object)
+                self.navigationController?.pushViewController(breedDetailViewController, animated: true)
+            }
         }
     }
 }
