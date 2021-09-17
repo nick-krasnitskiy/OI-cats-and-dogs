@@ -178,7 +178,7 @@
                         <segue destination="vK6-km-mzJ" kind="relationship" relationship="viewControllers" id="DpP-bx-xaG"/>
                         <segue destination="Nm6-cF-3Bp" kind="relationship" relationship="viewControllers" id="tpQ-KF-Vre"/>
                         <segue destination="YsF-bd-UQt" kind="relationship" relationship="viewControllers" id="jRe-eX-wYg"/>
-                        <segue destination="D49-Xp-EUm" kind="relationship" relationship="viewControllers" id="jL6-Bc-yzZ"/>
+                        <segue destination="oBV-9h-fBB" kind="relationship" relationship="viewControllers" id="V1a-Or-ru0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RvU-6M-djp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1434,10 +1434,13 @@
             </objects>
             <point key="canvasLocation" x="1422" y="2948"/>
         </scene>
-        <!--Hosting Controller-->
+        <!--Speech-->
         <scene sceneID="r4s-Af-xVw">
             <objects>
                 <hostingController id="oBV-9h-fBB" customClass="HostingController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Speech" image="speaker.3" catalog="system" id="04q-4s-Lcr">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="HlU-U2-Bta">
                         <barButtonItem key="leftBarButtonItem" image="hamburger" id="KbE-4f-byL">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1449,7 +1452,7 @@
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Vg-jv-GMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2254" y="3818"/>
+            <point key="canvasLocation" x="1423" y="3810"/>
         </scene>
         <!--Dog List-->
         <scene sceneID="2c3-5l-Q74">
@@ -1471,25 +1474,6 @@
             </objects>
             <point key="canvasLocation" x="1390" y="123"/>
         </scene>
-        <!--Speech-->
-        <scene sceneID="uGJ-ot-BnG">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D49-Xp-EUm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Speech" image="speaker.wave.3" catalog="system" id="6zM-zY-fcR"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zwZ-1L-2H0">
-                        <rect key="frame" x="0.0" y="44" width="568" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="oBV-9h-fBB" kind="relationship" relationship="rootViewController" id="ejs-0k-VXe"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I6G-l8-wlf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1389.8550724637682" y="3817.6339285714284"/>
-        </scene>
     </scenes>
     <resources>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
@@ -1502,7 +1486,7 @@
         <image name="hamburger" width="30" height="30"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="slider.vertical.3" catalog="system" width="128" height="111"/>
-        <image name="speaker.wave.3" catalog="system" width="128" height="86"/>
+        <image name="speaker.3" catalog="system" width="128" height="86"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star.leadinghalf.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">

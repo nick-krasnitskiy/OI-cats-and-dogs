@@ -33,7 +33,6 @@ struct K {
         static let backgroundColor = UIColor(red: 0.3176909506, green: 0.5634241709, blue: 0.5961199444, alpha: 1)
         static let indicatorColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         static let sectionHeaderColor = UIColor(red: 0.1443712413, green: 0.2595478296, blue: 0.2738721073, alpha: 1)
-        static let speechButtonColor = UIColor(red: 0.2942742872, green: 0.02711772529, blue: 0.07036353478, alpha: 1)
     }
     
     struct Fonts {
