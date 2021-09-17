@@ -13,7 +13,21 @@ struct RecordingsList: View {
     
     var body: some View {
         List {
-            Text("Empty list")
+            ForEach(speechRecorder.recordings, id: \.createdAt) { recording in
+                RecordingRow(audioURL: recording.fileURL)
+            }
+        }
+    }
+}
+
+struct RecordingRow: View {
+    
+    var audioURL: URL
+    
+    var body: some View {
+        HStack {
+            Text("\(audioURL.lastPathComponent)")
+            Spacer()
         }
     }
 }

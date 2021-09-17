@@ -19,6 +19,7 @@ struct ContentView: View {
                     .fontWeight(.bold)
                     .padding()
                 RecordingsList(speechRecorder: speechRecorder)
+                
                 if speechRecorder.recording == false {
                     Button(action: {print(self.speechRecorder.startRecording())}) {
                         ZStack {
@@ -31,7 +32,7 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    .padding(.vertical, 80)
+                    .padding(.vertical, 40)
                 } else {
                     Button(action: {self.speechRecorder.stopRecording()}) {
                         ZStack {
@@ -44,7 +45,7 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    .padding(.vertical, 80)
+                    .padding(.vertical, 40)
                 }
             }
             .navigationBarHidden(true)
