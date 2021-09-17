@@ -12,7 +12,7 @@ struct ContentView: View {
     @ObservedObject var speechRecorder: SpeechRecorder
     
     var body: some View {
-        NavigationView {
+         NavigationView {
             VStack {
                 Text("Speech Recorder")
                     .font(.system(size: 30))
@@ -38,7 +38,7 @@ struct ContentView: View {
                         ZStack {
                             Circle()
                                 .stroke(Color.white, lineWidth: 6)
-                                .frame(width: 100, height: 100)
+                                .frame(width: 85, height: 85)
                             Text("Stop")
                                 .font(.system(size: 15))
                                 .fontWeight(.medium)

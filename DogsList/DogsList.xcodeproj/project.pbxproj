@@ -38,6 +38,7 @@
 		D430AB6F26F36B9B00C410B0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D430AB6E26F36B9B00C410B0 /* Extensions.swift */; };
 		D430AB7726F46B7100C410B0 /* RecordingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D430AB7626F46B7100C410B0 /* RecordingDataModel.swift */; };
 		D430AB7A26F46C4E00C410B0 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D430AB7926F46C4E00C410B0 /* Helper.swift */; };
+		D430AB7D26F489D000C410B0 /* SpeechPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D430AB7C26F489D000C410B0 /* SpeechPlayer.swift */; };
 		D43507B226C39214009C9B04 /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B126C39214009C9B04 /* ForecastData.swift */; };
 		D43507B526C3932B009C9B04 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B426C3932B009C9B04 /* ForecastModel.swift */; };
 		D43507B826C398F7009C9B04 /* CustomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B726C398F7009C9B04 /* CustomPin.swift */; };
@@ -134,6 +135,7 @@
 		D430AB6E26F36B9B00C410B0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D430AB7626F46B7100C410B0 /* RecordingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingDataModel.swift; sourceTree = "<group>"; };
 		D430AB7926F46C4E00C410B0 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		D430AB7C26F489D000C410B0 /* SpeechPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechPlayer.swift; sourceTree = "<group>"; };
 		D43507B126C39214009C9B04 /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
 		D43507B426C3932B009C9B04 /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
 		D43507B726C398F7009C9B04 /* CustomPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPin.swift; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 				D466DFE726F32DC600FE046F /* RecordingsList.swift */,
 				D466DFDA26F315B900FE046F /* HostingController.swift */,
 				D466DFE126F3270E00FE046F /* SpeechRecorder.swift */,
+				D430AB7C26F489D000C410B0 /* SpeechPlayer.swift */,
 				D430AB6E26F36B9B00C410B0 /* Extensions.swift */,
 				D430AB7626F46B7100C410B0 /* RecordingDataModel.swift */,
 				D430AB7926F46C4E00C410B0 /* Helper.swift */,
@@ -783,6 +786,7 @@
 				D466DFDB26F315B900FE046F /* HostingController.swift in Sources */,
 				D40ED45026CF9DE10010ED6B /* NewsManager.swift in Sources */,
 				D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */,
+				D430AB7D26F489D000C410B0 /* SpeechPlayer.swift in Sources */,
 				D430AB7A26F46C4E00C410B0 /* Helper.swift in Sources */,
 				D4429B4926A4B167000B5DD2 /* AnimalBottomCell.swift in Sources */,
 				D43E8A1126D614CD00345AF8 /* FilterViewController.swift in Sources */,

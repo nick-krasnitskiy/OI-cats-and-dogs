@@ -24,11 +24,20 @@ struct RecordingRow: View {
     
     var audioURL: URL
     
+    @ObservedObject var speechPlayer = SpeechPlayer()
+    
     var body: some View {
         HStack {
-            Text("\(audioURL.lastPathComponent)")
-            Spacer()
-        }
+            if speechPlayer.isPlaying == false {
+                Button(action: { print("Start playing audio")}) {
+                    Label("\(audioURL.lastPathComponent)", systemImage: "play.circle")
+                }
+            } else {
+                Button(action: { print("Stop playing audio")}) {
+                    Label("\(audioURL.lastPathComponent)", systemImage: "stop.fill")
+                }
+            }
+        }.accentColor(Color(.white))
     }
 }
 
