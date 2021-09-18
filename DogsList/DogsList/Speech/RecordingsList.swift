@@ -29,12 +29,12 @@ struct RecordingRow: View {
     var body: some View {
         HStack {
             if speechPlayer.isPlaying == false {
-                Button(action: { print("Start playing audio")}) {
+                Button(action: { self.speechPlayer.startPlayback(audio: self.audioURL)}) {
                     Label("\(audioURL.lastPathComponent)", systemImage: "play.circle")
                 }
             } else {
-                Button(action: { print("Stop playing audio")}) {
-                    Label("\(audioURL.lastPathComponent)", systemImage: "stop.fill")
+                Button(action: { self.speechPlayer.stopPlayback()}) {
+                    Label("\(audioURL.lastPathComponent)", systemImage: "stop")
                 }
             }
         }.accentColor(Color(.white))
