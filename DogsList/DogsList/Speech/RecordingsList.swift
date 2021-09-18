@@ -16,7 +16,17 @@ struct RecordingsList: View {
             ForEach(speechRecorder.recordings, id: \.createdAt) { recording in
                 RecordingRow(audioURL: recording.fileURL)
             }
+            .onDelete(perform: delete)
         }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        
+        var urlsToDelete = [URL]()
+        for index in offsets {
+            urlsToDelete.append(speechRecorder.recordings[index].fileURL)
+        }
+        speechRecorder.deleteRecording(urlsToDelete: urlsToDelete)
     }
 }
 
