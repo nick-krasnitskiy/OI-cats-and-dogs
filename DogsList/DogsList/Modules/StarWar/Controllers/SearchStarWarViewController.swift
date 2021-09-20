@@ -13,12 +13,12 @@ class SearchStarWarViewController: TabViewControllerTemplate {
         case main
     }
     
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, Person>
-    private var dataSource: DataSource!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, Person>?
     private var personManager = PersonManager()
     
     private var collectionView: UICollectionView! = nil
     private let searchBar = UISearchBar(frame: .zero)
+    private var searchHistory = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +27,19 @@ class SearchStarWarViewController: TabViewControllerTemplate {
         configureHierarchy()
         configureDataSource()
         self.navigationItem.title = "Search Star Wars Heroes"
-        self.view.backgroundColor =
-            UIColor(red: 0.1469314694, green: 0.259611547, blue: 0.2739216685, alpha: 1)
+        self.view.backgroundColor = K.Colors.backgroundColor
         personManager.delegate = self
+        hideKeyboardWhenTappedAround()
     }
     
     @IBAction func hamburgerMenu(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
     }
-    
+  
+    @IBAction func searchHistoryPressed(_ sender: UIBarButtonItem) {
+        let searchHistoryVC = SearchHistoryViewController(with: searchHistory)
+        show(searchHistoryVC, sender: nil)
+    }  
 }
 
 extension SearchStarWarViewController {
@@ -50,8 +54,7 @@ extension SearchStarWarViewController {
         
         let nib = UINib(nibName: StarWarsCell.reuseIdentifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: StarWarsCell.reuseIdentifier)
-        collectionView.backgroundColor =
-            UIColor(red: 0.3176909506, green: 0.5634241709, blue: 0.5961199444, alpha: 1)
+        collectionView.backgroundColor = K.Colors.backgroundColor
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -61,8 +64,7 @@ extension SearchStarWarViewController {
     
     private func configuresearchBar() {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.barTintColor =
-            UIColor(red: 0.3176909506, green: 0.5634241709, blue: 0.5961199444, alpha: 1)
+        searchBar.barTintColor = K.Colors.backgroundColor
         searchBar.searchTextField.backgroundColor = .white
         searchBar.placeholder = "Enter a hero name"
         view.addSubview(searchBar)
@@ -72,7 +74,7 @@ extension SearchStarWarViewController {
     private func alertGeenrate(alertTitle: String, alertMessage: String, actionTitle: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: actionTitle, style: .default) {(_: UIAlertAction!) in
-            self.viewDidLoad()})
+                            self.viewDidLoad()})
         present(alert, animated: true, completion: nil)
     }
 }
@@ -94,7 +96,7 @@ extension SearchStarWarViewController {
     }
     
     private func configureDataSource() {
-        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, person) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<Section, Person>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, person) -> UICollectionViewCell? in
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StarWarsCell", for: indexPath) as? StarWarsCell else { fatalError("Cannot create the cell") }
             cell.configure(personName: person.name)
@@ -102,19 +104,30 @@ extension SearchStarWarViewController {
         })
     }
     
-    func addSnaphot(persons: [Person]?) {
+    private func addSnaphot(persons: [Person]?) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Person>()
         snapshot.appendSections([.main])
+        guard let data = self.dataSource else { return }
         if let foundPersons = persons {
             snapshot.appendItems(foundPersons)
             DispatchQueue.main.async {
-                self.dataSource.apply(snapshot, animatingDifferences: false)
+                data.apply(snapshot, animatingDifferences: false)
             }
         } else {
             DispatchQueue.main.async {
-                self.dataSource.apply(snapshot, animatingDifferences: false)
+                data.apply(snapshot, animatingDifferences: false)
             }
         }
+    }
+    
+    private func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SearchStarWarViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
@@ -122,7 +135,8 @@ extension SearchStarWarViewController {
 
 extension SearchStarWarViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let person = self.dataSource.itemIdentifier(for: indexPath) else {
+        guard let data = self.dataSource else { return  }
+        guard let person = data.itemIdentifier(for: indexPath) else {
             collectionView.deselectItem(at: indexPath, animated: true)
             return
         }
@@ -137,10 +151,12 @@ extension SearchStarWarViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
             personManager.fetchName(name: searchText)
+            searchHistory.append(searchText)
         } else {
             addSnaphot(persons: nil)
         }
     }
+    
 }
 
 // MARK: - PersonManagerDelegate

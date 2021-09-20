@@ -30,7 +30,7 @@ class DetailStarWarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 0.3176909506, green: 0.5634241709, blue: 0.5961199444, alpha: 1)
+        self.view.backgroundColor = K.Colors.backgroundColor
         self.navigationController?.navigationBar.tintColor = .white
         setupLabels()
         addLabels()
@@ -103,12 +103,12 @@ class DetailStarWarViewController: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             nameLabel.centerYAnchor.constraint(lessThanOrEqualTo: view.topAnchor, constant: 300),
-            heightLabel.topAnchor.constraint(equalToSystemSpacingBelow: nameLabel.bottomAnchor, multiplier: 1.0),
-            massLabel.topAnchor.constraint(equalToSystemSpacingBelow: heightLabel.bottomAnchor, multiplier: 1.0),
-            hairColorLabel.topAnchor.constraint(equalToSystemSpacingBelow: massLabel.bottomAnchor, multiplier: 1.0),
-            skinColorLabel.topAnchor.constraint(equalToSystemSpacingBelow: hairColorLabel.bottomAnchor, multiplier: 1.0),
-            eyeColorLabel.topAnchor.constraint(equalToSystemSpacingBelow: skinColorLabel.bottomAnchor, multiplier: 1.0),
-            genderLabel.topAnchor.constraint(equalToSystemSpacingBelow: eyeColorLabel.bottomAnchor, multiplier: 1.0),
+            heightLabel.topAnchor.constraint(equalToSystemSpacingBelow: nameLabel.bottomAnchor, multiplier: K.Dimensions.standartDimension),
+            massLabel.topAnchor.constraint(equalToSystemSpacingBelow: heightLabel.bottomAnchor, multiplier: K.Dimensions.standartDimension),
+            hairColorLabel.topAnchor.constraint(equalToSystemSpacingBelow: massLabel.bottomAnchor, multiplier: K.Dimensions.standartDimension),
+            skinColorLabel.topAnchor.constraint(equalToSystemSpacingBelow: hairColorLabel.bottomAnchor, multiplier: K.Dimensions.standartDimension),
+            eyeColorLabel.topAnchor.constraint(equalToSystemSpacingBelow: skinColorLabel.bottomAnchor, multiplier: K.Dimensions.standartDimension),
+            genderLabel.topAnchor.constraint(equalToSystemSpacingBelow: eyeColorLabel.bottomAnchor, multiplier: K.Dimensions.standartDimension),
             
             nameLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             heightLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),

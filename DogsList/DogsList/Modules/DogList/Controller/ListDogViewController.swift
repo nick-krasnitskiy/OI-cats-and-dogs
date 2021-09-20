@@ -24,20 +24,20 @@ enum Section: Int, CaseIterable {
     var groupHeight: NSCollectionLayoutDimension {
         switch self {
         case .first:
-            return .fractionalHeight(0.2)
+            return .fractionalHeight(K.Dimensions.standartDimension/5)
         case .second:
-            return .fractionalWidth(0.5)
+            return .fractionalWidth(K.Dimensions.standartDimension/2)
         case .third:
-            return .fractionalHeight(0.5)
+            return .fractionalHeight(K.Dimensions.standartDimension/2)
         }
     }
     
     var groupWidth: NSCollectionLayoutDimension {
         switch self {
         case .first, .third:
-            return .fractionalWidth(1.0)
+            return .fractionalWidth(K.Dimensions.standartDimension)
         case .second:
-            return .fractionalWidth(0.5)
+            return .fractionalWidth(K.Dimensions.standartDimension/2)
         }
     }
     
@@ -49,8 +49,7 @@ class ListDogViewController: TabViewControllerTemplate {
 
     private let indicator = UIActivityIndicatorView(style: .large)
 
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, String>
-    private var dataSource: DataSource!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, String>?
     private var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
     var dogManager = DogManager()
     
@@ -90,9 +89,9 @@ class ListDogViewController: TabViewControllerTemplate {
             let heights = sectionType.groupHeight
             let widths = sectionType.groupWidth
             
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.Dimensions.standartDimension), heightDimension: .fractionalHeight(K.Dimensions.standartDimension))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 2*K.Dimensions.standartDimension, leading: 2*K.Dimensions.standartDimension, bottom: 2*K.Dimensions.standartDimension, trailing: 2*K.Dimensions.standartDimension)
             
             let groupSize = NSCollectionLayoutSize(widthDimension: widths, heightDimension: heights)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
@@ -107,7 +106,7 @@ class ListDogViewController: TabViewControllerTemplate {
     }
     
     private func configureDataSource() {
-        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, imageURL) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, imageURL) -> UICollectionViewCell? in
             
             let sectionKind = Section(rawValue: indexPath.section)!
         

@@ -9,8 +9,6 @@ import Foundation
 
 protocol PersonManagerDelegate: AnyObject {
     func getPersons(persons: [Person])
-//    func startActivityIndicator()
-//    func stopActivityIndicator()
     func didFailWithError(error: Error)
     func didFailWithResponce(response: HTTPURLResponse)
     func notResponce()

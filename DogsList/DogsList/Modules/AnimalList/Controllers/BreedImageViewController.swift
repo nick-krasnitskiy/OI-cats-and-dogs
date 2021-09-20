@@ -18,7 +18,7 @@ class BreedImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         generateImage(urlString: imageName)
-        view.backgroundColor = UIColor(red: 0.38307597, green: 0.6793843527, blue: 0.7188093509, alpha: 1)
+        view.backgroundColor = K.Colors.backgroundColor
         self.navigationController?.navigationBar.tintColor = .white
         
         if let scrollView = imageScrollView {

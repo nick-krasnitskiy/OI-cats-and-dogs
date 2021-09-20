@@ -15,20 +15,20 @@ enum NewSection: Int, CaseIterable {
     var groupHeight: NSCollectionLayoutDimension {
         switch self {
         case .first:
-            return .fractionalHeight(0.2)
+            return .fractionalHeight(K.Dimensions.standartDimension/5)
         case .second:
-            return .fractionalWidth(0.5)
+            return .fractionalWidth(K.Dimensions.standartDimension/2)
         case .third:
-            return .fractionalHeight(0.5)
+            return .fractionalHeight(K.Dimensions.standartDimension/2)
         }
     }
     
     var groupWidth: NSCollectionLayoutDimension {
         switch self {
         case .first, .third:
-            return .fractionalWidth(1.0)
+            return .fractionalWidth(K.Dimensions.standartDimension)
         case .second:
-            return .fractionalWidth(0.5)
+            return .fractionalWidth(K.Dimensions.standartDimension/2)
         }
     }
     
@@ -39,8 +39,7 @@ class AnimalListViewController: TabViewControllerTemplate {
     @IBOutlet private weak var collectionView: UICollectionView!
     private let indicator = UIActivityIndicatorView(style: .large)
   
-    typealias DataSource = UICollectionViewDiffableDataSource<NewSection, Animal>
-    private var dataSource: DataSource!
+    private var dataSource: UICollectionViewDiffableDataSource<NewSection, Animal>?
     private var snapshot = NSDiffableDataSourceSnapshot<NewSection, Animal>()
     private var animalManager = AnimalManager()
     private var images = [AnimalImages]()
@@ -82,9 +81,9 @@ class AnimalListViewController: TabViewControllerTemplate {
             let heights = sectionType.groupHeight
             let widths = sectionType.groupWidth
             
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.Dimensions.standartDimension), heightDimension: .fractionalHeight(K.Dimensions.standartDimension))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 2*K.Dimensions.standartDimension, leading: 2*K.Dimensions.standartDimension, bottom: 2*K.Dimensions.standartDimension, trailing: 2*K.Dimensions.standartDimension)
             
             let groupSize = NSCollectionLayoutSize(widthDimension: widths, heightDimension: heights)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
@@ -99,7 +98,7 @@ class AnimalListViewController: TabViewControllerTemplate {
     }
     
     private func configureDataSource() {
-        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, animal) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<NewSection, Animal>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, animal) -> UICollectionViewCell? in
             
             let sectionKind = NewSection(rawValue: indexPath.section)!
 
@@ -194,8 +193,8 @@ extension AnimalListViewController: AnimalDelegate {
 
 extension AnimalListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        guard let breed = self.dataSource.itemIdentifier(for: indexPath)?.breed else {
+        guard let data = self.dataSource else { return }
+        guard let breed = data.itemIdentifier(for: indexPath)?.breed else {
             collectionView.deselectItem(at: indexPath, animated: true)
             return
         }

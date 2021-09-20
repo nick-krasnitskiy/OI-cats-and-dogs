@@ -127,7 +127,7 @@ struct AnimalManager {
                     if let image = cat.image {
                         if let imageURL = image.url {
                             animalGenerate(animals: (breed, imageURL))
-                            saveToDataBase(objects: animalObjects) // СОХРАНИЛИ ЗАПРОС С СЕРВЕРА В CD
+                            saveToDataBase(objects: animalObjects)
                         }
                     }
                 }
