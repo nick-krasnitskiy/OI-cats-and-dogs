@@ -35,6 +35,10 @@
 		D420F4A026E7FF4300C139D6 /* DetailViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D420F49F26E7FF4300C139D6 /* DetailViewModelType.swift */; };
 		D420F4A326E7FFD800C139D6 /* CollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D420F4A226E7FFD800C139D6 /* CollectionViewCellViewModel.swift */; };
 		D420F4A626E8002200C139D6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D420F4A526E8002200C139D6 /* DetailViewModel.swift */; };
+		D430AB6F26F36B9B00C410B0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D430AB6E26F36B9B00C410B0 /* Extensions.swift */; };
+		D430AB7726F46B7100C410B0 /* RecordingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D430AB7626F46B7100C410B0 /* RecordingDataModel.swift */; };
+		D430AB7A26F46C4E00C410B0 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D430AB7926F46C4E00C410B0 /* Helper.swift */; };
+		D430AB7D26F489D000C410B0 /* SpeechPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D430AB7C26F489D000C410B0 /* SpeechPlayer.swift */; };
 		D43507B226C39214009C9B04 /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B126C39214009C9B04 /* ForecastData.swift */; };
 		D43507B526C3932B009C9B04 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B426C3932B009C9B04 /* ForecastModel.swift */; };
 		D43507B826C398F7009C9B04 /* CustomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43507B726C398F7009C9B04 /* CustomPin.swift */; };
@@ -67,6 +71,10 @@
 		D44914752692F35D002EBF46 /* BottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44914732692F35D002EBF46 /* BottomCell.swift */; };
 		D44914762692F35D002EBF46 /* BottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44914742692F35D002EBF46 /* BottomCell.xib */; };
 		D466DFCE26F1E9A000FE046F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466DFCD26F1E99F00FE046F /* Constants.swift */; };
+		D466DFD726F3151400FE046F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466DFD626F3151300FE046F /* ContentView.swift */; };
+		D466DFDB26F315B900FE046F /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466DFDA26F315B900FE046F /* HostingController.swift */; };
+		D466DFE226F3270E00FE046F /* SpeechRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466DFE126F3270E00FE046F /* SpeechRecorder.swift */; };
+		D466DFE826F32DC600FE046F /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466DFE726F32DC600FE046F /* RecordingsList.swift */; };
 		D48B5BA42694582100CF6EDB /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BA32694582100CF6EDB /* Dog.swift */; };
 		D48B5BAB2694BDCF00CF6EDB /* DogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */; };
 		D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */; };
@@ -124,6 +132,10 @@
 		D420F49F26E7FF4300C139D6 /* DetailViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelType.swift; sourceTree = "<group>"; };
 		D420F4A226E7FFD800C139D6 /* CollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		D420F4A526E8002200C139D6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		D430AB6E26F36B9B00C410B0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D430AB7626F46B7100C410B0 /* RecordingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingDataModel.swift; sourceTree = "<group>"; };
+		D430AB7926F46C4E00C410B0 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		D430AB7C26F489D000C410B0 /* SpeechPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechPlayer.swift; sourceTree = "<group>"; };
 		D43507B126C39214009C9B04 /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
 		D43507B426C3932B009C9B04 /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
 		D43507B726C398F7009C9B04 /* CustomPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPin.swift; sourceTree = "<group>"; };
@@ -158,6 +170,10 @@
 		D44914732692F35D002EBF46 /* BottomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCell.swift; sourceTree = "<group>"; };
 		D44914742692F35D002EBF46 /* BottomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomCell.xib; sourceTree = "<group>"; };
 		D466DFCD26F1E99F00FE046F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D466DFD626F3151300FE046F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D466DFDA26F315B900FE046F /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		D466DFE126F3270E00FE046F /* SpeechRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecorder.swift; sourceTree = "<group>"; };
+		D466DFE726F32DC600FE046F /* RecordingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
 		D48B5BA32694582100CF6EDB /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		D48B5BAA2694BDCF00CF6EDB /* DogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogManager.swift; sourceTree = "<group>"; };
 		D48B5BB42698241200CF6EDB /* SearchStarWarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStarWarViewController.swift; sourceTree = "<group>"; };
@@ -472,6 +488,7 @@
 				D4491431268D912E002EBF46 /* SceneDelegate.swift */,
 				D40ED40F26CD6E6B0010ED6B /* SlideMenu */,
 				D415720426BA5735009507D2 /* Modules */,
+				D466DFD926F3152100FE046F /* Speech */,
 				D4491438268D9132002EBF46 /* Assets.xcassets */,
 				D466DFCD26F1E99F00FE046F /* Constants.swift */,
 				D4491435268D912E002EBF46 /* Main.storyboard */,
@@ -489,6 +506,21 @@
 				D44914742692F35D002EBF46 /* BottomCell.xib */,
 			);
 			path = Xibs;
+			sourceTree = "<group>";
+		};
+		D466DFD926F3152100FE046F /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				D466DFD626F3151300FE046F /* ContentView.swift */,
+				D466DFE726F32DC600FE046F /* RecordingsList.swift */,
+				D466DFDA26F315B900FE046F /* HostingController.swift */,
+				D466DFE126F3270E00FE046F /* SpeechRecorder.swift */,
+				D430AB7C26F489D000C410B0 /* SpeechPlayer.swift */,
+				D430AB6E26F36B9B00C410B0 /* Extensions.swift */,
+				D430AB7626F46B7100C410B0 /* RecordingDataModel.swift */,
+				D430AB7926F46C4E00C410B0 /* Helper.swift */,
+			);
+			path = Speech;
 			sourceTree = "<group>";
 		};
 		D48B5BAE2695C31E00CF6EDB /* Controllers */ = {
@@ -712,6 +744,8 @@
 				D4429B4426A4B11A000B5DD2 /* AnimalMiddleCell.swift in Sources */,
 				D43507B826C398F7009C9B04 /* CustomPin.swift in Sources */,
 				D4D085BE269C5A7F0080CA80 /* DetailStarWarViewController.swift in Sources */,
+				D466DFE226F3270E00FE046F /* SpeechRecorder.swift in Sources */,
+				D466DFD726F3151400FE046F /* ContentView.swift in Sources */,
 				D40ED41826CD75EF0010ED6B /* LeftMenuTableViewController.swift in Sources */,
 				D40ED40226CD2AAA0010ED6B /* NewsDetailViewController.swift in Sources */,
 				D40ED3E926CCF3D60010ED6B /* TopNewsCell.swift in Sources */,
@@ -726,9 +760,11 @@
 				D420F4A326E7FFD800C139D6 /* CollectionViewCellViewModel.swift in Sources */,
 				D48B5BBD269C080A00CF6EDB /* PersonManager.swift in Sources */,
 				D40ED3EC26CCF3D60010ED6B /* NewsViewController.swift in Sources */,
+				D430AB6F26F36B9B00C410B0 /* Extensions.swift in Sources */,
 				D420F49C26E7FF1D00C139D6 /* CollectionViewCellViewModelType.swift in Sources */,
 				D415724026BCFFF0009507D2 /* WeatherDetailViewController.swift in Sources */,
 				D43507BF26C3B464009C9B04 /* ForecastCell.swift in Sources */,
+				D466DFE826F32DC600FE046F /* RecordingsList.swift in Sources */,
 				D44914752692F35D002EBF46 /* BottomCell.swift in Sources */,
 				D48B5BB52698241200CF6EDB /* SearchStarWarViewController.swift in Sources */,
 				D41571D226B7BDFE009507D2 /* ListAllBreeds.xcdatamodeld in Sources */,
@@ -747,13 +783,17 @@
 				D40ED41C26CD7CBD0010ED6B /* TabViewControllerTemplate.swift in Sources */,
 				D4429B5A26A55F8C000B5DD2 /* DetailAnimalCell.swift in Sources */,
 				D44914702692F32C002EBF46 /* MiddleCell.swift in Sources */,
+				D466DFDB26F315B900FE046F /* HostingController.swift in Sources */,
 				D40ED45026CF9DE10010ED6B /* NewsManager.swift in Sources */,
 				D48B5BC7269C231600CF6EDB /* StarWarsCell.swift in Sources */,
+				D430AB7D26F489D000C410B0 /* SpeechPlayer.swift in Sources */,
+				D430AB7A26F46C4E00C410B0 /* Helper.swift in Sources */,
 				D4429B4926A4B167000B5DD2 /* AnimalBottomCell.swift in Sources */,
 				D43E8A1126D614CD00345AF8 /* FilterViewController.swift in Sources */,
 				D420F4A026E7FF4300C139D6 /* DetailViewModelType.swift in Sources */,
 				D4F47FE526C3E80400543FF3 /* SettingsViewController.swift in Sources */,
 				D4491432268D912E002EBF46 /* SceneDelegate.swift in Sources */,
+				D430AB7726F46B7100C410B0 /* RecordingDataModel.swift in Sources */,
 				D4100B7126DD6777005566BB /* Article.swift in Sources */,
 				D4429B3B26A4B091000B5DD2 /* AnimalTopCell.swift in Sources */,
 				D4100B9526E35879005566BB /* CoreDataModel.swift in Sources */,

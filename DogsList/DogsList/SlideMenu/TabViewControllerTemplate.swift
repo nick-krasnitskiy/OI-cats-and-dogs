@@ -30,6 +30,10 @@ class TabViewControllerTemplate: UIViewController {
         NotificationCenter.default.addObserver(forName:  NSNotification.Name(rawValue: "openNews") , object: nil, queue: .main) { [weak self] _ in
             self?.tabBarController?.selectedIndex = 4
         }
+        
+        NotificationCenter.default.addObserver(forName:  NSNotification.Name(rawValue: "openSpeech") , object: nil, queue: .main) { [weak self] _ in
+            self?.tabBarController?.selectedIndex = 5
+        }
     }
     
     deinit {

@@ -178,6 +178,7 @@
                         <segue destination="vK6-km-mzJ" kind="relationship" relationship="viewControllers" id="DpP-bx-xaG"/>
                         <segue destination="Nm6-cF-3Bp" kind="relationship" relationship="viewControllers" id="tpQ-KF-Vre"/>
                         <segue destination="YsF-bd-UQt" kind="relationship" relationship="viewControllers" id="jRe-eX-wYg"/>
+                        <segue destination="oBV-9h-fBB" kind="relationship" relationship="viewControllers" id="V1a-Or-ru0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RvU-6M-djp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -651,7 +652,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ac1-mJ-tsv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3469.5652173913045" y="2947.7678571428569"/>
+            <point key="canvasLocation" x="4116" y="2930"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="5a8-4C-RFH">
@@ -950,7 +951,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5P-wG-Ptl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3469.5652173913045" y="3653.5714285714284"/>
+            <point key="canvasLocation" x="3529" y="3521"/>
         </scene>
         <!--Weather Detail View Controller-->
         <scene sceneID="gUz-6g-mr1">
@@ -1433,6 +1434,26 @@
             </objects>
             <point key="canvasLocation" x="1422" y="2948"/>
         </scene>
+        <!--Speech-->
+        <scene sceneID="r4s-Af-xVw">
+            <objects>
+                <hostingController id="oBV-9h-fBB" customClass="HostingController" customModule="DogsList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Speech" image="speaker.3" catalog="system" id="04q-4s-Lcr">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="HlU-U2-Bta">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="KbE-4f-byL">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="hanburgerMenu:" destination="oBV-9h-fBB" id="09c-7T-cQV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Vg-jv-GMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1423" y="3810"/>
+        </scene>
         <!--Dog List-->
         <scene sceneID="2c3-5l-Q74">
             <objects>
@@ -1465,6 +1486,7 @@
         <image name="hamburger" width="30" height="30"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="slider.vertical.3" catalog="system" width="128" height="111"/>
+        <image name="speaker.3" catalog="system" width="128" height="86"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star.leadinghalf.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
