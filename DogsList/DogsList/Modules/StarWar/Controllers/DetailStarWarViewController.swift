@@ -103,12 +103,12 @@ class DetailStarWarViewController: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             nameLabel.centerYAnchor.constraint(lessThanOrEqualTo: view.topAnchor, constant: 300),
-            heightLabel.topAnchor.constraint(equalToSystemSpacingBelow: nameLabel.bottomAnchor, multiplier: K.Dimensions.standartDimension),
-            massLabel.topAnchor.constraint(equalToSystemSpacingBelow: heightLabel.bottomAnchor, multiplier: K.Dimensions.standartDimension),
-            hairColorLabel.topAnchor.constraint(equalToSystemSpacingBelow: massLabel.bottomAnchor, multiplier: K.Dimensions.standartDimension),
-            skinColorLabel.topAnchor.constraint(equalToSystemSpacingBelow: hairColorLabel.bottomAnchor, multiplier: K.Dimensions.standartDimension),
-            eyeColorLabel.topAnchor.constraint(equalToSystemSpacingBelow: skinColorLabel.bottomAnchor, multiplier: K.Dimensions.standartDimension),
-            genderLabel.topAnchor.constraint(equalToSystemSpacingBelow: eyeColorLabel.bottomAnchor, multiplier: K.Dimensions.standartDimension),
+            heightLabel.topAnchor.constraint(equalToSystemSpacingBelow: nameLabel.bottomAnchor, multiplier: K.LayoutDimensions.standartDimension),
+            massLabel.topAnchor.constraint(equalToSystemSpacingBelow: heightLabel.bottomAnchor, multiplier: K.LayoutDimensions.standartDimension),
+            hairColorLabel.topAnchor.constraint(equalToSystemSpacingBelow: massLabel.bottomAnchor, multiplier: K.LayoutDimensions.standartDimension),
+            skinColorLabel.topAnchor.constraint(equalToSystemSpacingBelow: hairColorLabel.bottomAnchor, multiplier: K.LayoutDimensions.standartDimension),
+            eyeColorLabel.topAnchor.constraint(equalToSystemSpacingBelow: skinColorLabel.bottomAnchor, multiplier: K.LayoutDimensions.standartDimension),
+            genderLabel.topAnchor.constraint(equalToSystemSpacingBelow: eyeColorLabel.bottomAnchor, multiplier: K.LayoutDimensions.standartDimension),
             
             nameLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             heightLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),

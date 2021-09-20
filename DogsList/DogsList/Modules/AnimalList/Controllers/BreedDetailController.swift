@@ -44,19 +44,19 @@ class BreedDetailController: UIViewController {
 extension BreedDetailController {
     
     func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.Dimensions.standartDimension),
-                                              heightDimension: .fractionalWidth(K.Dimensions.standartDimension/2))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.LayoutDimensions.standartDimension),
+                                              heightDimension: .fractionalWidth(K.LayoutDimensions.halfDimension))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.Dimensions.standartDimension),
-                                               heightDimension: .fractionalWidth(K.Dimensions.standartDimension/2))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.LayoutDimensions.standartDimension),
+                                               heightDimension: .fractionalWidth(K.LayoutDimensions.halfDimension))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
-        let spacing = CGFloat(10)
+        let spacing = K.LayoutDimensions.tenDimension
         group.interItemSpacing = .fixed(spacing)
         
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = spacing
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10*K.Dimensions.standartDimension, leading: 10*K.Dimensions.standartDimension, bottom: 10*K.Dimensions.standartDimension, trailing: 10*K.Dimensions.standartDimension)
+        section.contentInsets = NSDirectionalEdgeInsets(top: K.LayoutDimensions.tenDimension, leading: K.LayoutDimensions.tenDimension, bottom: K.LayoutDimensions.tenDimension, trailing: K.LayoutDimensions.tenDimension)
         
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout

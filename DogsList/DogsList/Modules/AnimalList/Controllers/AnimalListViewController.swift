@@ -15,20 +15,20 @@ enum NewSection: Int, CaseIterable {
     var groupHeight: NSCollectionLayoutDimension {
         switch self {
         case .first:
-            return .fractionalHeight(K.Dimensions.standartDimension/5)
+            return .fractionalHeight(K.LayoutDimensions.standartDimension/5)
         case .second:
-            return .fractionalWidth(K.Dimensions.standartDimension/2)
+            return .fractionalWidth(K.LayoutDimensions.halfDimension)
         case .third:
-            return .fractionalHeight(K.Dimensions.standartDimension/2)
+            return .fractionalHeight(K.LayoutDimensions.halfDimension)
         }
     }
     
     var groupWidth: NSCollectionLayoutDimension {
         switch self {
         case .first, .third:
-            return .fractionalWidth(K.Dimensions.standartDimension)
+            return .fractionalWidth(K.LayoutDimensions.standartDimension)
         case .second:
-            return .fractionalWidth(K.Dimensions.standartDimension/2)
+            return .fractionalWidth(K.LayoutDimensions.halfDimension)
         }
     }
     
@@ -81,9 +81,9 @@ class AnimalListViewController: TabViewControllerTemplate {
             let heights = sectionType.groupHeight
             let widths = sectionType.groupWidth
             
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.Dimensions.standartDimension), heightDimension: .fractionalHeight(K.Dimensions.standartDimension))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(K.LayoutDimensions.standartDimension), heightDimension: .fractionalHeight(K.LayoutDimensions.standartDimension))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = NSDirectionalEdgeInsets(top: 2*K.Dimensions.standartDimension, leading: 2*K.Dimensions.standartDimension, bottom: 2*K.Dimensions.standartDimension, trailing: 2*K.Dimensions.standartDimension)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 2*K.LayoutDimensions.standartDimension, leading: 2*K.LayoutDimensions.standartDimension, bottom: 2*K.LayoutDimensions.standartDimension, trailing: 2*K.LayoutDimensions.standartDimension)
             
             let groupSize = NSCollectionLayoutSize(widthDimension: widths, heightDimension: heights)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
