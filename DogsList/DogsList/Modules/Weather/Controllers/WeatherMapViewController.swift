@@ -12,7 +12,7 @@ protocol WeatherMapViewControllerDelegate: AnyObject {
     func update(unit: String)
 }
 
-class WeatherMapViewController: UIViewController {
+class WeatherMapViewController: TabViewControllerTemplate {
     
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var searchBar: UISearchBar!
@@ -38,6 +38,10 @@ class WeatherMapViewController: UIViewController {
         searchBar.delegate = self
         addPinTapAction(mapView: mapView, target:self, action: #selector(addTapAnnotation))
         hideKeyboardWhenTappedAround()
+    }
+    
+    @IBAction func hamburgerMenu(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
     }
     
     func addPinTapAction(mapView: MKMapView, target: AnyObject, action: Selector) {

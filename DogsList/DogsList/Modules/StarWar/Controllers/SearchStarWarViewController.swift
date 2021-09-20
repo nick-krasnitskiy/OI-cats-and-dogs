@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchStarWarViewController: UIViewController {
+class SearchStarWarViewController: TabViewControllerTemplate {
     
     enum Section: CaseIterable {
         case main
@@ -32,11 +32,14 @@ class SearchStarWarViewController: UIViewController {
         hideKeyboardWhenTappedAround()
     }
     
+    @IBAction func hamburgerMenu(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
+    }
+  
     @IBAction func searchHistoryPressed(_ sender: UIBarButtonItem) {
         let searchHistoryVC = SearchHistoryViewController(with: searchHistory)
         show(searchHistoryVC, sender: nil)
-    }
-    
+    }  
 }
 
 extension SearchStarWarViewController {
