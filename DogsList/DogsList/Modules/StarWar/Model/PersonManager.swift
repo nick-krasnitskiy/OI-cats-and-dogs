@@ -43,7 +43,7 @@ struct PersonManager {
                             }
                         case nil:
                             print("Nil")
-                             self.delegate?.notResponce()
+                            self.delegate?.notResponce()
                         default:
                             print("Default")
                              self.delegate?.didFailWithResponce(response: httpResponse)

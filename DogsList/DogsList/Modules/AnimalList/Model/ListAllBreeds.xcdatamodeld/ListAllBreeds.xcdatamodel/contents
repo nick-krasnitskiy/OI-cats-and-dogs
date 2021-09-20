@@ -4,7 +4,16 @@
         <attribute name="breed" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES"/>
     </entity>
+    <entity name="NewsModel" representedClassName=".NewsModel" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="imageURL" optional="YES" attributeType="String"/>
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Animals" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="NewsModel" positionX="-36" positionY="27" width="128" height="133"/>
     </elements>
 </model>

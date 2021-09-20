@@ -34,7 +34,7 @@ enum NewSection: Int, CaseIterable {
     
 }
 
-class AnimalListViewController: UIViewController {
+class AnimalListViewController: TabViewControllerTemplate {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     private let indicator = UIActivityIndicatorView(style: .large)
@@ -52,6 +52,10 @@ class AnimalListViewController: UIViewController {
         animalManager.performRequest()
         startActivityIndicator()
         
+    }
+    
+    @IBAction func hamburgerMenu(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
     }
     
     private func configureCollectionView() {
@@ -195,11 +199,9 @@ extension AnimalListViewController: UICollectionViewDelegate {
             return
         }
         
-        for object in images {
-            if breed == object.breed {
-                let breedDetailViewController = BreedDetailController(with: object)
-                self.navigationController?.pushViewController(breedDetailViewController, animated: true)
-            }
+        for object in images where breed == object.breed {
+            let breedDetailViewController = BreedDetailController(with: object)
+            self.navigationController?.pushViewController(breedDetailViewController, animated: true)
         }
     }
 }

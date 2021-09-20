@@ -43,7 +43,7 @@ enum Section: Int, CaseIterable {
     
 }
 
-class ListDogViewController: UIViewController {
+class ListDogViewController: TabViewControllerTemplate {
     
     @IBOutlet private weak var collectionView: UICollectionView!
 
@@ -55,11 +55,16 @@ class ListDogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.endEditing(true)
         configureDataSource()
         configureCollectionView()
         dogManager.delegate = self
         dogManager.performRequest(with: dogManager.imageURL)
         startActivityIndicator()
+    }
+    
+    @IBAction func hamburgerMenu(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
     }
     
     private func configureCollectionView() {
